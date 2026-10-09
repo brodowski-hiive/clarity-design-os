@@ -1,5 +1,5 @@
 /*
- * Playground panel. Copied verbatim by design-os-alloy-prototype.
+ * Playground panel. Copied verbatim by design-os-prototype.
  *
  * Prototype-only tool for testers, deliberately not part of the design: an
  * onyx, monospace "dev tool" window in Clarity colors (see playground.css).

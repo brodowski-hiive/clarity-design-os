@@ -1,10 +1,10 @@
 {
-  "skill_name": "design-os-alloy-prototype",
+  "skill_name": "design-os-prototype",
   "evals": [
     {
       "id": 1,
       "prompt": "In ai-prototypes, build a quick prototype of the sell order flow: amount in shares, price per share, and a confirm dialog.",
-      "expected_output": "Scaffolds per the repo, swaps the app to @hiivemarkets/alloy, reads COMPONENTS.md and TOKENS.md, builds with SharesInput, MoneyInput, Dialog, and PageSection, runs the self-check, and ends with a receipt.",
+      "expected_output": "Scaffolds per the repo, swaps the app to @hiivemarkets/alloy, fills in prototype.json from the request, reads COMPONENTS.md and TOKENS.md, builds with SharesInput, MoneyInput, Dialog, and PageSection, runs the self-check, and ends with a receipt.",
       "files": [],
       "expectations": [
         "package.json depends on @hiivemarkets/alloy, not @hiivemarkets/ui",
@@ -12,13 +12,14 @@
         "Uses SharesInput for share quantity and MoneyInput for price",
         "Imports use @hiivemarkets/alloy/<component> subpaths",
         "No hex values or arbitrary color classes",
-        "Ends with an Alloy receipt including the self-check result"
+        "prototype.json has a real name and description (no TODO) and status exploring",
+        "Ends with an Alloy receipt including the self-check result and the listing"
       ]
     },
     {
       "id": 2,
       "prompt": "Turn this Figma frame into a coded prototype: https://www.figma.com/design/EXAMPLE/holdings?node-id=4-20",
-      "expected_output": "Reads Code Connect, confirms linked instances are Alloy by component key, proposes Alloy swaps for hand-built layers with reasons and confidence, posts the component map for confirmation, then builds from Alloy and compares against the Figma screenshot.",
+      "expected_output": "Reads Code Connect, confirms linked instances are Alloy by component key, proposes Alloy swaps for hand-built layers with reasons and confidence, posts the component map for confirmation, then builds from Alloy, compares against the Figma screenshot, and records the Figma URL in the listing.",
       "files": [],
       "expectations": [
         "Calls get_code_connect_map before searching the library",
@@ -26,6 +27,7 @@
         "Proposes an Alloy component for each hand-built layer with a reason and confidence",
         "Posts the component map and waits for confirmation before writing UI",
         "Makes no writes to the Figma file",
+        "prototype.json links.figma is the URL from the prompt",
         "Receipt includes match rate and any gaps"
       ]
     },
@@ -48,6 +50,7 @@
       "expectations": [
         "Flags @hiivemarkets/ui imports as high severity",
         "Reports file and line for each finding",
+        "Reports the state of prototype.json",
         "Makes no code changes before asking"
       ]
     },
@@ -89,6 +92,20 @@
         "Posts the flow map and waits for confirmation before writing UI",
         "Every link in the confirmed flow map works in the rendered prototype",
         "Receipt lists the flow (wired vs. inferred, corrections) and any Assumed items"
+      ]
+    },
+    {
+      "id": 8,
+      "prompt": "ok the offer approvals prototype is good, share it with the team. it's for CLR-512",
+      "expected_output": "Updates apps/offer-approvals/prototype.json to match what was built (status in-review, links.linear for CLR-512), validates it, opens the PR per the repo's CLAUDE.md, and replies with the PR link plus a one-line listing preview the designer can correct.",
+      "files": [],
+      "expectations": [
+        "prototype.json status is in-review",
+        "links.linear points to CLR-512 as a full URL",
+        "Description describes what was built, not the scaffold placeholder",
+        "Runs mise run validate for the app before opening the PR",
+        "Reply includes the PR link and a one-line listing preview",
+        "Does not invent a team or Figma link"
       ]
     }
   ]

@@ -8,10 +8,6 @@
   "should_trigger": true
  },
  {
-  "query": "turn this Figma frame into a React prototype",
-  "should_trigger": true
- },
- {
   "query": "which Alloy component should I use for a percentage field?",
   "should_trigger": true
  },
@@ -24,7 +20,11 @@
   "should_trigger": true
  },
  {
-  "query": "let testers flip between empty, loading, and error states in my prototype",
+  "query": "my sell order prototype is ready, open a PR and make sure people can find it later",
+  "should_trigger": true
+ },
+ {
+  "query": "the listing for kits-v1 says TODO for the description, can you fix it",
   "should_trigger": true
  },
  {

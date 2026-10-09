@@ -8,7 +8,9 @@ The check to run on a prototype before calling it done, or when asked whether a 
 | Medium | Hand-rolled page padding (`px-4 md:px-6 lg:px-8`), `max-w-*` page caps, or main-plus-sidebar grids | `PageContainer` / `PageSection` / `CenteredPageSection` |
 | Medium | Missing or misordered Alloy CSS imports, no `data-theme="clarity"`, an `@source` into Alloy | Fix per `references/setup.md` |
 | Medium | Plain `Input` for money, shares, percentages, or decimals | The dedicated numeric input |
+| Medium | In ai-prototypes: no `prototype.json`, a TODO or scaffold-placeholder description, or a listing that no longer matches what was built | Update per `references/listing.md`, then `mise run validate <name>` |
 | Low | Icons from Phosphor, Lucide, Heroicons, or an icon barrel | `@hiivemarkets/alloy-icons/<icon-slug>`, one import per icon |
+| Low | "Hiive" in the page title or visible product name, or a redrawn or image logo | Write Clarity; use `assets/clarity-logo.svg` colored with a text token |
 
 `src/playground/` is exempt: it's shared prototype tooling and intentionally not built from Alloy components. Check only that its four shared files match the skill's `assets/playground/` versions. Other prototype-only files you've labelled as Custom (animations, demo extras) are exempt from the color rule, but not from using Alloy components for controls.
 

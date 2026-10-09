@@ -14,6 +14,7 @@ Scope every `search_design_system` call to the 🤖 Alloy - DS library with `inc
 - Skip hidden layers, report cards, and `· Alloy fixes` copies made by the audit skill.
 - Take a `get_screenshot` of each frame. You'll compare the build against these at the end.
 - A whole page can be slow and may hit Figma rate limits. Say so before starting.
+- Keep the Figma URL the designer gave. In ai-prototypes it goes in `prototype.json` as `links.figma` (`references/listing.md`).
 
 ## 2. Match components
 

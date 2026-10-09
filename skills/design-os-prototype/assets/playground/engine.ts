@@ -1,5 +1,5 @@
 /*
- * Playground engine. Copied verbatim by design-os-alloy-prototype; don't edit
+ * Playground engine. Copied verbatim by design-os-prototype; don't edit
  * per prototype. Per-prototype settings live in ./config.ts.
  *
  * Settings are mirrored to the query string, so a link opens the exact state a

@@ -1,5 +1,5 @@
 /*
- * Playground provider and hook. Copied verbatim by design-os-alloy-prototype.
+ * Playground provider and hook. Copied verbatim by design-os-prototype.
  *
  *   <PlaygroundProvider config={playground}>  // in client.tsx, around <App />
  *   const s = usePlayground(playground);      // in any component

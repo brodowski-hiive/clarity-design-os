@@ -1,5 +1,5 @@
 /*
- * This prototype's playground. design-os-alloy-prototype writes this file
+ * This prototype's playground. design-os-prototype writes this file
  * from the playground plan the designer approved; it's the only playground
  * file that changes per prototype.
  *

@@ -1,0 +1,13 @@
+[
+  {"query": "/design-ping", "should_trigger": true},
+  {"query": "design ping, last 2 days", "should_trigger": true},
+  {"query": "what's on my plate today? I'm a designer and I'm drowning in Linear", "should_trigger": true},
+  {"query": "catch me up on Slack and Linear", "should_trigger": true},
+  {"query": "check my tickets and Slack, anything waiting on me?", "should_trigger": true},
+  {"query": "what am I missing across my Notion tasks and Linear?", "should_trigger": true},
+  {"query": "find stalled design asks across the whole team and write them to Notion", "should_trigger": false},
+  {"query": "ping - just Slack, any DMs I missed?", "should_trigger": false},
+  {"query": "where are we on the onboarding redesign project in Linear?", "should_trigger": false},
+  {"query": "clean up the layer names in this Figma file", "should_trigger": false},
+  {"query": "review this mock for the new listing flow", "should_trigger": false}
+]

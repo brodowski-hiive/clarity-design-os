@@ -6,13 +6,14 @@ Each folder under `skills/` is one skill: a `SKILL.md`, plus `references/` when 
 
 ## Skills
 
-_None yet._ `clarity-pm-os` already calls these as optional companions, so they are the first to build:
-
 | Skill | What it does | Status |
 |---|---|---|
+| `design-os-ping` | Ranked digest of what needs a designer's attention across Slack, Linear, and their Notion task list | Live |
 | `design-os-create-mocks` | Turns a brief and Design Spec into mocks or a prototype on Alloy | Planned |
 | `design-os-review-design-work` | Critiques a drafted mock or flow | Planned |
 | `design-os-audit-design-system` | Design-system drift and coverage audits | Planned |
+
+`design-os-create-mocks`, `design-os-review-design-work`, and `design-os-audit-design-system` are called by `clarity-pm-os` as optional companions.
 
 ## Agents
 

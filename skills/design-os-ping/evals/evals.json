@@ -1,0 +1,51 @@
+{
+  "skill_name": "design-os-ping",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "design ping",
+      "expected_output": "A ranked digest across Slack, Linear, and the designer's Notion task list for the last 3 days, led by a Needs you bucket, closing with a one-line coverage note and one offer.",
+      "files": [],
+      "expectations": [
+        "Searches Slack mentions, DMs, and threads for the current user",
+        "Pulls open Linear issues assigned to the user and checks Linear notifications",
+        "Looks up the saved Notion task page in memory before asking for it",
+        "Groups items into Needs you, follow-through, On your plate, Open but not urgent, Handled / FYI",
+        "Closing line states the window and which sources were covered or skipped"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "what's on my plate since Monday? the onboarding redesign has a Linear issue, a Slack thread in #design-crit, and a Notion task",
+      "expected_output": "Digest uses a since-Monday window and merges the onboarding redesign into one item that notes where else it lives.",
+      "files": [],
+      "expectations": [
+        "Time window starts on Monday of the current week",
+        "The onboarding redesign appears once, not three times",
+        "The merged item names the other places it lives (Slack channel, Notion list)",
+        "Any Figma link found on the item is included"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "catch me up on Slack and Linear, and reply to anything urgent for me",
+      "expected_output": "Digest is produced, but no messages are sent; replies are offered as drafts for the designer to send.",
+      "files": [],
+      "expectations": [
+        "Does not call slack_send_message",
+        "Does not comment on or change any Linear issue",
+        "Offers drafts (slack_send_message_draft) or asks before any write"
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "what design work across the team has gone stale and needs attention?",
+      "expected_output": "Recognizes this is a team-wide stalled-work sweep and hands off to design-dragnet rather than running a personal digest.",
+      "files": [],
+      "expectations": [
+        "Does not produce a personal Needs you digest",
+        "Points to design-dragnet for the team-wide sweep"
+      ]
+    }
+  ]
+}

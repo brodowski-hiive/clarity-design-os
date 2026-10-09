@@ -1,0 +1,13 @@
+{
+  "name": "clarity-design-os",
+  "owner": {
+    "name": "Clarity Design"
+  },
+  "plugins": [
+    {
+      "name": "clarity-design-os",
+      "source": "./",
+      "description": "Clarity's design operating system: mocks and prototypes, design review, design-system audits, Figma hygiene, and design-team triage."
+    }
+  ]
+}

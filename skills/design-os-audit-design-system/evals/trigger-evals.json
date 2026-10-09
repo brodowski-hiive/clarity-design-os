@@ -1,0 +1,13 @@
+[
+  {"query": "audit my frame for Alloy", "should_trigger": true},
+  {"query": "am I using Alloy components everywhere in this file?", "should_trigger": true},
+  {"query": "find detached components on this page", "should_trigger": true},
+  {"query": "fix A2 and A5", "should_trigger": true},
+  {"query": "what in this screen isn't on the design system?", "should_trigger": true},
+  {"query": "re-run the Alloy report card on checkout", "should_trigger": true},
+  {"query": "audit the Alloy library against the dev-ready checklist", "should_trigger": false},
+  {"query": "build me a coded prototype of the sell flow", "should_trigger": false},
+  {"query": "critique the UX of this onboarding flow", "should_trigger": false},
+  {"query": "what's on my plate today?", "should_trigger": false},
+  {"query": "add a size variant to the Alloy Button in packages/alloy", "should_trigger": false}
+]

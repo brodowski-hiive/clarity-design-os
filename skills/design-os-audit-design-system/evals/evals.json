@@ -1,0 +1,80 @@
+{
+  "skill_name": "design-os-audit-design-system",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Audit this frame for Alloy: https://www.figma.com/design/EXAMPLE/checkout?node-id=12-345",
+      "expected_output": "A read-only audit, a request to add the report card, then a report card to the right of the frame with IDs, coverage, and saved findings, plus a short chat summary.",
+      "files": [],
+      "expectations": [
+        "Every search_design_system call passes includeLibraryKeys with only the Alloy library key",
+        "Makes no Figma writes before asking to add the report card",
+        "Report card is placed beside the audited frame and does not overlap it",
+        "Each finding has an ID like A1, a severity, what's wrong, and a suggested fix",
+        "Findings are saved with setSharedPluginData('designos', ...) on the report card",
+        "Chat summary tells the designer how to reply (fix A1, fix all high)",
+        "Report card includes an Alloy gaps callout listing what Alloy is missing, with finding IDs",
+        "ID links use URL hyperlinks with node-id, not NODE-type links",
+        "search_design_system calls pass disableCodeConnect: true and stay small"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "fix A1, A3 and A4",
+      "expected_output": "Reads the saved findings, duplicates the frame once as '<name> · Alloy fixes', applies only those fixes in the copy, and updates statuses on the card.",
+      "files": [],
+      "expectations": [
+        "Resolves IDs from the saved findings on the report card",
+        "Creates the fix copy below the original, or reuses an existing one",
+        "No write targets the original frame or its children",
+        "Only A1, A3, and A4 change",
+        "Report card statuses update to Fixed in copy, Needs designer, or Couldn't fix",
+        "Findings that need a decision are marked Needs designer, not skipped"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "I fixed some stuff myself, can you re-run the Alloy audit on the checkout frame?",
+      "expected_output": "Updates the existing report card instead of adding a second one, keeps existing IDs, marks fixed ones Resolved, and numbers new findings after the highest ID.",
+      "files": [],
+      "expectations": [
+        "Finds the existing card by its reportFor plugin data",
+        "Does not create a second report card",
+        "Findings no longer present are marked Resolved",
+        "New findings continue numbering from the highest existing ID"
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "fix all medium",
+      "expected_output": "Binds exact color and text-style matches in the copy; marks non-exact ones Needs designer with the closest option and delta; asks a short multiple-choice question when the closest heading style would visibly change the design.",
+      "files": [],
+      "expectations": [
+        "Only exact color and text-style matches are applied automatically",
+        "Non-exact matches are marked Needs designer with the closest option",
+        "Asks the designer to choose when two styles are equally close or the change is visible",
+        "Hex values are checked against all 2. Clarity colors, including colors/chart/*, before being called 'no token'"
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "just fix everything directly in my frame, don't bother with a copy",
+      "expected_output": "Explains that fixes always go in a copy so the original is safe, offers to make the copy, and doesn't edit the original.",
+      "files": [],
+      "expectations": [
+        "Does not write to the original frame",
+        "Offers the fix-copy flow instead"
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Audit the Alloy library against the dev-ready checklist",
+      "expected_output": "Hands off to alloy-figma-audit.",
+      "files": [],
+      "expectations": [
+        "Does not audit the library as a designer's frame",
+        "Points to alloy-figma-audit"
+      ]
+    }
+  ]
+}

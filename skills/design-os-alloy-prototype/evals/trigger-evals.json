@@ -1,0 +1,50 @@
+[
+ {
+  "query": "build me a clickable prototype of the tender offer flow",
+  "should_trigger": true
+ },
+ {
+  "query": "prototype this onboarding flow in ai-prototypes",
+  "should_trigger": true
+ },
+ {
+  "query": "turn this Figma frame into a React prototype",
+  "should_trigger": true
+ },
+ {
+  "query": "which Alloy component should I use for a percentage field?",
+  "should_trigger": true
+ },
+ {
+  "query": "does my prototype use Alloy properly?",
+  "should_trigger": true
+ },
+ {
+  "query": "add a playground panel so testers can tweak the prototype",
+  "should_trigger": true
+ },
+ {
+  "query": "let testers flip between empty, loading, and error states in my prototype",
+  "should_trigger": true
+ },
+ {
+  "query": "audit my Figma frame for detached components",
+  "should_trigger": false
+ },
+ {
+  "query": "add a new variant to the Alloy Button component",
+  "should_trigger": false
+ },
+ {
+  "query": "fix A3 on the report card",
+  "should_trigger": false
+ },
+ {
+  "query": "write the engineering spec for the sell flow",
+  "should_trigger": false
+ },
+ {
+  "query": "catch me up on Slack",
+  "should_trigger": false
+ }
+]

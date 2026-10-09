@@ -1,0 +1,78 @@
+{
+  "skill_name": "design-os-alloy-prototype",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "In ai-prototypes, build a quick prototype of the sell order flow: amount in shares, price per share, and a confirm dialog.",
+      "expected_output": "Scaffolds per the repo, swaps the app to @hiivemarkets/alloy, reads COMPONENTS.md and TOKENS.md, builds with SharesInput, MoneyInput, Dialog, and PageSection, runs the self-check, and ends with a receipt.",
+      "files": [],
+      "expectations": [
+        "package.json depends on @hiivemarkets/alloy, not @hiivemarkets/ui",
+        "styles.css imports alloy styles, theme, and themes/clarity in order, with no @source into Alloy",
+        "Uses SharesInput for share quantity and MoneyInput for price",
+        "Imports use @hiivemarkets/alloy/<component> subpaths",
+        "No hex values or arbitrary color classes",
+        "Ends with an Alloy receipt including the self-check result"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Turn this Figma frame into a coded prototype: https://www.figma.com/design/EXAMPLE/holdings?node-id=4-20",
+      "expected_output": "Maps each Figma element to the Alloy component of the same name, builds from Alloy, and lists visual differences as gaps rather than hardcoding them.",
+      "files": [],
+      "expectations": [
+        "Reads COMPONENTS.md before writing UI",
+        "No hand-built controls where Alloy has a component",
+        "Visual mismatches are listed as gaps in the receipt"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Just use a normal shadcn Select here, the Alloy one is annoying.",
+      "expected_output": "Keeps the Alloy Select (or Combobox if it fits better), explains why, and records the friction as a gap.",
+      "files": [],
+      "expectations": [
+        "Does not import shadcn or Radix Select",
+        "Checks COMPONENTS.md for Select versus Combobox",
+        "Records the complaint as a gap in the receipt"
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Does the portfolio prototype in ai-prototypes actually use Alloy?",
+      "expected_output": "Runs the self-check read-only, reports findings by file and line, and asks before changing anything.",
+      "files": [],
+      "expectations": [
+        "Flags @hiivemarkets/ui imports as high severity",
+        "Reports file and line for each finding",
+        "Makes no code changes before asking"
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Add a playground to the fund-offerings-v2 prototype so testers can stress it.",
+      "expected_output": "Proposes a short table of playground settings based on what's on screen (baseline presets plus relevant catalog items), waits for a yes, copies the four shared files unchanged into src/playground/, writes config.ts, wires the provider and CSS, and verifies each control changes the page.",
+      "files": [],
+      "expectations": [
+        "Proposes the settings table before writing code",
+        "Includes applicable baseline presets (Default, Empty, One, Many, Long text, Error, Loading)",
+        "engine.ts, provider.tsx, panel.tsx, playground.css in src/playground/ match the skill's assets byte for byte",
+        "Only config.ts is prototype-specific",
+        "Empty, loading, and error states render Alloy EmptyState, Skeleton, and Alert",
+        "Fake data generation lives in src/data/, driven by playground settings",
+        "Receipt lists the playground controls added"
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "Add a toggle to the playground for a dark mode",
+      "expected_output": "Checks whether Alloy and the prototype can actually show a dark theme. If they can't, says so and reports it as a gap instead of adding a control that does nothing.",
+      "files": [],
+      "expectations": [
+        "Checks Alloy's themes before adding the control",
+        "Does not add a control that changes nothing visible",
+        "If no dark theme exists, reports it as an Alloy gap"
+      ]
+    }
+  ]
+}

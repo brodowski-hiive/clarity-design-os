@@ -18,12 +18,15 @@
     {
       "id": 2,
       "prompt": "Turn this Figma frame into a coded prototype: https://www.figma.com/design/EXAMPLE/holdings?node-id=4-20",
-      "expected_output": "Maps each Figma element to the Alloy component of the same name, builds from Alloy, and lists visual differences as gaps rather than hardcoding them.",
+      "expected_output": "Reads Code Connect, confirms linked instances are Alloy by component key, proposes Alloy swaps for hand-built layers with reasons and confidence, posts the component map for confirmation, then builds from Alloy and compares against the Figma screenshot.",
       "files": [],
       "expectations": [
-        "Reads COMPONENTS.md before writing UI",
-        "No hand-built controls where Alloy has a component",
-        "Visual mismatches are listed as gaps in the receipt"
+        "Calls get_code_connect_map before searching the library",
+        "Scopes search_design_system to the Alloy - DS library",
+        "Proposes an Alloy component for each hand-built layer with a reason and confidence",
+        "Posts the component map and waits for confirmation before writing UI",
+        "Makes no writes to the Figma file",
+        "Receipt includes match rate and any gaps"
       ]
     },
     {
@@ -72,6 +75,20 @@
         "Checks Alloy's themes before adding the control",
         "Does not add a control that changes nothing visible",
         "If no dark theme exists, reports it as an Alloy gap"
+      ]
+    },
+    {
+      "id": 7,
+      "prompt": "Make this Figma page clickable in Claude Code: https://www.figma.com/design/EXAMPLE/place-bid?node-id=12-0. It has the bid form, review, confirmation, and an error version of the bid form. Only Continue is wired.",
+      "expected_output": "Treats the page as a flow, uses the wired Continue link as-is, infers the remaining links from labels, names, and order with confidence levels, groups the error frame as a state of the bid form, posts the flow map with low-confidence links first, waits for corrections, then builds a working stepper or routes with every link clickable.",
+      "files": [],
+      "expectations": [
+        "Labels Continue as wired and other links as inferred with confidence",
+        "Treats the error frame as a state of the bid form, not a separate route",
+        "Repeated header or step indicator becomes one shared layout",
+        "Posts the flow map and waits for confirmation before writing UI",
+        "Every link in the confirmed flow map works in the rendered prototype",
+        "Receipt lists the flow (wired vs. inferred, corrections) and any Assumed items"
       ]
     }
   ]

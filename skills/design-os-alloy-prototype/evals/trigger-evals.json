@@ -4,7 +4,7 @@
   "should_trigger": true
  },
  {
-  "query": "prototype this onboarding flow in ai-prototypes",
+  "query": "port these Figma screens into Claude Code as a clickable flow",
   "should_trigger": true
  },
  {
@@ -44,7 +44,7 @@
   "should_trigger": false
  },
  {
-  "query": "catch me up on Slack",
+  "query": "wire up prototype connections between my Figma frames",
   "should_trigger": false
  }
 ]

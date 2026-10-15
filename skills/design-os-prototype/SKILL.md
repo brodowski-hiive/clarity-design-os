@@ -1,6 +1,6 @@
 ---
 name: "design-os-prototype"
-description: "Build coded Clarity prototypes from real Alloy components, port Figma screens and flows into clickable code, add a playground, keep the ai-prototypes listing current, and check it's on-system. Use for \"build a prototype\", \"make this Figma page clickable\", \"add a playground\", \"share my prototype\", \"update the prototype listing\", \"which Alloy component for X?\". Not for: auditing Figma files (design-os-audit-design-system), changing Alloy itself (packages/alloy AGENTS.md), or production app work."
+description: "Build coded Clarity prototypes from Alloy components, port Figma screens and flows into clickable code, add a playground, keep the ai-prototypes listing current, and check it's on-system. Use for \"build a prototype\", \"make this Figma page clickable\", \"add a playground\", \"share my prototype\", \"update the prototype listing\". Not for: Figma audits (design-os-audit-design-system), prototype to Figma (design-os-prototype-to-figma), or changing Alloy (packages/alloy AGENTS.md)."
 ---
 
 # Design OS: prototype

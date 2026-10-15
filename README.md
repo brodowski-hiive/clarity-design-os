@@ -10,6 +10,7 @@ Each folder under `skills/` is one skill: a `SKILL.md`, plus `references/` when 
 |---|---|---|
 | `design-os-audit-design-system` | Audits a Figma frame for Alloy coverage, adds a report card with fix IDs, and fixes chosen IDs in a copy of the frame | Live |
 | `design-os-prototype` | Builds coded prototypes from `@hiivemarkets/alloy` components, ports Figma flows, adds a standard playground panel for stress testing, keeps each ai-prototypes app's `prototype.json` listing current, and checks the code is on-system | Live |
+| `design-os-prototype-to-figma` | Ports a coded prototype back into Figma as Alloy screens in auto layout with its flow wired, then audits them with `design-os-audit-design-system` and fixes findings in place | Live |
 | `design-os-ping` | Ranked digest of what needs a designer's attention across Slack, Linear, and their Notion task list | Live |
 | `design-os-create-mocks` | Turns a brief and Design Spec into mocks or a prototype on Alloy | Planned |
 | `design-os-review-design-work` | Critiques a drafted mock or flow | Planned |

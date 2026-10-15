@@ -51,6 +51,16 @@ Node-type hyperlinks fail in `use_figma` ("Invalid hyperlink target"). Use URL l
 }
 ```
 
+## Fixing in place
+
+Frames built by `design-os-prototype-to-figma` carry `designos` / `kind` = `prototype-port`. For those:
+
+- Fixes go directly into the frame; no fix copy is made. Statuses read `Fixed` instead of `Fixed in copy`.
+- The reply line reads "Reply in chat: fix A1, A4 · fix all", followed by "These screens were ported from code, so fixes are made directly in them."
+- The saved findings data adds `"fixMode": "in-place"`. Use `"fixMode": "copy"` if the designer later asks for a copy instead.
+
+Never treat a frame as `prototype-port` on name alone; check the saved data.
+
 ## Updating
 
 - Find an existing card by looking on the page for a node whose `reportFor` matches the audited frame's ID; find the copy by `fixFor`.

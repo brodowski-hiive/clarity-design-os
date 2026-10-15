@@ -29,7 +29,7 @@ For each instance, get its main component (`getMainComponentAsync()`) and, if it
 
 ## Statuses
 
-`Open` → `Fixed in copy`, `Partly fixed in copy · Needs designer`, `Needs designer`, or `Couldn't fix`. On a re-run, a finding that no longer appears becomes `Resolved`.
+`Open` → `Fixed in copy`, `Partly fixed in copy · Needs designer`, `Needs designer`, or `Couldn't fix`. On `prototype-port` frames, which are fixed in place, use `Fixed` and `Partly fixed · Needs designer`. On a re-run, a finding that no longer appears becomes `Resolved`.
 
 ## Fix rules
 

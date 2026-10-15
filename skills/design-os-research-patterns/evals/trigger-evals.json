@@ -1,0 +1,12 @@
+[
+  {"query": "how do competitors handle approval flows?", "should_trigger": true},
+  {"query": "pattern research for a cap table view", "should_trigger": true},
+  {"query": "what's out there for document data rooms?", "should_trigger": true},
+  {"query": "inspiration for our tender offer dashboard", "should_trigger": true},
+  {"query": "how does this Figma design compare to what Carta and Pulley do?", "should_trigger": true},
+  {"query": "review this mock and tell me what's wrong with it", "should_trigger": false},
+  {"query": "what should our multi-year product strategy be?", "should_trigger": false},
+  {"query": "stress test this screen", "should_trigger": false},
+  {"query": "is this frame using Alloy?", "should_trigger": false},
+  {"query": "what's the status of the data room project in Linear?", "should_trigger": false}
+]

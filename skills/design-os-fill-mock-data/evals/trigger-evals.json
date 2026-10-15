@@ -1,0 +1,12 @@
+[
+  {"query": "replace the placeholders in this frame", "should_trigger": true},
+  {"query": "make the data realistic", "should_trigger": true},
+  {"query": "the numbers in this mock don't add up, fix them", "should_trigger": true},
+  {"query": "fill in [programName] and the John Doe rows with real-looking data", "should_trigger": true},
+  {"query": "populate this Figma table with sample content", "should_trigger": true},
+  {"query": "stress test this table with extreme values", "should_trigger": false},
+  {"query": "find detached components in this frame", "should_trigger": false},
+  {"query": "clean up the layer names in this file", "should_trigger": false},
+  {"query": "build a clickable prototype from this frame", "should_trigger": false},
+  {"query": "what will engineers ask about this design?", "should_trigger": false}
+]

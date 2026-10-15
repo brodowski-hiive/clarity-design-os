@@ -1,0 +1,12 @@
+[
+  {"query": "ready for eng?", "should_trigger": true},
+  {"query": "what questions will engineers ask about this design in kickoff?", "should_trigger": true},
+  {"query": "handoff checklist for this Figma flow", "should_trigger": true},
+  {"query": "what's expensive to build here?", "should_trigger": true},
+  {"query": "backend implications of this new approvals screen", "should_trigger": true},
+  {"query": "write the engineering spec with acceptance criteria", "should_trigger": false},
+  {"query": "does this brief give engineering what they need to start?", "should_trigger": false},
+  {"query": "stress test this screen with long names", "should_trigger": false},
+  {"query": "fix the placeholder data in this frame", "should_trigger": false},
+  {"query": "build a coded prototype of this flow", "should_trigger": false}
+]

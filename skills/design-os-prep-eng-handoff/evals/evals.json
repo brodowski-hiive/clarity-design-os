@@ -1,0 +1,39 @@
+{
+  "skill_name": "design-os-prep-eng-handoff",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "ready for eng? https://www.figma.com/design/abc123/Tender-Offers?node-id=4-200",
+      "expected_output": "A checklist with 'Questions to answer before handoff' and 'Backend to confirm with eng', one concrete line each, ending with an offer to draft a message to the PM or eng lead.",
+      "files": [],
+      "expectations": [
+        "Pulls the frames and checks which elements are Alloy instances vs custom",
+        "Turns build difficulties into questions rather than a separate 'hard to build' section",
+        "Names specific elements, fields, or interactions",
+        "Ends with one line offering a message for the PM or eng lead"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "here's the fee breakdown modal for handoff: gross $125,000, fee 2% = $2,000, net $123,000",
+      "expected_output": "Flags that the fee math doesn't reconcile (2% of 125,000 is 2,500) as a question about the formula.",
+      "files": [],
+      "expectations": [
+        "Checks the mock math",
+        "Lists the mismatch as a question about the fee formula",
+        "Does not silently correct the numbers"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "what are the backend implications of adding multi-party ROFR approvals to this flow?",
+      "expected_output": "Backend items (state machine, approver permissions, deadlines, notifications, audit log, migration) phrased as things to confirm, not asserted facts.",
+      "files": [],
+      "expectations": [
+        "Phrases unknown backend behavior as items to confirm with eng",
+        "Covers permissions, async or deadline handling, side effects, and migration",
+        "Points to design-os-stress-test-design for a deep edge-case pass rather than duplicating it"
+      ]
+    }
+  ]
+}

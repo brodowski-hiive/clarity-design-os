@@ -12,6 +12,10 @@ Each folder under `skills/` is one skill: a `SKILL.md`, plus `references/` when 
 | `design-os-prototype` | Builds coded prototypes from `@hiivemarkets/alloy` components, ports Figma flows, adds a standard playground panel for stress testing, keeps each ai-prototypes app's `prototype.json` listing current, and checks the code is on-system | Live |
 | `design-os-prototype-to-figma` | Ports a coded prototype back into Figma as Alloy screens in auto layout with its flow wired, then audits them with `design-os-audit-design-system` and fixes findings in place | Live |
 | `design-os-ping` | Ranked digest of what needs a designer's attention across Slack, Linear, and their Notion task list | Live |
+| `design-os-stress-test-design` | Stress-tests a design for edge cases (long text, high volume, extreme numbers, missing states) and builds data permutations to design against | Live |
+| `design-os-fill-mock-data` | Replaces placeholder content in a Figma frame with realistic, reconciled Clarity mock data, section by section after approval | Live |
+| `design-os-prep-eng-handoff` | Gets ahead of eng handoff: the questions engineers will ask and the backend, permission, and data work the design implies | Live |
+| `design-os-research-patterns` | Researches how 15+ competitors and cross-industry products handle a screen or feature, with tradeoffs and source links | Live |
 | `design-os-create-mocks` | Turns a brief and Design Spec into mocks or a prototype on Alloy | Planned |
 | `design-os-review-design-work` | Critiques a drafted mock or flow | Planned |
 
@@ -46,6 +50,8 @@ _None yet._
 ## Migrating from personal copies
 
 If you installed any of these skills as personal skills, uninstall those copies after installing the plugin. Otherwise two copies compete to trigger.
+
+Four skills were renamed when they joined the plugin in 1.2.0. Remove any personal copy of the old name: `design-edge-cases` (now `design-os-stress-test-design`), `design-mock-data` (now `design-os-fill-mock-data`), `design-eng-handoff` (now `design-os-prep-eng-handoff`), and `design-pattern-research` (now `design-os-research-patterns`).
 
 `design-os-alloy-prototype` was renamed to `design-os-prototype` in 1.0.0. Remove any personal copy of either name, including `design-prototype` or `design-os-prototype` installed from a `.skill` file.
 

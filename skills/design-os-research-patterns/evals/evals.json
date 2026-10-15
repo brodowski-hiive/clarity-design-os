@@ -1,0 +1,40 @@
+{
+  "skill_name": "design-os-research-patterns",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "how do other platforms handle data rooms?",
+      "expected_output": "Exploration-mode report: one-line mode header, a 1-2 sentence neutral summary, a platform table of sources that show UI, 'Worth checking yourself', a Mobbin line, and an offer of the full pattern breakdown.",
+      "files": [],
+      "expectations": [
+        "Breaks the feature into 4-8 patterns before searching",
+        "Includes specialists (e.g. DocSend, Datasite) and 3-5 wildcards",
+        "Searches platforms separately",
+        "Tags sources Help / Mktg / 3P",
+        "Every link comes from search or fetch results",
+        "Summary states a finding, not a recommendation"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "here's my transfer modal, how does it compare to the market? https://www.figma.com/design/abc123/Transfers?node-id=1-2",
+      "expected_output": "Validation-mode report whose summary leads with the most significant convergence or divergence from the designer's frame.",
+      "files": [],
+      "expectations": [
+        "Pulls the frame with the Figma connector",
+        "Sets mode to Validation",
+        "Offers a Pattern | Your design | Market | Note comparison"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "dashboard",
+      "expected_output": "Asks one short question about the goal before searching.",
+      "files": [],
+      "expectations": [
+        "Asks exactly one clarifying question",
+        "Does not start searching yet"
+      ]
+    }
+  ]
+}

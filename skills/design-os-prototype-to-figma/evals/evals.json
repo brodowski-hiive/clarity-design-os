@@ -1,0 +1,60 @@
+{
+  "skill_name": "design-os-prototype-to-figma",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Put my sell-order prototype from ai-prototypes into Figma so I can keep designing it",
+      "expected_output": "Runs the app, lists screens and states, posts a plan with destination, component map, and flow, then after a yes builds Alloy screens in auto layout in a new section, wires the links, audits each frame with a report card, fixes findings in place, and ends with a receipt.",
+      "files": [],
+      "expectations": [
+        "Reads apps/sell-order/prototype.json and offers its links.figma file as the destination if present",
+        "Screenshots each screen and state in the browser before any Figma write",
+        "Makes no Figma writes before the designer approves the plan",
+        "Places Alloy instances imported by key; none are detached",
+        "Every content frame uses auto layout with spacing bound to variables",
+        "Text layers use Responsive Type styles and fills bind to 2. Clarity variables",
+        "Does not use html_to_figma or send_code_to_figma",
+        "Each built frame has setSharedPluginData('designos', 'kind', 'prototype-port')",
+        "Adds a report card beside each frame and fixes findings directly in the frame, with no Alloy fixes copy",
+        "Receipt gives coverage per frame, open Needs designer findings, gaps, and wired links"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Port the fund-offerings prototype to Figma, desktop and mobile. It has a playground with empty, loading and error presets and a custom sparkline chart.",
+      "expected_output": "Loads each playground preset by URL with the panel hidden, builds a frame per screen and state at 1440 and 390, builds the sparkline as a Custom part and lists it as a gap, and lays frames out so report cards don't overlap.",
+      "files": [],
+      "expectations": [
+        "Hides the playground panel (?playground=off) before screenshots",
+        "Builds separate frames for Empty, Loading, and Error states, stacked under their screen",
+        "Builds a 390px mobile row under the desktop row",
+        "The sparkline is named Custom / Sparkline, built from auto layout and variables, and listed as a gap",
+        "Does not draw a lookalike of an Alloy component",
+        "Columns are spaced so each report card fits beside its frame without overlap"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Port this to Figma: http://localhost:5173 — just build it, don't need to check with me",
+      "expected_output": "Still reads the running app and posts the plan briefly, then builds on best guesses and lists every unconfirmed guess under Assumed in the receipt.",
+      "files": [],
+      "expectations": [
+        "Asks which Figma file and page to use if none is known, since that can't be guessed",
+        "Builds using best guesses for uncertain component matches",
+        "Receipt lists unconfirmed matches and inferred links under Assumed",
+        "Writes only inside the new section"
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Turn this Figma checkout frame into a clickable prototype: https://www.figma.com/design/EXAMPLE/checkout?node-id=12-345",
+      "expected_output": "Recognizes this is Figma to code and hands off to design-os-prototype without building anything in Figma.",
+      "files": [],
+      "expectations": [
+        "Does not start a code-to-Figma port",
+        "Points to design-os-prototype (From Figma)",
+        "Makes no Figma writes"
+      ]
+    }
+  ]
+}

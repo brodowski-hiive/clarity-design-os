@@ -1,6 +1,6 @@
 ---
 name: "design-os-audit-design-system"
-description: "Audit a Figma frame for Alloy coverage: missing or detached components, non-Alloy libraries, raw colors, off-system type. Adds a report card with fix IDs and Alloy gaps beside the frame, then fixes chosen IDs in a duplicate, never the original. Use for \"audit my frame\", \"am I using Alloy?\", \"find detached components\", \"fix A3\". Not for: auditing the Alloy library itself (alloy-figma-audit), coded prototypes (design-os-alloy-prototype), or UX critique (design-os-review-design-work)."
+description: "Audit a Figma frame for Alloy coverage: missing or detached components, non-Alloy libraries, raw colors, off-system type. Adds a report card with fix IDs and Alloy gaps beside the frame, then fixes chosen IDs in a duplicate, never the original. Use for \"audit my frame\", \"am I using Alloy?\", \"find detached components\", \"fix A3\". Not for: auditing the Alloy library itself (alloy-figma-audit), coded prototypes (design-os-prototype), or UX critique (design-os-review-design-work)."
 ---
 
 # Design OS: Audit design system
@@ -9,7 +9,7 @@ Check a designer's Figma work against the live Alloy library, show what isn't Al
 
 ## Rules
 
-1. **Never write to the original.** The only writes are: the report card (a new frame beside the original), the fix copy (a duplicate of the original), and edits inside those two. Before every write, check that the target node is the report card, the copy, or inside one of them. If not, stop.
+1. **Never write to the original.** The only writes are: the report card (a new frame beside the original), the fix copy (a duplicate of the original), and edits inside those two. Before every write, check that the target node is the report card, the copy, or inside one of them. If not, stop. The one exception: frames marked `designos` / `kind` = `prototype-port` were built by `design-os-prototype-to-figma`, not the designer, so fixes go into them directly (`references/report-card.md`, Fixing in place).
 2. **Alloy only, looked up live.** Compare against the 🤖 Alloy - DS library, scoping every search to its library key (`references/alloy-library.md`). Never compare against memory, shadcn, or other Hiive libraries, which show up in unscoped searches.
 3. **Read before judging.** Read each Alloy component's description before calling something a lookalike or suggesting a swap. The description often decides it (for example, mobile dialogs are `Drawer / Mobile`).
 4. **Suggest; the designer decides.** Lookalike detection is a judgment call. Give a confidence level, and never fix a finding the designer hasn't picked.
@@ -31,7 +31,7 @@ Collect **Alloy gaps**: things the frame needed that Alloy doesn't provide (no c
 
 ## 3. Report card
 
-Ask once per frame before adding it ("I'll add a report card to the right of Checkout. OK?"). Then build it as in `references/report-card.md`: beside the original, made from Alloy, with the gaps callout, each ID linked to its layer, and the findings saved in the file so a later chat can pick them up.
+Ask once per frame before adding it ("I'll add a report card to the right of Checkout. OK?"), unless `design-os-prototype-to-figma` is running the audit and its plan approval already covered it. Then build it as in `references/report-card.md`: beside the original, made from Alloy, with the gaps callout, each ID linked to its layer, and the findings saved in the file so a later chat can pick them up.
 
 In chat, give a short version: coverage, counts, the top findings with IDs, the gaps in one line, and how to reply ("fix A1, A4", "fix all high", "fix all").
 
@@ -42,7 +42,7 @@ If a report card already exists for the frame, update it instead of adding anoth
 When the designer names IDs:
 
 1. Read the findings saved on the report card (resolve IDs from there, not from memory).
-2. If the frame has no fix copy yet, duplicate the original, name it `<frame name> · Alloy fixes`, and place it below the original with an 80px gap. Reuse the same copy for later fixes.
+2. If the frame is a `prototype-port` frame, skip the copy and fix in place. Otherwise, if the frame has no fix copy yet, duplicate the original, name it `<frame name> · Alloy fixes`, and place it below the original with an 80px gap. Reuse the same copy for later fixes.
 3. Map each finding's node to its counterpart in the copy (same index path in the layer tree) and apply the fix there, using the fix notes in `references/findings.md`. Screenshot the affected section after each batch, and the whole copy at the end.
 4. Update each finding's status on the report card: **Fixed in copy** (linked to the fixed layer), **Partly fixed in copy · Needs designer**, **Needs designer** (with the specific choice to make), or **Couldn't fix** (with the reason). "Fix all <severity>" includes findings that need a decision; mark them, don't skip them silently. Add any gaps found while fixing to the callout.
 5. In chat, list what changed and what didn't, and remind them the original is untouched. They keep whichever version they want.

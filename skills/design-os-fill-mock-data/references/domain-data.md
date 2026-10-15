@@ -23,7 +23,7 @@ Use this as vocabulary and realistic ranges. Invent fresh values each run; don't
 - Show cents for currency unless the frame doesn't
 
 ## Transfers and approvals
-- Statuses: Draft, Submitted, In review, ROFR period, ROFR waived, ROFR exercised, Approved, Rejected, Cancelled, Expired, Closed
+- Statuses: use the product's own labels from `pm-os-clarity-context` (`infra/transactions` for transfers, `infra/issuer-workflows` for ROFR, approvals, and tender offers). If it isn't installed, keep the frame's existing labels or ask; don't invent new ones.
 - ROFR periods: usually 30 days, sometimes 45–60
 - Tender offers: open windows of at least 20 business days; sell limits often a percentage of vested holdings
 

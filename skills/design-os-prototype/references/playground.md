@@ -8,7 +8,7 @@ It's prototype tooling, not design: it never uses Alloy components, and it alway
 
 ## 1. Propose a plan first
 
-Read the prototype's screens and data, then suggest settings in a short table and ask the designer to confirm, cut, or add:
+Read the prototype's screens and data. If `design-os-stress-test-design` has already run on this screen, start from its variables and riskiest combinations rather than guessing. Then suggest settings in a short table and ask the designer to confirm, cut, or add:
 
 | Control | Type | Values | Why |
 |---|---|---|---|

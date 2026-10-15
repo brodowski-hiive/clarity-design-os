@@ -47,6 +47,17 @@
         "Loads figma-use guidance before use_figma",
         "Duplicates the frame instead of editing the original"
       ]
+    },
+    {
+      "prompt": "stress test the fund offerings list in my ai-prototypes app before I share it",
+      "expected_output": "Edge-case checklist, then an offer to turn the permutations into playground controls handed to design-os-prototype.",
+      "expectations": [
+        "Maps variables to playground controls (range, toggle, select) and risky combinations to presets",
+        "Follows design-os-prototype references/playground.md",
+        "Does not write prototype code itself"
+      ],
+      "id": 5,
+      "files": []
     }
   ]
 }

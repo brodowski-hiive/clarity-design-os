@@ -60,13 +60,15 @@ Rules:
 - Check that mock values reconcile (totals, fees, calculations) and list mismatches under Cleanup. Don't propose replacement values; `design-os-fill-mock-data` owns the fix, so one finding doesn't turn into three.
 - Keep the permutation matrix out of the default output. Offer it instead; when asked, give it as a table and note the method (full matrix or pairwise).
 
-## 5. Data files and Figma (on request)
+## 5. Data files, Figma, and prototypes (on request)
 
 If the user wants the data itself, create a CSV or JSON file of the permutations with realistic values and present it, so it can be pasted into Figma (e.g. with a data-populating plugin) or used by eng as fixtures.
 
 If the user wants stress-test variants built in Figma, use the Figma connector's `use_figma` tool, following the Figma connector's own skill guidance first. Confirm before writing, because Figma edits land in a shared file. Duplicate the frame and populate each variant rather than editing the original.
 
-End with one line offering the permutation matrix, a CSV/JSON of the data, or Figma variants.
+If the screen is a coded prototype, or the designer is about to build one, offer the permutations as playground controls instead of a file. Map each variable to a control (a count becomes a range, a long-text or missing-data case a toggle, a status a select) and the riskiest combinations to presets, following `design-os-prototype` `references/playground.md`. Hand the plan to `design-os-prototype` to install; don't write prototype code from this skill.
+
+End with one line offering the permutation matrix, a CSV/JSON of the data, Figma variants, or (for a coded prototype) playground controls.
 
 ## Reference files
 

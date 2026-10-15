@@ -12,8 +12,8 @@ Select the 12-15 most relevant per run. Clarity is issuer-facing, so weight the 
 
 ## Secondary marketplaces
 - Nasdaq Private Market
-- Forge (acquired by Charles Schwab)
-- EquityZen (part of Morgan Stanley)
+- Forge
+- EquityZen
 - Augment
 - Caplight
 

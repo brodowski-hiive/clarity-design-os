@@ -14,7 +14,16 @@ Help a product designer get ahead of engineering before handoff: surface what's 
 
 If the scope is unclear (one screen vs. a whole flow), ask one short question. Otherwise proceed.
 
-## 2. Analyze
+## 2. Read what's already decided
+
+When the work has an initiative or Linear issue (named by the user or linked from the Figma file) and `clarity-pm-os` is installed, read before analyzing, so the checklist asks only what's still open:
+
+- **Initiative record:** read it with `pm-os-initiative-record` (Decisions, Numbers of record, Artifacts, including the brief and Design Spec). Skip questions the record already answers. A design that contradicts a recorded decision is the first question.
+- **Architecture:** for backend items, read the `pm-os-clarity-context` node for the surface (for example `infra/issuer-workflows` for ROFR and approvals, `infra/transactions` for transfers) and cite its live doc. Where the node is Partial or a Placeholder, say so and keep the item as a question for eng.
+
+Read only; this skill doesn't write to the record or Linear. If neither source is available, work from the design and say so in one line.
+
+## 3. Analyze
 
 Think like a senior full-stack engineer seeing this for the first time. Look across:
 
@@ -27,13 +36,13 @@ Think like a senior full-stack engineer seeing this for the first time. Look acr
 - **Migration and rollout**: existing data that needs backfilling, feature flags, behavior for records created before the change.
 - **Unspecified states**: loading, empty, error, partial, permission-restricted. For a deep pass on edge cases and content stress tests, point to the `design-os-stress-test-design` skill rather than duplicating it.
 
-Don't invent facts about Clarity's backend. When something depends on how the existing system works, phrase it as a question for eng.
+Don't invent facts about Clarity's backend. When something depends on how the existing system works and the architecture doc doesn't settle it, phrase it as a question for eng.
 
-## 3. Check the numbers
+## 4. Check the numbers
 
 If the design shows calculations (totals, fees, breakdowns, counts), check that the mock values reconcile. Mismatched placeholder math hides real questions about formulas, so list each mismatch as a question about the formula. Don't propose corrected values; fixing the mock belongs to `design-os-fill-mock-data`, so point there once.
 
-## 4. Output format
+## 5. Output format
 
 A short checklist, not tables. Don't include a "what's hard to build" section; turn each difficulty into a question the designer needs answered. Use this structure:
 
@@ -55,7 +64,7 @@ Rules:
 
 If the `design-os-stress-test-design` skill also runs, put any cleanup items (placeholder text, leftover layers, client-facing copy for `compliance-review`) in its Cleanup section rather than duplicating them.
 
-End with one line offering to turn the open questions into a message for the PM or eng lead.
+End with one line offering to turn the open questions into a message for the PM or eng lead, or, when an Engineering Spec is next, to carry them into `pm-os-write-spec` as its open questions.
 
 ## Reference files
 

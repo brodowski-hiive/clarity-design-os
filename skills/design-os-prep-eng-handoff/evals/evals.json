@@ -34,6 +34,18 @@
         "Covers permissions, async or deadline handling, side effects, and migration",
         "Points to design-os-stress-test-design for a deep edge-case pass rather than duplicating it"
       ]
+    },
+    {
+      "prompt": "ready for eng? this is the dynamic issuer approvals flow for ISS-3573 https://www.figma.com/design/abc123/Approvals?node-id=3-10",
+      "expected_output": "Reads the initiative record and the infra/issuer-workflows node first, drops questions already decided, cites the architecture doc, and makes no writes.",
+      "expectations": [
+        "Reads the initiative record via pm-os-initiative-record before analyzing",
+        "Reads pm-os-clarity-context infra/issuer-workflows and cites its live doc",
+        "Does not ask questions the record already answers",
+        "Makes no writes to the record or Linear"
+      ],
+      "id": 4,
+      "files": []
     }
   ]
 }

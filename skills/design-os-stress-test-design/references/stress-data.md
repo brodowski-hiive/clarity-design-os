@@ -37,4 +37,5 @@ Use these as starting points. Adapt them to the element being tested. All names 
 - Event across a time zone boundary (submitted 11:58 PM PT, which is the next day in ET)
 
 ## Statuses (transfers / approvals)
-- Draft, submitted, pending review, ROFR window open, ROFR waived, approved, rejected, cancelled, expired, partially completed, failed (needs retry)
+- Take the real status set for the surface from `pm-os-clarity-context` (`infra/transactions` for transfers, `infra/issuer-workflows` for ROFR, approvals, and tender offers), so the cases match the product.
+- Then stress the ones designs most often miss: expired, cancelled mid-workflow, partially completed, failed and needing a retry, and whichever label is longest.

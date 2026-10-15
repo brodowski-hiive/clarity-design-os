@@ -4,20 +4,36 @@ The design operating system for Clarity, packaged as a Claude plugin for Clarity
 
 Each folder under `skills/` is one skill: a `SKILL.md`, plus `references/` when needed and `evals/` (`evals.json` and `trigger-evals.json`). Each file under `agents/` is one subagent. The plugin manifest lives in `.claude-plugin/`.
 
+## What's new
+
+**1.2.0 (Oct 15, 2026)**
+- Four skills created by Ernie join the plugin, renamed to the `design-os-` convention: `design-os-stress-test-design`, `design-os-fill-mock-data`, `design-os-prep-eng-handoff`, and `design-os-research-patterns`. Uninstall any personal copies under the old names (see Migrating below).
+- `design-os-stress-test-design` can turn its permutations into playground controls for coded prototypes, through `design-os-prototype`.
+- `design-os-prep-eng-handoff` reads the initiative record and the architecture docs in `pm-os-clarity-context` first, so it only asks what's still open.
+- All four pass their trigger evals ([#4](https://github.com/brodowski-hiive/clarity-design-os/pull/4)).
+
+**1.1.0 (Oct 15, 2026)**
+- New `design-os-prototype-to-figma`: ports a coded prototype back into Figma as Alloy screens with the flow wired, then audits and fixes them.
+- `design-os-audit-design-system` fixes ported prototype frames in place.
+
+**1.0.0 (Oct 9, 2026)**
+- `design-os-alloy-prototype` renamed to `design-os-prototype`, with Figma-to-prototype porting and the playground panel.
+- Earlier 0.x releases added `design-os-ping` and `design-os-audit-design-system`.
+
 ## Skills
 
-| Skill | What it does | Status |
-|---|---|---|
-| `design-os-audit-design-system` | Audits a Figma frame for Alloy coverage, adds a report card with fix IDs, and fixes chosen IDs in a copy of the frame | Live |
-| `design-os-prototype` | Builds coded prototypes from `@hiivemarkets/alloy` components, ports Figma flows, adds a standard playground panel for stress testing, keeps each ai-prototypes app's `prototype.json` listing current, and checks the code is on-system | Live |
-| `design-os-prototype-to-figma` | Ports a coded prototype back into Figma as Alloy screens in auto layout with its flow wired, then audits them with `design-os-audit-design-system` and fixes findings in place | Live |
-| `design-os-ping` | Ranked digest of what needs a designer's attention across Slack, Linear, and their Notion task list | Live |
-| `design-os-stress-test-design` | Stress-tests a design for edge cases (long text, high volume, extreme numbers, missing states) and builds data permutations to design against | Live |
-| `design-os-fill-mock-data` | Replaces placeholder content in a Figma frame with realistic, reconciled Clarity mock data, section by section after approval | Live |
-| `design-os-prep-eng-handoff` | Gets ahead of eng handoff: the questions engineers will ask and the backend, permission, and data work the design implies | Live |
-| `design-os-research-patterns` | Researches how 15+ competitors and cross-industry products handle a screen or feature, with tradeoffs and source links | Live |
-| `design-os-create-mocks` | Turns a brief and Design Spec into mocks or a prototype on Alloy | Planned |
-| `design-os-review-design-work` | Critiques a drafted mock or flow | Planned |
+| Skill | What it does | Status | Last edited |
+|---|---|---|---|
+| `design-os-audit-design-system` | Audits a Figma frame for Alloy coverage, adds a report card with fix IDs, and fixes chosen IDs in a copy of the frame | Live | Adam Brodowski, Oct 15, 2026 |
+| `design-os-prototype` | Builds coded prototypes from `@hiivemarkets/alloy` components, ports Figma flows, adds a standard playground panel for stress testing, keeps each ai-prototypes app's `prototype.json` listing current, and checks the code is on-system | Live | Adam Brodowski (via Claude), Oct 15, 2026 |
+| `design-os-prototype-to-figma` | Ports a coded prototype back into Figma as Alloy screens in auto layout with its flow wired, then audits them with `design-os-audit-design-system` and fixes findings in place | Live | Adam Brodowski, Oct 15, 2026 |
+| `design-os-ping` | Ranked digest of what needs a designer's attention across Slack, Linear, and their Notion task list | Live | Adam Brodowski, Oct 9, 2026 |
+| `design-os-stress-test-design` | Stress-tests a design for edge cases (long text, high volume, extreme numbers, missing states) and builds data permutations to design against | Live | Adam Brodowski (via Claude), Oct 15, 2026; created by Ernie |
+| `design-os-fill-mock-data` | Replaces placeholder content in a Figma frame with realistic, reconciled Clarity mock data, section by section after approval | Live | Adam Brodowski (via Claude), Oct 15, 2026; created by Ernie |
+| `design-os-prep-eng-handoff` | Gets ahead of eng handoff: the questions engineers will ask and the backend, permission, and data work the design implies | Live | Adam Brodowski (via Claude), Oct 15, 2026; created by Ernie |
+| `design-os-research-patterns` | Researches how 15+ competitors and cross-industry products handle a screen or feature, with tradeoffs and source links | Live | Adam Brodowski (via Claude), Oct 15, 2026; created by Ernie |
+| `design-os-create-mocks` | Turns a brief and Design Spec into mocks or a prototype on Alloy | Planned | — |
+| `design-os-review-design-work` | Critiques a drafted mock or flow | Planned | — |
 
 `design-os-create-mocks`, `design-os-review-design-work`, and `design-os-audit-design-system` are called by `clarity-pm-os` as optional companions.
 
@@ -64,4 +80,6 @@ Four skills were renamed when they joined the plugin in 1.2.0. Remove any person
 
 ## Evergreen rule
 
-Plugin content names roles, never people. Who holds each role lives in the Notion Product Team Directory. When someone changes roles, update the directory, not the plugin.
+Skills, references, agents, and evals name roles, never people. Who holds each role lives in the Notion Product Team Directory. When someone changes roles, update the directory, not the plugin.
+
+The one exception is this README: the What's new notes and the Last edited column record who did the work. Skills never read them.

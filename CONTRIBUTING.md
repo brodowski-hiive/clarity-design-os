@@ -66,3 +66,4 @@ Bump `version` in `.claude-plugin/plugin.json` on every PR that touches `skills/
 - [ ] Writes to Figma, Linear, Notion, or Slack ask first.
 - [ ] No person's name; roles only.
 - [ ] Both eval files present and valid JSON.
+- [ ] README updated: a What's new entry for the version, and the Last edited column for each skill you changed.

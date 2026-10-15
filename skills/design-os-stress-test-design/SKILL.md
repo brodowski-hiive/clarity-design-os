@@ -50,14 +50,14 @@ Low
 - [ ] ...
 
 Cleanup
-- [ ] Reconcile mock numbers, replace placeholders, remove leftover hidden layers, run copy audit (`clarity-copy-audit`)
+- [ ] Mock numbers that don't reconcile (name them; fix with `design-os-fill-mock-data`), leftover placeholders, hidden layers, client-facing copy to check with `compliance-review`
 ```
 
 Rules:
 - One line per item, with a short example in parentheses where it helps.
 - Severity: High = broken or misleading, Medium = ugly or awkward, Low = minor polish.
 - Mark cases the design doesn't show as needing a design, not as passing.
-- Check that mock values reconcile (totals, fees, calculations) and list mismatches under Cleanup.
+- Check that mock values reconcile (totals, fees, calculations) and list mismatches under Cleanup. Don't propose replacement values; `design-os-fill-mock-data` owns the fix, so one finding doesn't turn into three.
 - Keep the permutation matrix out of the default output. Offer it instead; when asked, give it as a table and note the method (full matrix or pairwise).
 
 ## 5. Data files and Figma (on request)

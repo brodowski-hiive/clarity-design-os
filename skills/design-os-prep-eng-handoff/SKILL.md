@@ -31,7 +31,7 @@ Don't invent facts about Clarity's backend. When something depends on how the ex
 
 ## 3. Check the numbers
 
-If the design shows calculations (totals, fees, breakdowns, counts), check that the mock values reconcile. Mismatched placeholder math hides real questions about formulas, so list each mismatch as a question.
+If the design shows calculations (totals, fees, breakdowns, counts), check that the mock values reconcile. Mismatched placeholder math hides real questions about formulas, so list each mismatch as a question about the formula. Don't propose corrected values; fixing the mock belongs to `design-os-fill-mock-data`, so point there once.
 
 ## 4. Output format
 
@@ -53,7 +53,7 @@ Rules:
 - Don't invent facts about Clarity's backend; phrase them as items to confirm.
 - Skip a section if it has nothing meaningful.
 
-If the `design-os-stress-test-design` skill also runs, put any cleanup items (placeholder text, leftover layers, copy audit via `clarity-copy-audit`) in its Cleanup section rather than duplicating them.
+If the `design-os-stress-test-design` skill also runs, put any cleanup items (placeholder text, leftover layers, client-facing copy for `compliance-review`) in its Cleanup section rather than duplicating them.
 
 End with one line offering to turn the open questions into a message for the PM or eng lead.
 

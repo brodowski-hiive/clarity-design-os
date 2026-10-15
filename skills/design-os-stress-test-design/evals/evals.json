@@ -1,0 +1,63 @@
+{
+  "skill_name": "design-os-stress-test-design",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "stress test this transfer review screen https://www.figma.com/design/abc123/Transfers?node-id=12-345",
+      "expected_output": "A High/Medium/Low checklist of edge cases for every dynamic element, plus a Cleanup section, ending with one offer (matrix, CSV/JSON, or Figma variants).",
+      "files": [],
+      "expectations": [
+        "Pulls the frame with get_screenshot and get_design_context or get_metadata",
+        "Lists dynamic elements before checking them",
+        "Uses realistic extreme values (long entity names, large share counts) rather than lorem ipsum",
+        "Groups items by severity High, Medium, Low, with one line each",
+        "Ends with one line offering the permutation matrix, a data file, or Figma variants"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "what states am I missing on the approvals list? it shows pending and approved only",
+      "expected_output": "Checklist flags missing states (empty, loading, error, rejected, expired, cancelled, partial) as needing design, not as passing.",
+      "files": [],
+      "expectations": [
+        "Works from the description without asking for a Figma link",
+        "Marks undesigned states as needing a design",
+        "Covers empty variants (first use, no results, no permission)"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "give me the full permutation matrix for the cap table row: holder type, share class count, status, and document count",
+      "expected_output": "A permutation table that names its method (full matrix or pairwise) and calls out the riskiest combinations explicitly.",
+      "files": [],
+      "expectations": [
+        "States whether the matrix is full or pairwise",
+        "Uses pairwise when full combinations exceed about 30",
+        "Adds the riskiest combinations explicitly",
+        "Marks which rows are worth designing as frames"
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "build the stress-test variants in Figma for this frame",
+      "expected_output": "Confirms before writing, then duplicates the frame and populates variants without touching the original.",
+      "files": [],
+      "expectations": [
+        "Asks for confirmation before any use_figma write",
+        "Loads figma-use guidance before use_figma",
+        "Duplicates the frame instead of editing the original"
+      ]
+    },
+    {
+      "prompt": "stress test the fund offerings list in my ai-prototypes app before I share it",
+      "expected_output": "Edge-case checklist, then an offer to turn the permutations into playground controls handed to design-os-prototype.",
+      "expectations": [
+        "Maps variables to playground controls (range, toggle, select) and risky combinations to presets",
+        "Follows design-os-prototype references/playground.md",
+        "Does not write prototype code itself"
+      ],
+      "id": 5,
+      "files": []
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+[
+  {"query": "stress test this screen", "should_trigger": true},
+  {"query": "find the edge cases on this Figma frame", "should_trigger": true},
+  {"query": "what breaks if the entity name is really long?", "should_trigger": true},
+  {"query": "cover all states for the transfer status badge", "should_trigger": true},
+  {"query": "generate permutations of holder data for the cap table", "should_trigger": true},
+  {"query": "give me dummy data to test the extremes of this table", "should_trigger": true},
+  {"query": "replace the lorem ipsum in this frame with realistic data", "should_trigger": false},
+  {"query": "what will eng ask about this design before handoff?", "should_trigger": false},
+  {"query": "am I using Alloy components correctly in this frame?", "should_trigger": false},
+  {"query": "how do competitors handle cap table views?", "should_trigger": false},
+  {"query": "review this mock for the new listing flow", "should_trigger": false}
+]

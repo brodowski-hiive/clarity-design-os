@@ -1,0 +1,39 @@
+{
+  "skill_name": "design-os-fill-mock-data",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "make the data realistic in this frame https://www.figma.com/design/abc123/Holdings?node-id=8-90",
+      "expected_output": "Section-by-section proposals of current → proposed values, a multi-select to pick sections, then writes only approved sections and re-screenshots to check layout.",
+      "files": [],
+      "expectations": [
+        "Loads figma-use guidance before use_figma",
+        "Reads text nodes with a read-only script first",
+        "Leaves static UI copy (labels, buttons, legal text) alone",
+        "Asks the designer to pick sections before writing",
+        "Verifies with a new screenshot and reports skipped nodes"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "the numbers don't make sense: 3 rows of 500 shares each but the total says 2,000",
+      "expected_output": "Proposes varied row values whose sum matches the total (or adjusts the total), with a note on which numbers changed to reconcile.",
+      "files": [],
+      "expectations": [
+        "Varies repeated identical values",
+        "Makes rows sum to the total",
+        "Notes under the section which numbers changed to reconcile"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "fill in the mock data with the longest names you can find so I can see what breaks",
+      "expected_output": "Keeps typical lengths and points to design-os-stress-test-design for extreme values.",
+      "files": [],
+      "expectations": [
+        "Does not insert extreme values",
+        "Mentions design-os-stress-test-design for stress testing"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "skill_name": "design-os-design-setup",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Here's the design-impact readout for the Canadian suitability refresh (Designer route, 12 screens, open questions attached). The team's Figma file 'COMP -> Suitability Refresh' has an older milestone of this. Set it up so a designer can jump in.",
+      "expected_output": "Lists the team file's pages and sections read-only, finds the earlier milestone and planning-board work, plans groups by journey and shows the plan as a short table. Asks once where to work, offering a labelled new page in the team file, the person's duplicate, or a drafts file. On yes, clones (never moves) the prior sections onto a WIP page with Start here, one section per group with a notes and links frame, stickies under each copied frame, NEW boards, and orange paste-in frames for assets in other files. Reviews the workspace as a designer, shows gaps and an organisation plan, and on a yes reorganizes it. Writes the Notion handoff linking the page as primary.",
+      "files": [],
+      "expectations": [
+        "Lists pages and sections of the team file before choosing what to copy",
+        "Shows a group plan and asks where to work before any write",
+        "Offers the three places to work and labels a page added to the team file with who added it and why",
+        "Clones prior frames; the original pages are unchanged",
+        "Every group has a notes frame with keep, change, drop, owner/sign-off and links",
+        "Stickies sit under copied frames and use the KEEP / CHANGE / DROP / CHECK / MAYBE / OPEN QUESTION kinds",
+        "Assets in other files get a paste-in frame next to the board that needs them, with a link and copy-paste steps",
+        "Runs the workspace review, shows gaps and an organisation plan, and applies the plan only after a yes",
+        "The organisation pass moves and labels frames but changes nothing inside a screen, and never touches the team's original pages",
+        "Handoff page links the workspace as the primary place to work"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Figma route agreed for a new 'alert rules' section in account settings. There's no earlier design and the current Clarity Account Settings frame lives in a different file. Set up the file.",
+      "expected_output": "Searches and reports no prior design for alert rules. Explains it can't copy frames across files or duplicate files. Offers the person's duplicate of the file holding the Account Settings frame, or a new drafts file. On a drafts file, builds Start here, groups, NEW boards and a paste-in placeholder for the Account Settings frame with its link, rather than redrawing it from memory.",
+      "files": [],
+      "expectations": [
+        "States plainly that frames can't be copied across files or files duplicated through the Figma MCP server",
+        "Does not redraw the current Account Settings screen from memory",
+        "Places a paste-in frame for the Account Settings frame next to the board that needs it, with the link",
+        "Confirms before creating the file"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Coded hi-fi route agreed for the floor price row on the company page. Get the prototype workspace ready.",
+      "expected_output": "Uses the coded workspace: rebuilds the company page as it ships with design-os-prototype, commits the as-is baseline before any brief change, adds a Version Today/Proposed design choice, writes NOTES.md with keep/change/drop and open questions, then hands to design-os-prototype From a brief.",
+      "files": [],
+      "expectations": [
+        "Commits the as-is baseline before applying the brief",
+        "Playground has a Version design choice with Today and Proposed",
+        "Writes per-screen notes (NOTES.md or equivalent) with open questions",
+        "Hands off to design-os-prototype From a brief"
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Can you set this up for design but not in Figma? Our team does flows in FigJam first. Readout attached for the onboarding checklist.",
+      "expected_output": "Builds a FigJam board: one section per group in flow order with arrows, real stickies using the same kinds, link blocks and screenshot placeholders, after confirming. Links it from the handoff or readout as the primary workspace.",
+      "files": [],
+      "expectations": [
+        "Chooses FigJam rather than a design file",
+        "Uses real stickies with the KEEP / CHANGE / DROP / OPEN QUESTION kinds",
+        "Orders sections by the flow",
+        "Confirms before creating the board"
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Set up the Figma for TRA-901.",
+      "expected_output": "Notices there's no design-impact readout or agreed route, and runs design-os-design-impact first (or asks to), instead of guessing the scope and building.",
+      "files": [],
+      "expectations": [
+        "Does not build a workspace without a readout and an agreed route",
+        "Runs or offers design-os-design-impact first"
+      ]
+    }
+  ]
+}

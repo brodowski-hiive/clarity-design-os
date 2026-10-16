@@ -30,6 +30,6 @@ If coverage on a frame is still under 80% after the re-run, say so in the receip
 
 ## Later runs
 
-Frames in a superseded section carry `prototype-port-superseded`, not `prototype-port`, so the audit treats them as the designer's work and fixes go into a copy. Don't fix a superseded frame: point the designer to the current section instead.
+Frames in a superseded section carry `prototype-port-superseded`. The audit doesn't fix them, in place or in a copy, and points the designer to the current section instead (`design-os-audit-design-system`'s `references/report-card.md`, Fixing in place).
 
 If the designer edits a ported frame and asks for a re-audit, the frame still carries the marker, but it's now partly their work. Ask once whether to keep fixing in place or switch to a fix copy, and record the answer as `fixMode` on the card.

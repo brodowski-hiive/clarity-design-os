@@ -11,7 +11,7 @@ How to read a coded prototype before porting it: get it running, record its vers
 
 In ai-prototypes, installing needs a GitHub token with `read:packages`, because `@hiivemarkets/alloy` comes from GitHub Packages. A 403 on install means the designer has to run `gh auth refresh -s read:packages -h github.com` themselves (it opens a browser); then install with `GH_NPM_TOKEN="$(gh auth token)"`. If `pnpm` and `mise` aren't installed, `corepack pnpm` works.
 
-Open each screen in the in-app browser (`preview_start`). If the app won't start, say what failed and stop. Don't port from source code alone, because the rendered layout is what the frames must match.
+Open each screen in a browser you can screenshot and inspect the DOM of (for example Claude Code's preview browser, or Playwright with Chromium). Without one, ask the designer to run the app and share screenshots, and say in the plan that the layout was read from source and screenshots instead of the DOM. If the app won't start, say what failed and stop. Don't port from source code alone, because the rendered layout is what the frames must match.
 
 ## Record the version
 

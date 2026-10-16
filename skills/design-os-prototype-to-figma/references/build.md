@@ -104,7 +104,7 @@ After all screens are built:
 A re-port builds a new section from the current code. It never updates the old frames in place, because the old ones may carry comments and the designer's exploration.
 
 1. **Find earlier ports.** On the destination page, look for sections with `kind` = `prototype-port-section` and the same `source`. Read each one's `sourceVersion` and `portedAt`.
-2. **Say how far the code has moved.** In a repo, list the commits since the port: `git log --oneline <sourceVersion>..HEAD -- <app path>`. A `+local` or `url` version can't be compared, so say that and compare screenshots instead. If nothing changed, tell the designer and ask whether a new port is still wanted.
+2. **Say how far the code has moved.** In a repo, list the commits since the port: `git log --oneline <sourceVersion>..HEAD -- <app path>`. For a `+local` version, drop the suffix, list commits since that base commit, and say the old port also showed uncommitted work. A `url` version can't be compared, so say that and compare screenshots instead. If nothing changed, tell the designer and ask whether a new port is still wanted.
 3. **Comments first.** Figma comments stay pinned to the old frames, and you can't move them with the Figma MCP server. Before superseding, ask the designer to resolve open comments or carry them over by hand.
 4. **Build the new section** as usual, to the right of the old one.
 5. **Mark the old section superseded,** only after the designer says yes:

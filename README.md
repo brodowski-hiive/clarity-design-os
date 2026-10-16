@@ -9,6 +9,7 @@ Each folder under `skills/` is one skill: a `SKILL.md`, plus `references/` when 
 **1.4.0 (Oct 16, 2026)**
 - `design-os-prototype-to-figma` treats the Figma port as a working copy for detailed review, with code as the source of truth. Each section is stamped with the source commit and date and carries a port note. Re-porting builds a new section, says how many commits the code has moved, and marks the old one superseded without deleting it or its comments.
 - `design-os-prototype` brings a ported section back into its existing app: it finds what the designer changed by comparing frames with the running prototype, then offers a re-port.
+- `design-os-audit-design-system` won't fix frames from a superseded port, in place or in a copy, and points to the current section instead.
 
 **1.3.0 (Oct 16, 2026)**
 - Skills are agent-agnostic, so Codex can run them too: tool names are examples per client with a plain-text fallback, Figma tools are named by their MCP server, and pointers to another repo's `CLAUDE.md` now read "its agent instructions file (`AGENTS.md`, or `CLAUDE.md`)".

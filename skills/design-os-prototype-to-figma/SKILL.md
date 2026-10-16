@@ -18,7 +18,7 @@ The code stays the source of truth. The Figma section is a dated working copy fo
 3. **Auto layout everywhere.** Every frame that holds content uses auto layout, with gap and padding bound to `1. Primitives` spacing variables and children set to fill or hug. No absolute positioning, except for overlays that float on purpose (toasts, popovers).
 4. **Styles and variables, not values.** Text uses `Responsive Type/*` styles and colors bind to `2. Clarity` variables. Never type a hex value, or a pixel value where a variable exists.
 5. **Gaps are reported, not faked.** If Alloy has no Figma component for something the code builds, build it from auto layout, styles, and variables, name it `Custom / <what it is>`, and list it as a gap. Never draw a lookalike of an Alloy component.
-6. **Confirm before writing.** No Figma writes until the designer has approved the plan (step 3). That one yes covers the build, the report cards, and the in-place fixes. Ask again before writing anywhere else.
+6. **Confirm before writing.** No Figma writes until the designer has approved the plan (step 3). That one yes covers the build, the report cards, and the in-place fixes. It doesn't cover marking an earlier port superseded (rule 7). Ask again before writing anywhere else.
 7. **Only write inside the new section.** Never edit or move existing layers in the destination file. The one exception is marking an earlier port of the same prototype as superseded, and only after the designer says yes (`references/build.md`, Re-porting).
 8. **Code stays canonical; stamp every port.** Name the section and its port note with the source version and date, and save both on the section. Then anyone can tell what a comment refers to, and whether the code has moved on since.
 
@@ -51,7 +51,7 @@ Map Tailwind token utilities to variables: semantic colors to `2. Clarity`, spac
 Post one message, putting the rows that need attention first:
 
 - **Destination:** which Figma file and page, and the section name (`<prototype name> · from code · <version> · <date>`). If the prototype's `prototype.json` has a `links.figma`, offer that file. Otherwise ask.
-- **Earlier port:** if the page already has a port section from the same source, give its version and date and say how many commits the code has moved since. If nothing has changed, say so and ask whether a new port is still wanted. Otherwise offer to mark the old section superseded once the new one is built (`references/build.md`, Re-porting). Figma comments stay on the old frames, so ask the designer to resolve or carry over open ones first.
+- **Earlier port:** if the page already has a port section from the same source, give its version and date and say how many commits the code has moved since. If nothing has changed, say so and ask whether a new port is still wanted. Otherwise say you'll offer to mark the old section superseded once the new one is built; that's a separate yes, asked after the build (`references/build.md`, Re-porting). Figma comments stay on the old frames, so ask the designer to resolve or carry over open ones first.
 - **Screens:** each screen with its states and widths.
 - **Component map:** code import → Alloy Figma component → how it matched (Code Connect, name match, or gap). Gaps and props without a matching variant go first.
 - **Flow:** one line per link, for example `Review —[Place bid]→ Confirmation  (navigate)`.

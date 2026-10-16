@@ -4,7 +4,7 @@
     {
       "id": 1,
       "prompt": "Put my sell-order prototype from ai-prototypes into Figma so I can keep designing it",
-      "expected_output": "Runs the app, lists screens and states, posts a plan with destination, component map, and flow, then after a yes builds Alloy screens in auto layout in a new section, wires the links, audits each frame with a report card, fixes findings in place, and ends with a receipt.",
+      "expected_output": "Runs the app, lists screens and states, posts a plan with destination, component map, and flow, then after a yes builds Alloy screens in auto layout in a new section, wires the links, audits each frame with a report card, fixes findings in place, tidies the section into flow order with a header and labels, and ends with a receipt.",
       "files": [],
       "expectations": [
         "Reads apps/sell-order/prototype.json and offers its links.figma file as the destination if present",
@@ -18,14 +18,15 @@
         "Section name includes the short commit and date (<name> · from code · <version> · <date>)",
         "Section has a port note saying code is canonical, and saved sourceVersion, portedAt, and status = current",
         "Adds a report card beside each frame and fixes findings directly in the frame, with no Alloy fixes copy",
-        "Receipt gives coverage per frame, open Needs designer findings, gaps, and wired links",
+        "Tidies the section after the audit: columns in wired-flow order, the port note as section header with source, version and links, no overlapping report cards",
+        "Receipt gives coverage per frame, open Needs designer findings, gaps, wired links, and what the tidy pass changed",
         "Receipt has a Source line naming the version and saying code is canonical"
       ]
     },
     {
       "id": 2,
       "prompt": "Port the fund-offerings prototype to Figma, desktop and mobile. It has a playground with empty, loading and error presets and a custom sparkline chart.",
-      "expected_output": "Loads each playground preset by URL with the panel hidden, builds a frame per screen and state at 1440 and 390, builds the sparkline as a Custom part and lists it as a gap, and lays frames out so report cards don't overlap.",
+      "expected_output": "Loads each playground preset by URL with the panel hidden, builds a frame per screen and state at 1440 and 390, builds the sparkline as a Custom part and lists it as a gap, and lays frames out so report cards don't overlap; the tidy pass keeps states under their screen and the mobile row under desktop.",
       "files": [],
       "expectations": [
         "Hides the playground panel (?playground=off) before screenshots",
@@ -45,7 +46,7 @@
         "Asks which Figma file and page to use if none is known, since that can't be guessed",
         "Builds using best guesses for uncertain component matches",
         "Receipt lists unconfirmed matches and inferred links under Assumed",
-        "Writes only inside the new section"
+        "Writes only inside the new section, including during the tidy pass"
       ]
     },
     {
@@ -72,6 +73,18 @@
         "Only after a yes: renames the old section with '· superseded', sets status = superseded, and sets its frames' kind to prototype-port-superseded",
         "Does not delete or move the old section",
         "Offers to point links.figma in prototype.json at the new section and writes it only on a yes"
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "Port the 4-step bid wizard to Figma onto our team's existing 'Bids' page, which already has a lot of explorations on it.",
+      "expected_output": "Builds in a new section placed to the right of everything on the page. The tidy pass orders the wizard steps by the wired flow, adds a section header and step labels, moves nodes rather than cloning them so prototype links survive, and leaves every existing exploration on the page untouched.",
+      "files": [],
+      "expectations": [
+        "Never moves, renames or edits layers outside the new section",
+        "Orders columns by the wired flow from its starting point",
+        "Moves nodes during the tidy pass rather than clone-and-delete; prototype links still resolve afterwards",
+        "Does not change anything inside a screen frame during the tidy pass"
       ]
     }
   ]

@@ -1,0 +1,71 @@
+{
+  "skill_name": "design-os-design-impact",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Here's the brief and Design Spec for showing a seller's floor price on the company page and the sell indication page: https://app.notion.com/p/EXAMPLE-offer-floors-brief. What screens does this touch and how should we design it?",
+      "expected_output": "Places the work with design-os-system-map (readout only, no FigJam), finds each current screen starting from the Design Spec's Where this lives links, classifies both screens as Compose, recommends Coded hi-fi with reasons and confidence, shows the readout table, and asks for one yes. On yes, hands the readout to design-os-design-setup rather than building anything itself.",
+      "files": [],
+      "expectations": [
+        "Checks design-os-system-map is installed before running it, and asks for no FigJam",
+        "Uses the Design Spec's Where this lives links as the first screen source",
+        "Each affected screen row has page, owner, change, path, and current reference with source and confidence",
+        "Classifies both screens as Compose, in those words",
+        "Recommends exactly one route, Coded hi-fi, with reasons tied to screens and a confidence",
+        "Builds nothing and writes nothing, before or after the yes",
+        "On yes, hands off to design-os-design-setup with the readout and route"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "TRA-123: let sellers get offer alerts on WhatsApp and add a new 'alert rules' section to account settings. Does this need a designer?",
+      "expected_output": "Fetches the Linear issue and its brief, places it, finds the current account settings screen, classifies the WhatsApp channel and the new section as Extend, recommends Designer, and on yes hands off to design-os-design-setup, which writes the handoff package and builds the workspace.",
+      "files": [],
+      "expectations": [
+        "Classifies the WhatsApp alerts and the new settings section as Extend",
+        "Recommends the Designer route because of Extend and the non-web channel",
+        "Names the Design lead role and says it is looked up fresh, without naming a person from memory",
+        "Does not write a handoff page, Linear comment or Figma page itself",
+        "On yes, hands off to design-os-design-setup"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "PRD for the Canadian suitability refresh: https://app.notion.com/p/EXAMPLE-suitability-refresh. The Linear tickets only link one banner frame. What's the design impact?",
+      "expected_output": "Doesn't stop at the one linked frame: lists the owning team's Figma file pages, finds an earlier milestone of the same feature (banner, refresh page, account settings, email, a TEXAS-task concept), reports it under Earlier design work with status 'superseded' and what changed, and uses it to lower the number of 'no reference found' rows. Recommends Designer because of the new low-suitability restriction and the email channel.",
+      "files": [],
+      "expectations": [
+        "Lists the team file's pages or sections before concluding a screen has no reference",
+        "Reports earlier design work with a link, a status, and what changed since",
+        "Treats a 404 on a linked node as a reason to search the file by name, not as 'no reference'",
+        "Recommends Designer, citing the Extend restriction state and the non-web email channel",
+        "Ends with one question: Start the Designer route?"
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Our team wants to add a 'Clarity fund available' banner on the company page, which another team owns, plus a small edit to our own fund details page. Just tell me how to design it and start.",
+      "expected_output": "Places it, sees the company page is owned by another team, finds that team's current frame (preferring ready-for-dev pages), marks the banner change as needing that team's sign-off, and recommends Figma (or Designer if contested or a new pattern), never a lighter route. Does not touch any Figma file; on yes hands to design-os-design-setup.",
+      "files": [],
+      "expectations": [
+        "Marks the company page change as cross-team with 'needs <team> sign-off'",
+        "Recommends Figma or Designer, not Coded hi-fi or wires",
+        "Prefers a shipped or ready-for-dev frame over explorations, and says which it used",
+        "Makes no Figma write",
+        "Ends the readout with a 'Map suggestion: link <page> card to <frame>' line"
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "The 'Download transaction history' button on the company page is returning a 500. What's the design impact?",
+      "expected_output": "Places it on the company page, finds the current screen, classifies it as Fix (no visible change), recommends No design, and offers pm-os-ticket-brief rather than setup.",
+      "files": [],
+      "expectations": [
+        "Classifies the screen as Fix",
+        "Recommends the No design route",
+        "Offers pm-os-ticket-brief as the next step, not design-os-design-setup",
+        "Starts no prototype or Figma work"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+/*
+ * Wires fidelity: a greyscale wireframe look for coded mid-fi prototypes.
+ * design-os-prototype copies this file verbatim into the app at
+ * src/wires/wires.css. Don't edit the copy; change it here.
+ *
+ * Turn it on with data-fidelity="wires" on <html>, next to data-theme="clarity".
+ * Import it after the Alloy imports and leave it unlayered, so it wins over
+ * Alloy's @layer base theme.
+ *
+ * It redefines Alloy's own --ds-* variables, so every Alloy component and
+ * semantic utility goes grey with no change to the prototype's code. The grey
+ * values are the neutrals Alloy 1.0.1 already uses in dist/themes/clarity.css
+ * and dist/variables.css (#282424, #575757, #909090, #bababa, #e3e3e3,
+ * #f0f0f0, #ffffff). This file is the one place a prototype may hold raw
+ * colors; the self-check exempts it.
+ */
+
+html[data-theme="clarity"][data-fidelity="wires"] {
+  /* Surfaces: plain white, no warm cream */
+  --ds-color-background: #ffffff;
+  --ds-color-background-dark: #f0f0f0;
+  --ds-color-card: #ffffff;
+  --ds-color-popover: #ffffff;
+  --ds-color-inverse-border: #ffffff;
+  --ds-color-inverse-foreground: #ffffff;
+  --ds-color-primary-foreground: #ffffff;
+  --ds-typography-text-inverted: #ffffff;
+
+  /* Feedback: one grey fill and dark text, so state is carried by copy and icons */
+  --ds-color-destructive: #575757;
+  --ds-color-destructive-hover: #282424;
+  --ds-color-destructive-inverse: #909090;
+  --ds-color-destructive-muted: #e3e3e3;
+  --ds-color-destructive-focus-ring: #a3a3a380;
+  --ds-color-error: #f0f0f0;
+  --ds-color-error-foreground: #282424;
+  --ds-color-information: #f0f0f0;
+  --ds-color-information-foreground: #282424;
+  --ds-color-success: #f0f0f0;
+  --ds-color-success-foreground: #282424;
+  --ds-color-success-inverse: #909090;
+  --ds-color-success-muted: #e3e3e3;
+  --ds-color-warning: #f0f0f0;
+  --ds-color-warning-foreground: #282424;
+  --ds-color-warning-muted: #e3e3e3;
+  --ds-typography-text-error: #282424;
+
+  /* Tags: all the same grey */
+  --ds-color-tag-amber: #e3e3e3;
+  --ds-color-tag-blue: #e3e3e3;
+  --ds-color-tag-gray: #e3e3e3;
+  --ds-color-tag-green: #e3e3e3;
+  --ds-color-tag-orange: #e3e3e3;
+  --ds-color-tag-purple: #e3e3e3;
+  --ds-color-tag-red: #e3e3e3;
+  --ds-color-tag-teal: #e3e3e3;
+
+  /* Brand colors: light, base, dark and background steps map to the grey ramp */
+  --ds-color-branded-cobalt-light: #f0f0f0;
+  --ds-color-branded-cobalt: #e3e3e3;
+  --ds-color-branded-cobalt-dark: #909090;
+  --ds-color-branded-cobalt-background: #575757;
+  --ds-color-branded-copper-light: #f0f0f0;
+  --ds-color-branded-copper: #e3e3e3;
+  --ds-color-branded-copper-dark: #909090;
+  --ds-color-branded-copper-background: #575757;
+  --ds-color-branded-gold-light: #f0f0f0;
+  --ds-color-branded-gold: #e3e3e3;
+  --ds-color-branded-gold-dark: #909090;
+  --ds-color-branded-gold-background: #575757;
+  --ds-color-branded-jade-light: #f0f0f0;
+  --ds-color-branded-jade: #e3e3e3;
+  --ds-color-branded-jade-dark: #909090;
+  --ds-color-branded-jade-background: #575757;
+}
+
+/*
+ * Images and charts render as flat placeholder blocks. The filter turns the
+ * whole box, background included, into one grey, so the content can't show
+ * through. Mark any other visual (an SVG chart, an illustration, a logo
+ * strip) with data-wire="placeholder". Icons stay as they are.
+ */
+html[data-fidelity="wires"] img,
+html[data-fidelity="wires"] picture,
+html[data-fidelity="wires"] video,
+html[data-fidelity="wires"] canvas,
+html[data-fidelity="wires"] iframe,
+html[data-fidelity="wires"] .recharts-wrapper,
+html[data-fidelity="wires"] [data-wire="placeholder"] {
+  background: #ffffff;
+  filter: brightness(0) invert(0.89);
+  border-radius: 0;
+}
+
+/* The wordmark is a real part of the page, not a picture: keep it */
+html[data-fidelity="wires"] [data-wire="keep"] {
+  filter: none;
+}
+
+/* A fixed label so nobody mistakes a wire for the final design */
+html[data-fidelity="wires"] body::after {
+  content: "Wireframe";
+  position: fixed;
+  left: 12px;
+  bottom: 12px;
+  z-index: 2147483000;
+  padding: 2px 8px;
+  border: 1px solid #909090;
+  background: #ffffff;
+  color: #575757;
+  font: 500 11px/18px var(--ds-font-mono, ui-monospace, monospace);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  pointer-events: none;
+}

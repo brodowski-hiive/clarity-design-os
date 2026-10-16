@@ -1,6 +1,6 @@
 ---
 name: "design-os-prototype-to-figma"
-description: "Port a coded Clarity prototype back into Figma as editable screens built from Alloy components, text styles, variables, and auto layout, with the flow wired, then audit and fix them with design-os-audit-design-system. Use for \"put my prototype in Figma\", \"port this prototype to Figma\", \"turn my Claude prototype into Figma screens\". Not for: Figma to code (design-os-prototype), auditing a designer's frame (design-os-audit-design-system), or Alloy library audits (alloy-figma-audit)."
+description: "Port a coded Clarity prototype back into Figma as editable screens built from Alloy components, text styles, variables, and auto layout, with the flow wired, then audit and fix them with design-os-audit-design-system. Use for \"put my prototype in Figma\", \"port this prototype to Figma\", \"turn my Claude or Codex prototype into Figma screens\". Not for: Figma to code (design-os-prototype), auditing a designer's frame (design-os-audit-design-system), or Alloy library audits (alloy-figma-audit)."
 ---
 
 # Design OS: prototype to Figma
@@ -19,7 +19,7 @@ The audit at the end is the proof. The skill builds the screens, then runs `desi
 6. **Confirm before writing.** No Figma writes until the designer has approved the plan (step 3). That one yes covers the build, the report cards, and the in-place fixes. Ask again before writing anywhere else.
 7. **Only write inside the new section.** Never edit or move existing layers in the destination file.
 
-Load the `figma-use` skill before the first `use_figma` call.
+Before the first `use_figma` call, load the Figma MCP server's `figma-use` guidance: the `figma-use` skill if your agent has it installed, otherwise the `skill://figma/figma-use/SKILL.md` resource.
 
 ## 1. Read the prototype
 

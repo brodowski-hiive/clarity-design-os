@@ -1,10 +1,15 @@
 # clarity-design-os
 
-The design operating system for Clarity, packaged as a Claude plugin for Clarity designers. Sister plugin to [clarity-pm-os](https://github.com/josh-m-kramer/clarity-pm-os).
+The design operating system for Clarity: agent-agnostic skills for Clarity designers that run in Claude (as a plugin) and Codex. Sister plugin to [clarity-pm-os](https://github.com/josh-m-kramer/clarity-pm-os).
 
-Each folder under `skills/` is one skill: a `SKILL.md`, plus `references/` when needed and `evals/` (`evals.json` and `trigger-evals.json`). Each file under `agents/` is one subagent. The plugin manifest lives in `.claude-plugin/`.
+Each folder under `skills/` is one skill: a `SKILL.md`, plus `references/` when needed and `evals/` (`evals.json` and `trigger-evals.json`). Each file under `agents/` is one subagent (Claude only). The Claude plugin manifest lives in `.claude-plugin/`; `.agents/skills/` links to `skills/` so Codex finds them. Agent instructions for working in this repo are in [AGENTS.md](AGENTS.md).
 
 ## What's new
+
+**1.3.0 (Oct 16, 2026)**
+- Skills are agent-agnostic, so Codex can run them too: tool names are examples per client with a plain-text fallback, Figma tools are named by their MCP server, and pointers to another repo's `CLAUDE.md` now read "its agent instructions file (`AGENTS.md`, or `CLAUDE.md`)".
+- New `AGENTS.md` for any coding agent working in this repo, and `.agents/skills/` so Codex picks up the skills here. Install steps for Codex below.
+- CONTRIBUTING has a new section 5, Agent-agnostic, and a matching merge check.
 
 **1.2.0 (Oct 15, 2026)**
 - Four skills created by Ernie join the plugin, renamed to the `design-os-` convention: `design-os-stress-test-design`, `design-os-fill-mock-data`, `design-os-prep-eng-handoff`, and `design-os-research-patterns`. Uninstall any personal copies under the old names (see Migrating below).
@@ -24,14 +29,14 @@ Each folder under `skills/` is one skill: a `SKILL.md`, plus `references/` when 
 
 | Skill | What it does | Status | Last edited |
 |---|---|---|---|
-| `design-os-audit-design-system` | Audits a Figma frame for Alloy coverage, adds a report card with fix IDs, and fixes chosen IDs in a copy of the frame | Live | Adam Brodowski, Oct 15, 2026 |
-| `design-os-prototype` | Builds coded prototypes from `@hiivemarkets/alloy` components, ports Figma flows, adds a standard playground panel for stress testing, keeps each ai-prototypes app's `prototype.json` listing current, and checks the code is on-system | Live | Adam Brodowski (via Claude), Oct 15, 2026 |
-| `design-os-prototype-to-figma` | Ports a coded prototype back into Figma as Alloy screens in auto layout with its flow wired, then audits them with `design-os-audit-design-system` and fixes findings in place | Live | Adam Brodowski, Oct 15, 2026 |
-| `design-os-ping` | Ranked digest of what needs a designer's attention across Slack, Linear, and their Notion task list | Live | Adam Brodowski, Oct 9, 2026 |
-| `design-os-stress-test-design` | Stress-tests a design for edge cases (long text, high volume, extreme numbers, missing states) and builds data permutations to design against | Live | Adam Brodowski (via Claude), Oct 15, 2026; created by Ernie |
-| `design-os-fill-mock-data` | Replaces placeholder content in a Figma frame with realistic, reconciled Clarity mock data, section by section after approval | Live | Adam Brodowski (via Claude), Oct 15, 2026; created by Ernie |
-| `design-os-prep-eng-handoff` | Gets ahead of eng handoff: the questions engineers will ask and the backend, permission, and data work the design implies | Live | Adam Brodowski (via Claude), Oct 15, 2026; created by Ernie |
-| `design-os-research-patterns` | Researches how 15+ competitors and cross-industry products handle a screen or feature, with tradeoffs and source links | Live | Adam Brodowski (via Claude), Oct 15, 2026; created by Ernie |
+| `design-os-audit-design-system` | Audits a Figma frame for Alloy coverage, adds a report card with fix IDs, and fixes chosen IDs in a copy of the frame | Live | Adam Brodowski (via Claude), Oct 16, 2026 |
+| `design-os-prototype` | Builds coded prototypes from `@hiivemarkets/alloy` components, ports Figma flows, adds a standard playground panel for stress testing, keeps each ai-prototypes app's `prototype.json` listing current, and checks the code is on-system | Live | Adam Brodowski (via Claude), Oct 16, 2026 |
+| `design-os-prototype-to-figma` | Ports a coded prototype back into Figma as Alloy screens in auto layout with its flow wired, then audits them with `design-os-audit-design-system` and fixes findings in place | Live | Adam Brodowski (via Claude), Oct 16, 2026 |
+| `design-os-ping` | Ranked digest of what needs a designer's attention across Slack, Linear, and their Notion task list | Live | Adam Brodowski (via Claude), Oct 16, 2026 |
+| `design-os-stress-test-design` | Stress-tests a design for edge cases (long text, high volume, extreme numbers, missing states) and builds data permutations to design against | Live | Adam Brodowski (via Claude), Oct 16, 2026; created by Ernie |
+| `design-os-fill-mock-data` | Replaces placeholder content in a Figma frame with realistic, reconciled Clarity mock data, section by section after approval | Live | Adam Brodowski (via Claude), Oct 16, 2026; created by Ernie |
+| `design-os-prep-eng-handoff` | Gets ahead of eng handoff: the questions engineers will ask and the backend, permission, and data work the design implies | Live | Adam Brodowski (via Claude), Oct 16, 2026; created by Ernie |
+| `design-os-research-patterns` | Researches how 15+ competitors and cross-industry products handle a screen or feature, with tradeoffs and source links | Live | Adam Brodowski (via Claude), Oct 16, 2026; created by Ernie |
 | `design-os-create-mocks` | Turns a brief and Design Spec into mocks or a prototype on Alloy | Planned | — |
 | `design-os-review-design-work` | Critiques a drafted mock or flow | Planned | — |
 
@@ -55,6 +60,20 @@ _None yet._
 /plugin install clarity-design-os@clarity-design-os
 ```
 
+**Codex**
+
+Working inside this repo, Codex finds the skills on its own through `.agents/skills/`. To use them in any project, clone the repo once and link each skill into your user skills folder:
+
+```
+git clone https://github.com/brodowski-hiive/clarity-design-os ~/clarity-design-os
+mkdir -p ~/.agents/skills
+for d in ~/clarity-design-os/skills/*/; do ln -s "${d%/}" ~/.agents/skills/; done
+```
+
+Restart Codex, then ask for a skill by name (for example `$design-os-prototype`) or describe the task. If your Codex version reads skills from `~/.codex/skills` instead, link them there. The skills call the Figma, Linear, Notion, and Slack MCP servers; add the ones you need to Codex's MCP config.
+
+Other agents that read `SKILL.md` (Cursor and others) can link the same `skills/` folders into their own skills directory.
+
 ## Companions
 
 | Skill / plugin | Used for |
@@ -65,7 +84,7 @@ _None yet._
 
 ## Migrating from personal copies
 
-If you installed any of these skills as personal skills, uninstall those copies after installing the plugin. Otherwise two copies compete to trigger.
+If you installed any of these skills as personal skills (in Claude, or copied into `~/.agents/skills` or `~/.codex/skills` for Codex), uninstall those copies after installing the plugin. Otherwise two copies compete to trigger.
 
 Four skills were renamed when they joined the plugin in 1.2.0. Remove any personal copy of the old name: `design-edge-cases` (now `design-os-stress-test-design`), `design-mock-data` (now `design-os-fill-mock-data`), `design-eng-handoff` (now `design-os-prep-eng-handoff`), and `design-pattern-research` (now `design-os-research-patterns`).
 
@@ -76,7 +95,7 @@ Four skills were renamed when they joined the plugin in 1.2.0. Remove any person
 - This repo is the source of truth. Plugin skills are read-only for users; never edit an installed copy.
 - Change a skill through a pull request. Follow [CONTRIBUTING.md](CONTRIBUTING.md).
 - Every merged change bumps `version` in `.claude-plugin/plugin.json` (semver). Users only receive changes when the version is bumped.
-- In Claude Code, run `/plugin marketplace update clarity-design-os`. In Claude desktop, click Update on the plugin, then restart Claude and start a new chat.
+- In Claude Code, run `/plugin marketplace update clarity-design-os`. In Claude desktop, click Update on the plugin, then restart Claude and start a new chat. In Codex, run `git -C ~/clarity-design-os pull` and restart Codex.
 
 ## Evergreen rule
 

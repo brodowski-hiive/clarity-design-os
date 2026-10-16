@@ -15,7 +15,7 @@ Check a designer's Figma work against the live Alloy library, show what isn't Al
 4. **Suggest; the designer decides.** Lookalike detection is a judgment call. Give a confidence level, and never fix a finding the designer hasn't picked.
 5. **Exact first, closest only when asked.** Bind colors and apply text styles only on exact matches. Otherwise mark the finding Needs designer and offer "use the closest". If the closest option visibly changes the design (a heading changes size or weight, or two styles are equally close), ask which one with a short multiple-choice question instead of picking.
 
-Load the `figma-use` skill before the first `use_figma` call.
+Before the first `use_figma` call, load the Figma MCP server's `figma-use` guidance: the `figma-use` skill if your agent has it installed, otherwise the `skill://figma/figma-use/SKILL.md` resource.
 
 ## 1. Scope
 

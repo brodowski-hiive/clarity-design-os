@@ -9,7 +9,7 @@ Give a designer a fast, honest read on what's waiting on them across Slack, Line
 
 ## Setup
 
-1. Tools may be deferred. Load the Slack, Linear, and Notion tools with `tool_search` before starting (e.g. "slack search", "linear issues notifications", "notion fetch query memory"). If a source's connector isn't available, run the sweep without it and say which source was skipped in the closing line.
+1. Find the Slack, Linear, and Notion tools (MCP servers or connectors) before starting. If your agent defers tool loading, search for them first (for example `ToolSearch` in Claude Code, `tool_search` in Claude chat) with queries like "slack search", "linear issues notifications", "notion fetch query memory". If a source's tools aren't available, run the sweep without it and say which source was skipped in the closing line.
 2. **Slack user ID:** take it from the Slack tool descriptions ("Current logged in user's user_id is ..."), or find it with `slack_search_users`.
 3. **Linear user:** resolve the current user with the Linear user tool (`get_user` with "me", or match by email via `list_users`).
 4. **Time window:** default to the last 3 days. Honor "since Monday", "this week", "today", etc. Use the real current date. The window applies to Slack messages and Linear comments/notifications; assigned Linear issues and Notion tasks are checked regardless of window, since they're standing work.

@@ -65,7 +65,7 @@ If they correct it, update the file and push to the same branch.
 
 Clear the warnings before you call a prototype done.
 
-If the repo doesn't have `prototype.schema.json` yet, the listing change hasn't merged there. Still write `prototype.json` in this shape. Don't touch the validator, scaffold, or root CLAUDE.md from a prototype PR; those belong to the platform owners.
+If the repo doesn't have `prototype.schema.json` yet, the listing change hasn't merged there. Still write `prototype.json` in this shape. Don't touch the validator, scaffold, or root agent instructions file (`AGENTS.md` / `CLAUDE.md`) from a prototype PR; those belong to the platform owners.
 
 ## Someone else's listing
 

@@ -9,7 +9,7 @@ Find where a design breaks under real-world content and data, and produce the pe
 
 ## 1. Get the design
 
-- **Figma link**: use the Figma connector. `get_screenshot` to see it, `get_design_context` / `get_metadata` to identify every dynamic element (text fields, numbers, lists, badges, avatars, tables, dates).
+- **Figma link**: use the Figma MCP server. `get_screenshot` to see it, `get_design_context` / `get_metadata` to identify every dynamic element (text fields, numbers, lists, badges, avatars, tables, dates).
 - **Description or screenshot**: work from that.
 
 List the dynamic elements first. Static UI copy is out of scope unless it's localizable or user-editable.
@@ -64,7 +64,7 @@ Rules:
 
 If the user wants the data itself, create a CSV or JSON file of the permutations with realistic values and present it, so it can be pasted into Figma (e.g. with a data-populating plugin) or used by eng as fixtures.
 
-If the user wants stress-test variants built in Figma, use the Figma connector's `use_figma` tool, following the Figma connector's own skill guidance first. Confirm before writing, because Figma edits land in a shared file. Duplicate the frame and populate each variant rather than editing the original.
+If the user wants stress-test variants built in Figma, use the Figma MCP server's `use_figma` tool, following the Figma MCP server's own skill guidance first. Confirm before writing, because Figma edits land in a shared file. Duplicate the frame and populate each variant rather than editing the original.
 
 If the screen is a coded prototype, or the designer is about to build one, offer the permutations as playground controls instead of a file. Map each variable to a control (a count becomes a range, a long-text or missing-data case a toggle, a status a select) and the riskiest combinations to presets, following `design-os-prototype` `references/playground.md`. Hand the plan to `design-os-prototype` to install; don't write prototype code from this skill.
 

@@ -16,7 +16,9 @@ skills/<name>/
   evals/
     evals.json          required, task evals
     trigger-evals.json  required, should/shouldn't trigger queries
-agents/<name>.md        optional, one subagent per file
+agents/<name>.md        optional, one subagent per file (Claude only)
+.agents/skills          symlink to skills/, so Codex finds them; don't edit
+AGENTS.md               instructions for any coding agent in this repo
 ```
 
 No README or CHANGES.md inside a skill folder. Describe changes in the pull request.
@@ -45,25 +47,37 @@ No README or CHANGES.md inside a skill folder. Describe changes in the pull requ
 - **Teams, owners, and Figma spaces** come from `pm-os-clarity-context` by node key. Never list them in a skill.
 - **Write Clarity, not Hiive**, except where `pm-os-clarity-context` Clarity naming allows.
 
-## 5. Roles, not names
+## 5. Agent-agnostic
+
+Skills run in Claude (Code, desktop, web) and Codex, and should work in any agent that reads `SKILL.md`.
+
+- **Describe the action, not one product's tool.** "Ask a multi-select question", "fetch the page", "search the web". Where naming a tool helps, give it as an example per client (`AskUserQuestion` in Claude Code, `ask_user_input_v0` in Claude chat) and a plain-text fallback for agents without one.
+- **MCP tool names are fine.** Figma, Linear, Notion, and Slack tools (`use_figma`, `get_screenshot`, `slack_search_public`) come from their MCP servers and are the same in every client. Call them "the Figma MCP server", not "the Figma connector".
+- **Don't assume deferred tools, a browser, or skill slash commands.** Say "if your agent defers tool loading, search for it first" or "where a browser is available".
+- **Say "you", not "Claude",** for the agent running the skill.
+- **Repo instructions files:** this repo's is `AGENTS.md`. When a skill points to another repo's instructions, say "the repo's agent instructions file (`AGENTS.md`, or `CLAUDE.md` where that's what it has)".
+- **Subagents in `agents/` are Claude-only.** A skill must still work when no subagent is available.
+
+## 6. Roles, not names
 
 Name roles ("the design lead", "the owning PM"), never people, in skills, references, agents, and evals.
 
-## 6. Evals
+## 7. Evals
 
 - `evals/evals.json`: 3 to 5 evals in `skill-creator`'s schema covering the main path, one hard case, and one boundary case.
 - `evals/trigger-evals.json`: 8 to 12 queries, about half should trigger; should-nots are near misses from neighbouring skills.
 
-## 7. Versioning
+## 8. Versioning
 
 Bump `version` in `.claude-plugin/plugin.json` on every PR that touches `skills/` or `agents/`: patch for fixes, minor for new skills or behavior, major for renaming or removing a skill.
 
-## 8. Checks before merge
+## 9. Checks before merge
 
 - [ ] Version bumped at the right level.
 - [ ] Valid frontmatter, `name` matches folder, under 500 lines, all references listed.
 - [ ] Description ≤ 500 characters with "Not for:".
 - [ ] Writes to Figma, Linear, Notion, or Slack ask first.
 - [ ] No person's name; roles only.
+- [ ] Agent-agnostic: no Claude-only tool, feature, or file named without an alternative (section 5).
 - [ ] Both eval files present and valid JSON.
 - [ ] README updated: a What's new entry for the version, and the Last edited column for each skill you changed.

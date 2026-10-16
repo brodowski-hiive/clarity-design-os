@@ -11,8 +11,8 @@ The flow is always: read → propose by section → user approves sections → a
 
 ## 1. Read the frame
 
-1. Take a screenshot with the Figma connector's `get_screenshot` so you can see the layout.
-2. Before any `use_figma` call, load the Figma connector's `figma-use` guidance (the `/figma-use` skill if available, otherwise the `skill://figma/figma-use/SKILL.md` resource). It covers API constraints that cause hard-to-debug failures.
+1. Take a screenshot with the Figma MCP server's `get_screenshot` so you can see the layout.
+2. Before any `use_figma` call, load the Figma MCP server's `figma-use` guidance (the `figma-use` skill if your agent has it installed, otherwise the `skill://figma/figma-use/SKILL.md` resource). It covers API constraints that cause hard-to-debug failures.
 3. Use `use_figma` with a read-only script to collect every visible text node under the frame: node id, layer name, current characters, whether it's inside a component instance, and its parent section. Skip hidden layers and anything inside hidden parents.
 
 ## 2. Find what to replace
@@ -52,7 +52,7 @@ Group replacements by visual section of the screen (use the frame's hierarchy an
 
 Add one line under any section with a note, such as which numbers were changed to reconcile, or a value you weren't sure was data.
 
-Then ask a multi-select question (`AskUserQuestion` in Claude Code, `ask_user_input_v0` in Claude chat) listing the sections so the user picks which ones to apply. Wait for their answer. If they ask for changes to a section, revise and propose that section again.
+Then ask a multi-select question listing the sections so the user picks which ones to apply. Use your agent's multiple-choice question tool if it has one (for example `AskUserQuestion` in Claude Code, `ask_user_input_v0` in Claude chat); otherwise number the sections in plain text and ask them to reply with the numbers. Wait for their answer. If they ask for changes to a section, revise and propose that section again.
 
 ## 5. Apply to the original frame
 

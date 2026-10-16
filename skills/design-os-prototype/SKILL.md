@@ -20,7 +20,7 @@ A prototype exists to get a reaction. Two things make that reaction worth having
 
 ## Where you are
 
-- **ai-prototypes:** its CLAUDE.md governs running commands, scaffolding, and PRs; follow it. Its scaffold installs `@hiivemarkets/ui`, so swap every new or touched app to Alloy first (`references/setup.md`). Keep the listing current (`references/listing.md`).
+- **ai-prototypes:** its agent instructions file (`AGENTS.md`, or `CLAUDE.md` where that's what it has) governs running commands, scaffolding, and PRs; follow it. Its scaffold installs `@hiivemarkets/ui`, so swap every new or touched app to Alloy first (`references/setup.md`). Keep the listing current (`references/listing.md`).
 - **frontend monorepo:** production work belongs to that repo's own `design-system` skill and `packages/alloy/AGENTS.md`. Hand off to them.
 - **Anywhere else:** install `@hiivemarkets/alloy` and set it up (`references/setup.md`). For a plain HTML file with no build step, use the Alloy CSS and the plain-HTML examples in `TOKENS.md`, and note in the receipt that components are approximated.
 
@@ -41,7 +41,7 @@ A prototype exists to get a reaction. Two things make that reaction worth having
 4. **If there's a Figma source,** run **From Figma** (below) before writing UI, and build from the component map and flow map the designer confirmed.
 5. **Self-check.** Run `references/self-check.md` and fix what it finds.
 6. **Render it and look:** page loads, zero console errors, Alloy styles visibly applied.
-7. **Share (ai-prototypes).** Update `prototype.json` to match what was built (`in-review`, plus the Figma link if there is one), then open the PR per the repo's CLAUDE.md. Give the designer the PR link and a one-line preview of the listing to correct.
+7. **Share (ai-prototypes).** Update `prototype.json` to match what was built (`in-review`, plus the Figma link if there is one), then open the PR per the repo's agent instructions file. Give the designer the PR link and a one-line preview of the listing to correct.
 
 Prototype-only extras (animations, demo controls) are fine. Keep them in their own clearly named files and list them as Custom.
 

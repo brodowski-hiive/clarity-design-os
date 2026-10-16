@@ -1,6 +1,6 @@
 # AGENTS.md
 
-Instructions for any coding agent (Codex, Claude Code, Cursor, and others) working in this repo. This is the only agent instructions file; don't add a `CLAUDE.md` or other tool-specific copy.
+Instructions for any coding agent (Codex, Claude Code, Cursor, and others) working in this repo. This is the only agent instructions file. `CLAUDE.md` is a one-line import of this file so Claude Code reads it too; keep it that way and put every instruction here, never in a tool-specific copy.
 
 ## What this repo is
 

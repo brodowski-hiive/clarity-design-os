@@ -19,6 +19,7 @@ skills/<name>/
 agents/<name>.md        optional, one subagent per file (Claude only)
 .agents/skills          symlink to skills/, so Codex finds them; don't edit
 AGENTS.md               instructions for any coding agent in this repo
+CLAUDE.md               one line, `@AGENTS.md`, so Claude Code reads it; don't add content
 ```
 
 No README or CHANGES.md inside a skill folder. Describe changes in the pull request.
@@ -55,7 +56,7 @@ Skills run in Claude (Code, desktop, web) and Codex, and should work in any agen
 - **MCP tool names are fine.** Figma, Linear, Notion, and Slack tools (`use_figma`, `get_screenshot`, `slack_search_public`) come from their MCP servers and are the same in every client. Call them "the Figma MCP server", not "the Figma connector".
 - **Don't assume deferred tools, a browser, or skill slash commands.** Say "if your agent defers tool loading, search for it first" or "where a browser is available".
 - **Say "you", not "Claude",** for the agent running the skill.
-- **Repo instructions files:** this repo's is `AGENTS.md`. When a skill points to another repo's instructions, say "the repo's agent instructions file (`AGENTS.md`, or `CLAUDE.md` where that's what it has)".
+- **Repo instructions files:** this repo's is `AGENTS.md`; `CLAUDE.md` only imports it. When a skill points to another repo's instructions, say "the repo's agent instructions file (`AGENTS.md`, or `CLAUDE.md` where that's what it has)".
 - **Subagents in `agents/` are Claude-only.** A skill must still work when no subagent is available.
 
 ## 6. Roles, not names

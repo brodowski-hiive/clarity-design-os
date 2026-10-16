@@ -2,13 +2,13 @@
 
 The design operating system for Clarity: agent-agnostic skills for Clarity designers that run in Claude (as a plugin) and Codex. Sister plugin to [clarity-pm-os](https://github.com/josh-m-kramer/clarity-pm-os).
 
-Each folder under `skills/` is one skill: a `SKILL.md`, plus `references/` when needed and `evals/` (`evals.json` and `trigger-evals.json`). Each file under `agents/` is one subagent (Claude only). The Claude plugin manifest lives in `.claude-plugin/`; `.agents/skills/` links to `skills/` so Codex finds them. Agent instructions for working in this repo are in [AGENTS.md](AGENTS.md).
+Each folder under `skills/` is one skill: a `SKILL.md`, plus `references/` when needed and `evals/` (`evals.json` and `trigger-evals.json`). Each file under `agents/` is one subagent (Claude only). The Claude plugin manifest lives in `.claude-plugin/`; `.agents/skills/` links to `skills/` so Codex finds them. Agent instructions for working in this repo are in [AGENTS.md](AGENTS.md); `CLAUDE.md` just imports it for Claude Code.
 
 ## What's new
 
 **1.3.0 (Oct 16, 2026)**
 - Skills are agent-agnostic, so Codex can run them too: tool names are examples per client with a plain-text fallback, Figma tools are named by their MCP server, and pointers to another repo's `CLAUDE.md` now read "its agent instructions file (`AGENTS.md`, or `CLAUDE.md`)".
-- New `AGENTS.md` for any coding agent working in this repo, and `.agents/skills/` so Codex picks up the skills here. Install steps for Codex below.
+- New `AGENTS.md` for any coding agent working in this repo (`CLAUDE.md` is a one-line import of it, so Claude Code reads the same file), and `.agents/skills/` so Codex picks up the skills here. Install steps for Codex below.
 - CONTRIBUTING has a new section 5, Agent-agnostic, and a matching merge check.
 
 **1.2.0 (Oct 15, 2026)**

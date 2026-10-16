@@ -167,6 +167,21 @@
         "The plan covers the happy path and names which states are left for hi-fi",
         "Receipt includes \"Fidelity: wires\" and lists wires.css under Custom"
       ]
+    },
+    {
+      "id": 13,
+      "prompt": "I've finished my edits on the ported sell-order screens in Figma (https://www.figma.com/design/EXAMPLE/sell-order?node-id=40-1). Bring them back into the prototype.",
+      "expected_output": "Recognizes a ported section, updates the existing app named in its saved source on a new branch, compares each frame with the running prototype at its saved route to find what changed, confirms only those changes, builds them, and offers a re-port.",
+      "files": [],
+      "expectations": [
+        "Reads the section's saved source and updates that app instead of scaffolding a new one",
+        "Stops and points to the current section if the section's status is superseded",
+        "Says so if the code has moved since the section's sourceVersion, and confirms before applying edits",
+        "Compares frames with the running prototype at each frame's saved route to find the changes",
+        "Ignores the port note, report cards, and gaps callouts",
+        "Makes no writes to the Figma file",
+        "Offers a re-port with design-os-prototype-to-figma after the change is pushed"
+      ]
     }
   ]
 }

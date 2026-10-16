@@ -69,3 +69,14 @@ Ask the designer to correct anything in plain language ("Edit goes to step 1", "
 ## 5. Build and compare
 
 Build from the confirmed maps using the main Build steps. Every link in the flow map must work in the rendered prototype. Click through the whole flow and compare each screen to its Figma screenshot. Treat differences as possible gaps or wrong matches, never as something to patch with hardcoded styles.
+
+## From a ported section
+
+When the frames came from `design-os-prototype-to-figma` (the section has `kind` = `prototype-port-section`), the designer is bringing Figma work back into an existing prototype. Update that prototype; don't start a new one.
+
+- **Target:** the app or path in the section's saved `source`. Work on a new branch from the latest code.
+- **Check it's current:** if the section's `status` is `superseded`, stop and point to the current section. If the code has moved since `sourceVersion`, say so. Their Figma edits are based on the older build, so confirm before applying them over newer code.
+- **Find what changed:** ask the designer which frames they changed. If they're not sure, open the running prototype at each frame's saved `route` and compare it with the frame's `get_screenshot`. Only the differences go on the component and flow maps.
+- **Skip tooling:** the port note, report cards, and gaps callouts aren't UI.
+- **Confirm, build, and compare** as in steps 4 and 5, then share as usual.
+- **Close the loop:** after the change is pushed, offer a re-port with `design-os-prototype-to-figma` so the Figma copy matches the code again.

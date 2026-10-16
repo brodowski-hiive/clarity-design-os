@@ -65,6 +65,7 @@ When the source is a Figma frame, section, or page, follow `references/from-figm
    - Group near-duplicate frames as states of one screen, and pull repeated chrome into one shared layout.
 3. **Confirm in chat** before building: the component map and flow map, uncertain rows first. The designer corrects in plain language.
 4. **Build and compare:** every link works, and each screen is checked against its Figma screenshot.
+5. **From a ported section** (frames made by `design-os-prototype-to-figma`): update the app in the section's `source` rather than starting a new one, change only what the designer changed, then offer a re-port.
 
 Read-only on Figma. If the designer wants their file fixed, hand off to `design-os-audit-design-system`.
 
@@ -120,7 +121,7 @@ From a brief, also include:
 
 - `references/setup.md`: read when creating an app, adding Alloy to a project, or touching an ai-prototypes app. CSS setup, theme, the `@hiivemarkets/ui` swap, and plain-HTML mocks.
 - `references/listing.md`: read whenever you're in ai-prototypes or sharing a prototype. What the directory lists, the `prototype.json` fields it accepts, the share preview, screenshots, and moving outside work into the repo.
-- `references/from-figma.md`: read when the source is a Figma frame, section, or page. Component matching, flow mapping, and the confirm step.
+- `references/from-figma.md`: read when the source is a Figma frame, section, or page. Component matching, flow mapping, the confirm step, and bringing a ported section back into its prototype.
 - `references/from-brief.md`: read when the source is a Product Brief or Design Spec. Sources, the question, reference state, the plan, coverage, and Controlled work.
 - `references/self-check.md`: read before saying a prototype is done, or when asked whether a prototype uses Alloy.
 - `references/wires.md`: read when building at wires fidelity (a wireframe, mid-fi, or greyscale prototype). When wires fit, install, scope, and the receipt line.

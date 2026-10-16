@@ -61,6 +61,8 @@ Frames built by `design-os-prototype-to-figma` carry `designos` / `kind` = `prot
 
 Never treat a frame as `prototype-port` on name alone; check the saved data.
 
+Frames marked `prototype-port-superseded` belong to an older port that a newer section replaced. Don't fix them, in place or in a copy, because the fixes would land on stale screens. Say the frame is superseded, link the section whose `status` is `current` for the same `source`, and offer to audit that one instead. Auditing a superseded frame read-only is fine if the designer still asks.
+
 ## Updating
 
 - Find an existing card by looking on the page for a node whose `reportFor` matches the audited frame's ID; find the copy by `fixFor`.

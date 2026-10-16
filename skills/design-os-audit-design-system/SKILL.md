@@ -42,7 +42,7 @@ If a report card already exists for the frame, update it instead of adding anoth
 When the designer names IDs:
 
 1. Read the findings saved on the report card (resolve IDs from there, not from memory).
-2. If the frame is a `prototype-port` frame, skip the copy and fix in place. Otherwise, if the frame has no fix copy yet, duplicate the original, name it `<frame name> · Alloy fixes`, and place it below the original with an 80px gap. Reuse the same copy for later fixes.
+2. If the frame is marked `prototype-port-superseded`, don't fix it; point to the current port (`references/report-card.md`, Fixing in place). If it's a `prototype-port` frame, skip the copy and fix in place. Otherwise, if the frame has no fix copy yet, duplicate the original, name it `<frame name> · Alloy fixes`, and place it below the original with an 80px gap. Reuse the same copy for later fixes.
 3. Map each finding's node to its counterpart in the copy (same index path in the layer tree) and apply the fix there, using the fix notes in `references/findings.md`. Screenshot the affected section after each batch, and the whole copy at the end.
 4. Update each finding's status on the report card: **Fixed in copy** (linked to the fixed layer), **Partly fixed in copy · Needs designer**, **Needs designer** (with the specific choice to make), or **Couldn't fix** (with the reason). "Fix all <severity>" includes findings that need a decision; mark them, don't skip them silently. Add any gaps found while fixing to the callout.
 5. In chat, list what changed and what didn't, and remind them the original is untouched. They keep whichever version they want.

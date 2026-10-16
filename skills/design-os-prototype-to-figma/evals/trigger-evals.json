@@ -3,12 +3,12 @@
   {"query": "port the sell-order prototype back to Figma so I can iterate on it", "should_trigger": true},
   {"query": "turn my Claude prototype into Figma screens using Alloy", "should_trigger": true},
   {"query": "I built this prototype with Codex, rebuild it in Figma on Alloy", "should_trigger": true},
-  {"query": "can you rebuild this coded prototype in Figma with auto layout?", "should_trigger": true},
+  {"query": "the code changed since I put my prototype in Figma, refresh the Figma copy", "should_trigger": true},
   {"query": "I built a prototype in ai-prototypes, now I need it as editable Figma frames", "should_trigger": true},
   {"query": "send the fund-offerings prototype back to design as Figma mocks", "should_trigger": true},
   {"query": "make this Figma page clickable as a coded prototype", "should_trigger": false},
   {"query": "audit my checkout frame for Alloy", "should_trigger": false},
   {"query": "audit the Alloy library against the dev-ready checklist", "should_trigger": false},
-  {"query": "add a playground to my prototype", "should_trigger": false},
+  {"query": "I finished editing the ported Figma screens, update the prototype code to match", "should_trigger": false},
   {"query": "critique the UX of this onboarding flow", "should_trigger": false}
 ]

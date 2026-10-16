@@ -6,6 +6,10 @@ Each folder under `skills/` is one skill: a `SKILL.md`, plus `references/` when 
 
 ## What's new
 
+**1.4.0 (Oct 16, 2026)**
+- `design-os-prototype-to-figma` treats the Figma port as a working copy for detailed review, with code as the source of truth. Each section is stamped with the source commit and date and carries a port note. Re-porting builds a new section, says how many commits the code has moved, and marks the old one superseded without deleting it or its comments.
+- `design-os-prototype` brings a ported section back into its existing app: it finds what the designer changed by comparing frames with the running prototype, then offers a re-port.
+
 **1.3.0 (Oct 16, 2026)**
 - Skills are agent-agnostic, so Codex can run them too: tool names are examples per client with a plain-text fallback, Figma tools are named by their MCP server, and pointers to another repo's `CLAUDE.md` now read "its agent instructions file (`AGENTS.md`, or `CLAUDE.md`)".
 - New `AGENTS.md` for any coding agent working in this repo (`CLAUDE.md` is a one-line import of it, so Claude Code reads the same file), and `.agents/skills/` so Codex picks up the skills here. Install steps for Codex below.
@@ -31,7 +35,7 @@ Each folder under `skills/` is one skill: a `SKILL.md`, plus `references/` when 
 |---|---|---|---|
 | `design-os-audit-design-system` | Audits a Figma frame for Alloy coverage, adds a report card with fix IDs, and fixes chosen IDs in a copy of the frame | Live | Adam Brodowski (via Claude), Oct 16, 2026 |
 | `design-os-prototype` | Builds coded prototypes from `@hiivemarkets/alloy` components, ports Figma flows, adds a standard playground panel for stress testing, keeps each ai-prototypes app's `prototype.json` listing current, and checks the code is on-system | Live | Adam Brodowski (via Claude), Oct 16, 2026 |
-| `design-os-prototype-to-figma` | Ports a coded prototype back into Figma as Alloy screens in auto layout with its flow wired, then audits them with `design-os-audit-design-system` and fixes findings in place | Live | Adam Brodowski (via Claude), Oct 16, 2026 |
+| `design-os-prototype-to-figma` | Ports a coded prototype into Figma as a version-stamped working copy (Alloy screens in auto layout, flow wired) for detailed review while code stays canonical, audits it with `design-os-audit-design-system`, fixes findings in place, and supersedes old ports on a re-port | Live | Adam Brodowski (via Claude), Oct 16, 2026 |
 | `design-os-ping` | Ranked digest of what needs a designer's attention across Slack, Linear, and their Notion task list | Live | Adam Brodowski (via Claude), Oct 16, 2026 |
 | `design-os-stress-test-design` | Stress-tests a design for edge cases (long text, high volume, extreme numbers, missing states) and builds data permutations to design against | Live | Adam Brodowski (via Claude), Oct 16, 2026; created by Ernie |
 | `design-os-fill-mock-data` | Replaces placeholder content in a Figma frame with realistic, reconciled Clarity mock data, section by section after approval | Live | Adam Brodowski (via Claude), Oct 16, 2026; created by Ernie |

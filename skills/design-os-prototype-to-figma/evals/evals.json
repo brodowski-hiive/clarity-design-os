@@ -15,8 +15,11 @@
         "Text layers use Responsive Type styles and fills bind to 2. Clarity variables",
         "Does not use html_to_figma or send_code_to_figma",
         "Each built frame has setSharedPluginData('designos', 'kind', 'prototype-port')",
+        "Section name includes the short commit and date (<name> · from code · <version> · <date>)",
+        "Section has a port note saying code is canonical, and saved sourceVersion, portedAt, and status = current",
         "Adds a report card beside each frame and fixes findings directly in the frame, with no Alloy fixes copy",
-        "Receipt gives coverage per frame, open Needs designer findings, gaps, and wired links"
+        "Receipt gives coverage per frame, open Needs designer findings, gaps, and wired links",
+        "Receipt has a Source line naming the version and saying code is canonical"
       ]
     },
     {
@@ -54,6 +57,21 @@
         "Does not start a code-to-Figma port",
         "Points to design-os-prototype (From Figma)",
         "Makes no Figma writes"
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "I ported the sell-order prototype to Figma last week and we've changed the code since. Refresh the Figma copy.",
+      "expected_output": "Finds the earlier port section by its saved source, reports its version and the commits since, asks about open comments, builds a new version-stamped section beside it after a yes, then marks the old one superseded without deleting it and offers to update links.figma.",
+      "files": [],
+      "expectations": [
+        "Reads the earlier section's sourceVersion and lists commits since it with git log on the app path",
+        "Tells the designer Figma comments stay on the old frames and asks them to resolve or carry them over before superseding",
+        "Builds a new section rather than editing the old frames in place",
+        "New section name and port note carry the new version and date",
+        "Only after a yes: renames the old section with '· superseded', sets status = superseded, and sets its frames' kind to prototype-port-superseded",
+        "Does not delete or move the old section",
+        "Offers to point links.figma in prototype.json at the new section and writes it only on a yes"
       ]
     }
   ]

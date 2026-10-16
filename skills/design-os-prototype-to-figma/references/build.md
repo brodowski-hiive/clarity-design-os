@@ -1,13 +1,24 @@
-How to build the ported screens in Figma. Read before the first write. Library keys, importing by key, and the variable collections are in `design-os-audit-design-system`'s `references/alloy-library.md`; read that too.
+How to build the ported screens in Figma. Read before the first write, and before a re-port. Library keys, importing by key, and the variable collections are in `design-os-audit-design-system`'s `references/alloy-library.md`; read that too.
 
 ## Section and frame layout
 
-- Create one Section on the destination page, named `<prototype name> · from code · <YYYY-MM-DD>`. Place it to the right of everything already on the page, with a 400px gap. Never move existing layers.
+- Create one Section on the destination page, named `<prototype name> · from code · <version> · <YYYY-MM-DD>` (`Sell order · from code · a1b2c3d · 2026-10-16`). The version comes from `references/reading-the-prototype.md`, Record the version. Place the section to the right of everything already on the page, with a 400px gap. Never move existing layers.
+- Put the port note at the section's top left, above the first column (Port note, below).
 - One column per screen, left to right in flow order. Columns are 640px apart, so each frame's report card (480px wide, 80px to its right) fits without overlapping the next column.
 - States stack under their screen, 120px apart, in this order: Default, then the rest as in the plan.
 - With mobile too, put a second row of columns for 390px frames under the desktop row, 240px below the tallest desktop column.
 - Frame names: `<Screen>` for the default state and `<Screen> · <State>` for the rest (`Review · Error`). Mobile frames end in `· Mobile`.
 - Frames are 1440px (or 390px) wide with hug height, so they grow with content like the page does.
+
+## Port note
+
+A small note so anyone opening the file knows what this section is and how old it is, without asking.
+
+- Use Alloy's inline alert or banner component if the library has one that fits. Otherwise build a vertical auto layout frame named `Custom / Port note`, with `Responsive Type/*` text and `2. Clarity` colors. It's tooling, not product UI, so don't list it as a gap.
+- Its text:
+  > **Ported from code.** `<source>` @ `<version>`, `<YYYY-MM-DD>`.
+  > Code is canonical: comment and explore here, then bring changes back to code with `design-os-prototype` and re-port.
+- When the section is superseded, its first line becomes **Superseded** by `<new section name>`, linked to the new section.
 
 ## Auto layout rules
 
@@ -60,7 +71,11 @@ Mark everything you create so the audit and later runs can find it:
 |---|---|---|
 | Section | `kind` | `prototype-port-section` |
 | Section | `source` | the prototype's app name, path, or URL |
-| Each screen frame | `kind` | `prototype-port` |
+| Section | `sourceVersion` | the short commit (with `+local` if uncommitted), or `url` |
+| Section | `portedAt` | the date, `YYYY-MM-DD` |
+| Section | `status` | `current`, or `superseded` after a re-port |
+| Port note | `kind` | `prototype-port-note` |
+| Each screen frame | `kind` | `prototype-port`, or `prototype-port-superseded` after a re-port |
 | Each screen frame | `route` | the route or step, plus the state (`/review?state=error`) |
 
 Use `setSharedPluginData("designos", key, value)`; `setPluginData` isn't supported in `use_figma`.
@@ -83,3 +98,17 @@ After all screens are built:
 - Link from the instance itself, not a layer inside it.
 - Set a flow starting point on the first screen's default frame, named after the prototype.
 - States aren't linked unless the code navigates between them (a submit that leads to an error state). Note links you couldn't wire, and why, for the receipt.
+
+## Re-porting
+
+A re-port builds a new section from the current code. It never updates the old frames in place, because the old ones may carry comments and the designer's exploration.
+
+1. **Find earlier ports.** On the destination page, look for sections with `kind` = `prototype-port-section` and the same `source`. Read each one's `sourceVersion` and `portedAt`.
+2. **Say how far the code has moved.** In a repo, list the commits since the port: `git log --oneline <sourceVersion>..HEAD -- <app path>`. A `+local` or `url` version can't be compared, so say that and compare screenshots instead. If nothing changed, tell the designer and ask whether a new port is still wanted.
+3. **Comments first.** Figma comments stay pinned to the old frames, and you can't move them with the Figma MCP server. Before superseding, ask the designer to resolve open comments or carry them over by hand.
+4. **Build the new section** as usual, to the right of the old one.
+5. **Mark the old section superseded,** only after the designer says yes:
+   - Rename it to `<old name> · superseded`, set `status` = `superseded`, and update its port note to link to the new section.
+   - Set each of its frames' `kind` to `prototype-port-superseded`. The audit only fixes frames marked `prototype-port` in place, so this stops later fixes from landing on an old copy.
+   - Don't delete or move it. The designer archives it when they're ready.
+6. **Update the listing:** offer to point `links.figma` in `prototype.json` at the new section.

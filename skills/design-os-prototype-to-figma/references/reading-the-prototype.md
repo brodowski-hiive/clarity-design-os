@@ -1,4 +1,4 @@
-How to read a coded prototype before porting it: get it running, find the screens and states, read the layout, and map the code to Alloy in Figma. Read in steps 1 and 2. Everything here is read-only on the prototype.
+How to read a coded prototype before porting it: get it running, record its version, find the screens and states, read the layout, and map the code to Alloy in Figma. Read in steps 1 and 2. Everything here is read-only on the prototype.
 
 ## Get it running
 
@@ -12,6 +12,13 @@ How to read a coded prototype before porting it: get it running, find the screen
 In ai-prototypes, installing needs a GitHub token with `read:packages`, because `@hiivemarkets/alloy` comes from GitHub Packages. A 403 on install means the designer has to run `gh auth refresh -s read:packages -h github.com` themselves (it opens a browser); then install with `GH_NPM_TOKEN="$(gh auth token)"`. If `pnpm` and `mise` aren't installed, `corepack pnpm` works.
 
 Open each screen in the in-app browser (`preview_start`). If the app won't start, say what failed and stop. Don't port from source code alone, because the rendered layout is what the frames must match.
+
+## Record the version
+
+The port is stamped with the version it came from, so comments can be traced to a build and staleness can be checked later.
+
+- **ai-prototypes app or local project:** `git rev-parse --short HEAD` in the repo. If `git status --porcelain -- <app path>` shows changes, append `+local`, and tell the designer that the port shows uncommitted work no one else can open.
+- **Running URL with no repo:** use `url`, and note the URL in the section's `source`.
 
 ## Find screens and states
 

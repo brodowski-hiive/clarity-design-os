@@ -20,7 +20,9 @@ Follow [CONTRIBUTING.md](CONTRIBUTING.md). The rules that trip agents up most:
 - **Agent-agnostic wording** (CONTRIBUTING section 5). Write "ask the designer", "fetch the page", "search the web", not one product's tool names. Where a tool name helps, give it as an example for each client ("for example `AskUserQuestion` in Claude Code") and a plain-text fallback.
 - **Roles, never people,** in skills, references, and evals.
 - **Confirm before every write** to Figma, Linear, Notion, or Slack.
-- **Every change bumps `version`** in `.claude-plugin/plugin.json` and adds a What's new entry and Last edited dates in README.md.
+- **Every change bumps `version`** in `.claude-plugin/plugin.json` and adds a What's new entry and Last edited dates in README.md. If another PR lands first, the version you claimed may already be taken (1.4.0 was claimed twice): re-check `main` before merging and renumber.
+
+Reasons behind past changes and the list of known loose ends are in [NOTES.md](NOTES.md). Read it before picking up unfinished work.
 
 ## Checks
 

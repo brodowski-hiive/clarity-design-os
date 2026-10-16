@@ -82,7 +82,7 @@
     },
     {
       "id": 7,
-      "prompt": "Make this Figma page clickable in Claude Code: https://www.figma.com/design/EXAMPLE/place-bid?node-id=12-0. It has the bid form, review, confirmation, and an error version of the bid form. Only Continue is wired.",
+      "prompt": "Make this Figma page clickable in Codex: https://www.figma.com/design/EXAMPLE/place-bid?node-id=12-0. It has the bid form, review, confirmation, and an error version of the bid form. Only Continue is wired.",
       "expected_output": "Treats the page as a flow, uses the wired Continue link as-is, infers the remaining links from labels, names, and order with confidence levels, groups the error frame as a state of the bid form, posts the flow map with low-confidence links first, waits for corrections, then builds a working stepper or routes with every link clickable.",
       "files": [],
       "expectations": [
@@ -97,7 +97,7 @@
     {
       "id": 8,
       "prompt": "ok the offer approvals prototype is good, share it with the team. it's for CLR-512",
-      "expected_output": "Updates apps/offer-approvals/prototype.json to match what was built (status in-review, links.linear for CLR-512), validates it, opens the PR per the repo's CLAUDE.md, and replies with the PR link plus a one-line listing preview the designer can correct.",
+      "expected_output": "Updates apps/offer-approvals/prototype.json to match what was built (status in-review, links.linear for CLR-512), validates it, opens the PR per the repo's agent instructions file, and replies with the PR link plus a one-line listing preview the designer can correct.",
       "files": [],
       "expectations": [
         "prototype.json status is in-review",

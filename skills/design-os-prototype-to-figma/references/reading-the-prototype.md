@@ -4,7 +4,7 @@ How to read a coded prototype before porting it: get it running, find the screen
 
 | Source | How |
 |---|---|
-| ai-prototypes app | Follow the repo's CLAUDE.md to run the app. Read `apps/<name>/prototype.json` for the name, description, and any `links.figma`. |
+| ai-prototypes app | Follow the repo's agent instructions file (`AGENTS.md`, or `CLAUDE.md` where that's what it has) to run the app. Read `apps/<name>/prototype.json` for the name, description, and any `links.figma`. |
 | Local project | Use its own dev script (`package.json`). Read its routes from the router config or `src/` folders. |
 | Running URL | Open it in the browser as-is. You can only port what you can reach by clicking, so ask for the routes if there's no visible nav. |
 | Plain HTML file | Open it directly. Expect fewer Alloy imports to map; components may be approximated with Alloy CSS (see `design-os-prototype`'s receipt). |

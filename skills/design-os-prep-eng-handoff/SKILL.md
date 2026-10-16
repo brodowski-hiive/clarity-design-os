@@ -9,7 +9,7 @@ Help a product designer get ahead of engineering before handoff: surface what's 
 
 ## 1. Get the design
 
-- **Figma link**: use the Figma connector. `get_screenshot` for the frames, `get_design_context` / `get_metadata` for structure, components, and annotations. Check whether elements are Alloy instances or custom; custom components are a common cost driver.
+- **Figma link**: use the Figma MCP server. `get_screenshot` for the frames, `get_design_context` / `get_metadata` for structure, components, and annotations. Check whether elements are Alloy instances or custom; custom components are a common cost driver.
 - **Description or screenshots**: work from those. State assumptions in one line.
 
 If the scope is unclear (one screen vs. a whole flow), ask one short question. Otherwise proceed.

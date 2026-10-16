@@ -2,6 +2,7 @@
   {"query": "put my prototype in Figma", "should_trigger": true},
   {"query": "port the sell-order prototype back to Figma so I can iterate on it", "should_trigger": true},
   {"query": "turn my Claude prototype into Figma screens using Alloy", "should_trigger": true},
+  {"query": "I built this prototype with Codex, rebuild it in Figma on Alloy", "should_trigger": true},
   {"query": "can you rebuild this coded prototype in Figma with auto layout?", "should_trigger": true},
   {"query": "I built a prototype in ai-prototypes, now I need it as editable Figma frames", "should_trigger": true},
   {"query": "send the fund-offerings prototype back to design as Figma mocks", "should_trigger": true},

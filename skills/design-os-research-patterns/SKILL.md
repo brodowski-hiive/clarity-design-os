@@ -16,7 +16,7 @@ Stay neutral. Describe patterns and tradeoffs; don't rank approaches or recommen
 Input can be any mix of a screen type, a problem or user goal, and a Figma link.
 
 - **Exploration mode**: no existing design. Map the landscape.
-- **Validation mode**: a Figma link or a described direction is provided. If there's a Figma link, pull the frame with the Figma connector (`get_screenshot` / `get_design_context`). Research the same way, then add a convergence/divergence table comparing their design to what you found.
+- **Validation mode**: a Figma link or a described direction is provided. If there's a Figma link, pull the frame with the Figma MCP server (`get_screenshot` / `get_design_context`). Research the same way, then add a convergence/divergence table comparing their design to what you found.
 
 If the input is only a bare screen type ("dashboard") with no context, ask one short question about the user's goal before searching. Otherwise proceed and state assumptions in one line.
 
@@ -37,17 +37,17 @@ Aim for 15+ platforms total with real findings.
 
 - Search each platform separately; combined queries return shallow results.
 - Prefer sources that show the actual UI: help-center articles (step-by-step docs usually include annotated screenshots), changelogs/release notes, product pages with screenshot galleries, app store listings, review sites with screenshot galleries (TrustRadius, G2), embedded walkthrough videos.
-- Fetch promising help articles (`WebFetch` in Claude Code, `web_fetch` in Claude chat) to confirm what they show and to find direct image URLs.
+- Fetch promising help articles with your agent's web fetch or browse tool (for example `WebFetch` in Claude Code, `web_fetch` in Claude chat) to confirm what they show and to find direct image URLs.
 - Note the date of sources. Flag anything older than ~2 years as possibly outdated, and be aware of acquisitions that may have changed a product's UI.
 - If a platform has nothing public on this feature, record it in Gaps rather than padding.
 
 ### Mobbin
 
-If a Mobbin connector is available (tools like `search_screens`, `search_flows`, `search_sections`), use it per pattern and add a Mobbin column/links to the tables. Search the deferred tools for "mobbin" at the start of each run (`ToolSearch` in Claude Code, `tool_search` in Claude chat). If it's not available, fall back to a "Look up in Mobbin" line listing specific apps and flows to search. Don't construct Mobbin URLs; they contain IDs and guesses won't resolve.
+If a Mobbin connector is available (tools like `search_screens`, `search_flows`, `search_sections`), use it per pattern and add a Mobbin column/links to the tables. Check for it at the start of each run; if your agent defers tool loading, search for "mobbin" first (for example `ToolSearch` in Claude Code, `tool_search` in Claude chat). If it's not available, fall back to a "Look up in Mobbin" line listing specific apps and flows to search. Don't construct Mobbin URLs; they contain IDs and guesses won't resolve.
 
 ## 5. Label honesty
 
-Claude can't see behind logins, so nothing is truly "observed". Where a browser is available (Claude Code ships Chromium with Playwright), open public help pages and screenshot them to confirm what the UI shows; still cite the source URL, never a local screenshot path. In chat, rely on the fetched page. Tag every source by type:
+You can't see behind logins, so nothing is truly "observed". Where a browser is available (for example Playwright with Chromium), open public help pages and screenshot them to confirm what the UI shows; still cite the source URL, never a local screenshot path. Without a browser, rely on the fetched page. Tag every source by type:
 
 - **[Help]** step-by-step support docs (most reliable for actual UI behavior)
 - **[Mktg]** product/marketing pages (describes capability, may overstate)

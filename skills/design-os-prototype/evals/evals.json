@@ -4,7 +4,7 @@
     {
       "id": 1,
       "prompt": "In ai-prototypes, build a quick prototype of the sell order flow: amount in shares, price per share, and a confirm dialog.",
-      "expected_output": "Scaffolds per the repo, swaps the app to @hiivemarkets/alloy, fills in prototype.json from the request, reads COMPONENTS.md and TOKENS.md, builds with SharesInput, MoneyInput, Dialog, and PageSection, runs the self-check, and ends with a receipt.",
+      "expected_output": "Checks apps/ for an existing app, scaffolds with mise run new (which uses @hiivemarkets/alloy), fills in prototype.json from the request, reads COMPONENTS.md and TOKENS.md, builds with SharesInput, MoneyInput, Dialog, and PageSection, runs the self-check, and ends with a receipt.",
       "files": [],
       "expectations": [
         "package.json depends on @hiivemarkets/alloy, not @hiivemarkets/ui",
@@ -105,7 +105,51 @@
         "Description describes what was built, not the scaffold placeholder",
         "Runs mise run validate for the app before opening the PR",
         "Reply includes the PR link and a one-line listing preview",
-        "Does not invent a team or Figma link"
+        "Does not invent a team or Figma link",
+        "Says the prototype appears in the Clarity Design directory once the PR merges"
+      ]
+    },
+    {
+      "id": 9,
+      "prompt": "Build a prototype from the floor-setting brief and its Design Spec: https://www.notion.so/clarity/Design-Spec-Offer-floor-EXAMPLE. Brief is linked from the spec.",
+      "expected_output": "Fetches the Design Spec and the brief it links, reads the initiative record if one exists, checks for an existing prototype, takes the question from What we're testing, starts from the Where this lives screens, posts a plan (flow per persona, states from the scenario matrix with classifications, Alloy components from Reuse vs. new, the spec's worked example as data, Assumed rows first), waits for confirmation, builds, checks every Must-demonstrate state is reachable, and ends with a receipt that includes Source, Testing, Coverage, New patterns and Assumed.",
+      "files": [],
+      "expectations": [
+        "Reads both the Design Spec and the brief before planning",
+        "Posts the plan and waits for confirmation before writing UI",
+        "Every Must-demonstrate row in the scenario matrix is reachable by a route, toggle or playground preset",
+        "Explicitly deferred scenarios are not built and are listed unchanged in the receipt",
+        "src/data uses the spec's worked example figures, the same on every screen",
+        "prototype.json description names the question being tested and links.docs is the brief URL",
+        "Receipt includes Source with the brief's Doc Stage and date, Testing, Coverage, New patterns, and Assumed",
+        "Builds the app in ai-prototypes, with team set to a pod name from the directory's org list or left out"
+      ]
+    },
+    {
+      "id": 10,
+      "prompt": "I'm the PM on a Controlled M project. Here's the brief, no design spec yet. I need a clickable prototype for scope review on Thursday, and if it looks good can you just push it into the frontend repo so we save time?",
+      "expected_output": "Treats this as a scope-review build from the brief only: names the question from the brief's Open items, derives states from the capabilities and failure modes and marks them derived, flags regulated copy for compliance-review, uses fictional data, and confirms the plan before building in ai-prototypes. Declines to push it into the frontend repo and explains that production code for Controlled work belongs to engineering.",
+      "files": [],
+      "expectations": [
+        "Says no Design Spec exists and labels this a brief-only build",
+        "Every state not from the brief is marked derived in the plan and the receipt",
+        "Regulated copy is marked as needing compliance-review",
+        "Makes no changes in the frontend repo and says production code for Controlled work belongs to engineering",
+        "Builds only in ai-prototypes, after the plan is confirmed"
+      ]
+    },
+    {
+      "id": 11,
+      "prompt": "Make me a quick prototype of a holdings summary card. I'm just in my Desktop folder, I don't really know git.",
+      "expected_output": "Explains in one line that prototypes live in ai-prototypes so the Clarity Design directory lists them, uses the person's clone or clones hiivemarkets/ai-prototypes, follows the repo's agent instructions file (no commands for the person to run), checks apps/ for an existing app, runs mise run new, builds on Alloy, writes prototype.json with only statuses and teams the directory accepts, and at share time says it appears in the directory once the PR merges. If the repo can't be cloned (no access), builds locally, says it isn't in the directory, and points to the directory's Add a link as a stopgap.",
+      "files": [],
+      "expectations": [
+        "The app is created under apps/<name> in ai-prototypes with mise run new, not in the Desktop folder",
+        "Does not ask the person to run terminal commands",
+        "prototype.json status is one of exploring, in-review, in-development, archived",
+        "team is a pod name from apps/clarity-design/src/org.ts or Cross-team, or is left out",
+        "Receipt's Listing line says when the prototype appears in the directory",
+        "If cloning fails, says the prototype is not in the directory and names the Add a link fallback"
       ]
     }
   ]

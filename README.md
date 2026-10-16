@@ -6,6 +6,12 @@ Each folder under `skills/` is one skill: a `SKILL.md`, plus `references/` when 
 
 ## What's new
 
+**1.4.0 (Oct 16, 2026)**
+- `design-os-prototype` builds from a Product Brief, with or without a Design Spec. It names the question the prototype answers, starts from the screen as it ships today, and plans states from the spec's scenario matrix (or derives them from the brief and marks them derived). The plan is confirmed before building. The receipt adds Source, Testing, Coverage and New patterns.
+- Covers PMs bringing a clickable prototype to the M and L scope review before a Design Spec exists. Controlled work gets a prototype only, never production code.
+- New prototypes go in ai-prototypes so the Clarity Design directory (`apps/clarity-design`) lists them once their PR merges. Work built elsewhere gets an offer to move it in, with the directory's Add a link as the fallback. The listing guide now matches the fields the directory reads: statuses are `exploring`, `in-review`, `in-development` and `archived`, and team is a pod name from the directory's list. Sharing offers a card screenshot.
+- `design-os-create-mocks` stays planned and is now described as Figma mocks only; coded prototypes from a brief belong to `design-os-prototype`.
+
 **1.3.0 (Oct 16, 2026)**
 - Skills are agent-agnostic, so Codex can run them too: tool names are examples per client with a plain-text fallback, Figma tools are named by their MCP server, and pointers to another repo's `CLAUDE.md` now read "its agent instructions file (`AGENTS.md`, or `CLAUDE.md`)".
 - New `AGENTS.md` for any coding agent working in this repo (`CLAUDE.md` is a one-line import of it, so Claude Code reads the same file), and `.agents/skills/` so Codex picks up the skills here. Install steps for Codex below.
@@ -30,14 +36,14 @@ Each folder under `skills/` is one skill: a `SKILL.md`, plus `references/` when 
 | Skill | What it does | Status | Last edited |
 |---|---|---|---|
 | `design-os-audit-design-system` | Audits a Figma frame for Alloy coverage, adds a report card with fix IDs, and fixes chosen IDs in a copy of the frame | Live | Adam Brodowski (via Claude), Oct 16, 2026 |
-| `design-os-prototype` | Builds coded prototypes from `@hiivemarkets/alloy` components, ports Figma flows, adds a standard playground panel for stress testing, keeps each ai-prototypes app's `prototype.json` listing current, and checks the code is on-system | Live | Adam Brodowski (via Claude), Oct 16, 2026 |
+| `design-os-prototype` | Builds coded prototypes from `@hiivemarkets/alloy` components, from a brief or Design Spec or by porting Figma flows, adds a standard playground panel for stress testing, keeps each ai-prototypes app's `prototype.json` listing current, and checks the code is on-system | Live | Adam Brodowski (via Claude), Oct 16, 2026 |
 | `design-os-prototype-to-figma` | Ports a coded prototype back into Figma as Alloy screens in auto layout with its flow wired, then audits them with `design-os-audit-design-system` and fixes findings in place | Live | Adam Brodowski (via Claude), Oct 16, 2026 |
 | `design-os-ping` | Ranked digest of what needs a designer's attention across Slack, Linear, and their Notion task list | Live | Adam Brodowski (via Claude), Oct 16, 2026 |
 | `design-os-stress-test-design` | Stress-tests a design for edge cases (long text, high volume, extreme numbers, missing states) and builds data permutations to design against | Live | Adam Brodowski (via Claude), Oct 16, 2026; created by Ernie |
 | `design-os-fill-mock-data` | Replaces placeholder content in a Figma frame with realistic, reconciled Clarity mock data, section by section after approval | Live | Adam Brodowski (via Claude), Oct 16, 2026; created by Ernie |
 | `design-os-prep-eng-handoff` | Gets ahead of eng handoff: the questions engineers will ask and the backend, permission, and data work the design implies | Live | Adam Brodowski (via Claude), Oct 16, 2026; created by Ernie |
 | `design-os-research-patterns` | Researches how 15+ competitors and cross-industry products handle a screen or feature, with tradeoffs and source links | Live | Adam Brodowski (via Claude), Oct 16, 2026; created by Ernie |
-| `design-os-create-mocks` | Turns a brief and Design Spec into mocks or a prototype on Alloy | Planned | — |
+| `design-os-create-mocks` | Turns a brief and Design Spec into Figma mocks on Alloy (coded prototypes from a brief: `design-os-prototype`) | Planned | — |
 | `design-os-review-design-work` | Critiques a drafted mock or flow | Planned | — |
 
 `design-os-create-mocks`, `design-os-review-design-work`, and `design-os-audit-design-system` are called by `clarity-pm-os` as optional companions.

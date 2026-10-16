@@ -2,7 +2,7 @@ Getting `@hiivemarkets/alloy` installed and wired up. Read when creating an app,
 
 ## Swap an ai-prototypes app to Alloy
 
-`mise run new` still scaffolds with `@hiivemarkets/ui`. On every new or touched app:
+New apps from `mise run new` already scaffold on `@hiivemarkets/alloy`. Older apps may still depend on `@hiivemarkets/ui`; on any of those you touch:
 
 1. In the app's `package.json`, remove `@hiivemarkets/ui` and add `@hiivemarkets/alloy` (plus `@hiivemarkets/alloy-icons` if you need icons). Use the version the newest Alloy app in the repo uses, or the latest published one.
 2. Replace the design-system block in `src/styles.css` with the setup below.

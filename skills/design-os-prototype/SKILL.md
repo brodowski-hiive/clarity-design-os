@@ -48,6 +48,13 @@ A prototype exists to get a reaction. Two things make that reaction worth having
 
 Prototype-only extras (animations, demo controls) are fine. Keep them in their own clearly named files and list them as Custom.
 
+## Fidelity
+
+Prototypes are hi-fi by default. Build at **wires** fidelity when the question is about flow or interaction rather than visual design (an early concept, or a scope review with a brief only), or when asked for wires, a wireframe, or mid-fi. Follow `references/wires.md`:
+
+1. Copy `assets/wires/wires.css` into the app unchanged and set `data-fidelity="wires"` on `<html>`. It turns Alloy grey by redefining its own variables, so the components stay real.
+2. Build the happy path plus only the states the question needs. No playground unless asked.
+
 ## From Figma
 
 When the source is a Figma frame, section, or page, follow `references/from-figma.md`. In short:
@@ -87,6 +94,7 @@ After any build with lists, forms, numbers, or loading data, offer one in a line
 
 End every build with:
 
+- **Fidelity:** hi-fi, or wires with the states left for hi-fi.
 - **Used:** Alloy components (import paths) and token utilities.
 - **Custom:** anything not from Alloy, and why.
 - **Gaps:** what Alloy is missing, worded so it can be pasted into #support-alloy-design-system.
@@ -115,9 +123,11 @@ From a brief, also include:
 - `references/from-figma.md`: read when the source is a Figma frame, section, or page. Component matching, flow mapping, and the confirm step.
 - `references/from-brief.md`: read when the source is a Product Brief or Design Spec. Sources, the question, reference state, the plan, coverage, and Controlled work.
 - `references/self-check.md`: read before saying a prototype is done, or when asked whether a prototype uses Alloy.
+- `references/wires.md`: read when building at wires fidelity (a wireframe, mid-fi, or greyscale prototype). When wires fit, install, scope, and the receipt line.
 - `references/playground.md`: read when adding or changing a playground. The plan, stress-test catalog, and install steps.
 - `references/lessons-archive.md`: older lessons; read when changing setup or the playground files.
 - `assets/playground/`: the shared playground files (`engine.ts`, `provider.tsx`, `panel.tsx`, `playground.css`) and `config.example.ts`. Copy, don't rewrite.
+- `assets/wires/wires.css`: the greyscale wire layer. Copy, don't rewrite.
 - `assets/clarity-logo.svg`: the Clarity wordmark, `currentColor`.
 
 ## Lessons logged

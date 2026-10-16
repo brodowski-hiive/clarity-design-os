@@ -8,7 +8,7 @@
       "files": [],
       "expectations": [
         "package.json depends on @hiivemarkets/alloy, not @hiivemarkets/ui",
-        "styles.css imports alloy styles, theme, and themes/clarity in order, with no @source into Alloy",
+        "styles.css keeps the scaffold's @source \"../node_modules/@hiivemarkets/alloy/dist\" line and imports alloy styles, theme, and themes/clarity in order",
         "Uses SharesInput for share quantity and MoneyInput for price",
         "Imports use @hiivemarkets/alloy/<component> subpaths",
         "No hex values or arbitrary color classes",
@@ -150,6 +150,22 @@
         "team is a pod name from apps/clarity-design/src/org.ts or Cross-team, or is left out",
         "Receipt's Listing line says when the prototype appears in the directory",
         "If cloning fails, says the prototype is not in the directory and names the Add a link fallback"
+      ]
+    },
+    {
+      "id": 12,
+      "prompt": "Build a wireframe-fidelity prototype of the new seller floor flow from this brief for Thursday's scope review. It's only about whether the steps make sense, not the look. https://app.notion.com/p/EXAMPLE-offer-floors-brief",
+      "expected_output": "Runs From a brief at wires fidelity: names the flow question, plans the happy path plus only the states the question needs, copies assets/wires/wires.css unchanged into src/wires/, imports it unlayered after the Alloy imports, sets data-fidelity=\"wires\" on <html>, still builds from real Alloy components, adds no playground, checks the grey render in the browser, and ends with a receipt that has a Fidelity line.",
+      "files": [],
+      "expectations": [
+        "src/wires/wires.css matches the skill's assets/wires/wires.css byte for byte",
+        "styles.css imports ./wires/wires.css after the Alloy imports with no layer()",
+        "<html> in the SSR shell has data-theme=\"clarity\" and data-fidelity=\"wires\"",
+        "UI imports come from @hiivemarkets/alloy/<component> subpaths, not hand-built grey boxes",
+        "No hex or arbitrary color classes outside src/wires/wires.css",
+        "No src/playground/ folder, since no playground was asked for",
+        "The plan covers the happy path and names which states are left for hi-fi",
+        "Receipt includes \"Fidelity: wires\" and lists wires.css under Custom"
       ]
     }
   ]

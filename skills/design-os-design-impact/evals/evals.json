@@ -1,0 +1,77 @@
+{
+  "skill_name": "design-os-design-impact",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Here's the brief and Design Spec for showing a seller's floor price on the company page and the sell indication page: https://app.notion.com/p/EXAMPLE-offer-floors-brief. What screens does this touch and how should we design it?",
+      "expected_output": "Places the work with design-os-system-map (readout only, no FigJam), finds each current screen starting from the Design Spec's Where this lives links, classifies both screens as Compose, recommends Coded hi-fi with reasons and confidence, shows the readout table, and asks for one yes. On yes, rebuilds both screens as they ship, commits that baseline before any change, adds a Today/Proposed Design choice, and hands off to design-os-prototype From a brief.",
+      "files": [],
+      "expectations": [
+        "Checks design-os-system-map is installed before running it, and asks for no FigJam",
+        "Uses the Design Spec's Where this lives links as the first screen source",
+        "Each affected screen row has page, owner, change, path, and current reference with source and confidence",
+        "Classifies both screens as Compose, in those words",
+        "Recommends exactly one route, Coded hi-fi, with reasons tied to screens and a confidence",
+        "Builds nothing before the person says yes",
+        "After yes, the as-is baseline is committed before any brief change is applied",
+        "Playground has a Design choice with Today and Proposed values",
+        "Hands off to design-os-prototype From a brief"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "TRA-123: let sellers get offer alerts on WhatsApp and add a new 'alert rules' section to account settings. Does this need a designer?",
+      "expected_output": "Fetches the Linear issue and its brief, places it, finds the current account settings screen, classifies the WhatsApp channel and the new section as Extend, recommends Designer, and after a yes writes the handoff package for the owning team's Design lead, looked up fresh in the Product Team Directory. Offers it as a Linear comment or a Notion page on the initiative record and writes only after a yes. No Slack draft.",
+      "files": [],
+      "expectations": [
+        "Classifies the WhatsApp alerts and the new settings section as Extend",
+        "Recommends the Designer route because of Extend and the non-web channel",
+        "Looks up the Design lead through pm-os-clarity-context People lookup and the Product Team Directory, not from memory",
+        "Handoff package has the brief link, why it needs a designer, affected screens, Extend candidates and Alloy gaps, open questions, placement, and a suggested next skill",
+        "Offers a Linear comment or a Notion page and writes neither without a yes",
+        "Does not draft a Slack message",
+        "No person's name appears in anything saved for reuse; the name appears only in the package itself"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "I'm a PM with only a brief so far (no Design Spec) for a new multi-step buyer onboarding checklist. I need something clickable for the M scope review next week to check the steps make sense.",
+      "expected_output": "Reads the brief, notes there's no Design Spec, places it, finds the current onboarding screens (or says none were found), and recommends Coded wires because it's a flow question in a brief-only scope review. On yes, rebuilds the current onboarding screens as they ship, commits the baseline, then hands to design-os-prototype From a brief at wires fidelity.",
+      "files": [],
+      "expectations": [
+        "States that no Design Spec exists",
+        "Records a source and confidence for each current onboarding screen, or says none found and what was checked",
+        "Recommends Coded wires, citing the brief-only scope review and the flow question",
+        "Hands off to design-os-prototype From a brief with wires fidelity",
+        "Commits the as-is baseline before applying the brief"
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Our team wants to add a 'Clarity fund available' banner on the company page, which another team owns, plus a small edit to our own fund details page. Just tell me how to design it and start.",
+      "expected_output": "Places it, sees the company page is owned by another team, finds that team's current frame in its Figma files (preferring ready-for-dev pages), marks the banner change as needing that team's sign-off, and recommends Figma (or Designer if the change is contested or a new pattern), never a lighter route. On yes to Figma, asks the person to duplicate the owning team's file, never edits the original, clones the affected frames onto a '<feature> · design impact' page in the copy, and annotates the changes.",
+      "files": [],
+      "expectations": [
+        "Marks the company page change as cross-team with 'needs <team> sign-off'",
+        "Recommends Figma or Designer, not Coded hi-fi or wires",
+        "Prefers a shipped or ready-for-dev frame over explorations, and says which it used",
+        "Never edits the owning team's Figma file; asks the person to duplicate it first",
+        "In the copy, creates a page named '<feature> · design impact' with the affected frames cloned and annotated",
+        "Confirms before the Figma write",
+        "Ends the readout with a 'Map suggestion: link <page> card to <frame>' line"
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "The 'Download transaction history' button on the company page is returning a 500. What's the design impact?",
+      "expected_output": "Places it on the company page, finds the current screen, classifies it as Fix (no visible change), recommends No design, and offers pm-os-ticket-brief rather than starting any build.",
+      "files": [],
+      "expectations": [
+        "Classifies the screen as Fix",
+        "Recommends the No design route",
+        "Offers pm-os-ticket-brief as the next step",
+        "Starts no prototype or Figma work"
+      ]
+    }
+  ]
+}

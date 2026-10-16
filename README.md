@@ -6,6 +6,12 @@ Each folder under `skills/` is one skill: a `SKILL.md`, plus `references/` when 
 
 ## What's new
 
+**1.5.0 (Oct 16, 2026)**
+- New `design-os-design-impact`: reads a brief, Linear item, or idea, finds every existing Clarity screen it affects (with the source and confidence for each), calls each change Fix, Compose, or Extend, and recommends one design route: no design, coded wires, coded hi-fi, Figma, or a designer. On one yes it starts from the screens as they ship: a committed as-is baseline with a Today/Proposed switch for the coded routes, an annotated `<feature> · design impact` page in a copy of the team's file for Figma, or a handoff package for the owning team's Design lead.
+- New agent `design-impact` (Claude only) runs the skill on a Linear issue or project and posts the readout and route as one proposal comment in the factory test project. It never builds. A note for the VP Product: pm-os's orchestrator and design-specialist could call it first in the design stage.
+- `design-os-prototype` has a wires fidelity: `assets/wires/wires.css` turns Alloy greyscale by redefining its own `--ds-*` variables, renders images and charts as placeholder blocks, and labels the page "Wireframe", while the components stay real Alloy. The receipt adds a Fidelity line, and the self-check exempts `wires.css` from the raw-color rule.
+- `design-os-prototype` setup fix: in ai-prototypes, keep the scaffold's `@source "../node_modules/@hiivemarkets/alloy/dist"` line, as the repo's agent instructions require. Elsewhere, follow the package's own setup.
+
 **1.4.0 (Oct 16, 2026)**
 - `design-os-prototype` builds from a Product Brief, with or without a Design Spec. It names the question the prototype answers, starts from the screen as it ships today, and plans states from the spec's scenario matrix (or derives them from the brief and marks them derived). The plan is confirmed before building. The receipt adds Source, Testing, Coverage and New patterns.
 - Covers PMs bringing a clickable prototype to the M and L scope review before a Design Spec exists. Controlled work gets a prototype only, never production code.
@@ -36,7 +42,8 @@ Each folder under `skills/` is one skill: a `SKILL.md`, plus `references/` when 
 | Skill | What it does | Status | Last edited |
 |---|---|---|---|
 | `design-os-audit-design-system` | Audits a Figma frame for Alloy coverage, adds a report card with fix IDs, and fixes chosen IDs in a copy of the frame | Live | Adam Brodowski (via Claude), Oct 16, 2026 |
-| `design-os-prototype` | Builds coded prototypes from `@hiivemarkets/alloy` components, from a brief or Design Spec or by porting Figma flows, adds a standard playground panel for stress testing, keeps each ai-prototypes app's `prototype.json` listing current, and checks the code is on-system | Live | Adam Brodowski (via Claude), Oct 16, 2026 |
+| `design-os-design-impact` | Finds every existing screen a brief affects, calls each Fix, Compose, or Extend, recommends one design route, and starts from the current screens on a yes | Live | Adam Brodowski (via Claude), Oct 16, 2026 |
+| `design-os-prototype` | Builds coded prototypes from `@hiivemarkets/alloy` components, from a brief or Design Spec or by porting Figma flows, at hi-fi or wires fidelity, adds a standard playground panel for stress testing, keeps each ai-prototypes app's `prototype.json` listing current, and checks the code is on-system | Live | Adam Brodowski (via Claude), Oct 16, 2026 |
 | `design-os-prototype-to-figma` | Ports a coded prototype back into Figma as Alloy screens in auto layout with its flow wired, then audits them with `design-os-audit-design-system` and fixes findings in place | Live | Adam Brodowski (via Claude), Oct 16, 2026 |
 | `design-os-ping` | Ranked digest of what needs a designer's attention across Slack, Linear, and their Notion task list | Live | Adam Brodowski (via Claude), Oct 16, 2026 |
 | `design-os-stress-test-design` | Stress-tests a design for edge cases (long text, high volume, extreme numbers, missing states) and builds data permutations to design against | Live | Adam Brodowski (via Claude), Oct 16, 2026; created by Ernie |
@@ -50,7 +57,11 @@ Each folder under `skills/` is one skill: a `SKILL.md`, plus `references/` when 
 
 ## Agents
 
-_None yet._
+Agents are Claude only. Each file under `agents/` is one subagent.
+
+| Agent | What it does | Last edited |
+|---|---|---|
+| `design-impact` | Runs `design-os-design-impact` on a Linear issue or project and posts the readout and recommended route as one comment, prefixed `**design-impact · proposal, not a decision**`, in the AI Software Factory Tests project only. Never builds; names the next step and who runs it | Adam Brodowski (via Claude), Oct 16, 2026 |
 
 ## Install
 
@@ -87,6 +98,7 @@ Other agents that read `SKILL.md` (Cursor and others) can link the same `skills/
 | `clarity-pm-os` | Briefs, Design Specs, and context (`pm-os-clarity-context`) that design skills read |
 | `hiive-brand` | Clarity naming, voice, deck and document styling |
 | `compliance-review` | Any client- or public-facing copy in mocks |
+| `design-os-system-map` | Org-managed. Places work on the Clarity system map; `design-os-design-impact` reads its readout to find affected pages |
 
 ## Migrating from personal copies
 

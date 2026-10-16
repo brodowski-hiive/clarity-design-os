@@ -8,10 +8,6 @@
   "should_trigger": true
  },
  {
-  "query": "which Alloy component should I use for a percentage field?",
-  "should_trigger": true
- },
- {
   "query": "does my prototype use Alloy properly?",
   "should_trigger": true
  },
@@ -25,6 +21,10 @@
  },
  {
   "query": "here's the PRD for offer floors, can you turn it into a clickable prototype for scope review",
+  "should_trigger": true
+ },
+ {
+  "query": "make a greyscale wireframe version of the onboarding prototype, mid-fi is fine",
   "should_trigger": true
  },
  {

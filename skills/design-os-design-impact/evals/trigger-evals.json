@@ -1,50 +1,14 @@
 [
- {
-  "query": "what existing screens does this offer floors brief touch, and how should we design it?",
-  "should_trigger": true
- },
- {
-  "query": "does TRA-482 need a designer or can we just build it?",
-  "should_trigger": true
- },
- {
-  "query": "design impact of this Linear project before we start design",
-  "should_trigger": true
- },
- {
-  "query": "is this Fix, Compose, or Extend? here's the PRD",
-  "should_trigger": true
- },
- {
-  "query": "should this brief go to coded wires, a coded prototype, or Figma?",
-  "should_trigger": true
- },
- {
-  "query": "find the current screens this idea changes and get me started from them",
-  "should_trigger": true
- },
- {
-  "query": "where does this sit on the system map",
-  "should_trigger": false
- },
- {
-  "query": "build a prototype of the sell flow from this brief",
-  "should_trigger": false
- },
- {
-  "query": "triage this",
-  "should_trigger": false
- },
- {
-  "query": "who owns the company page today?",
-  "should_trigger": false
- },
- {
-  "query": "write the design spec from this approved brief",
-  "should_trigger": false
- },
- {
-  "query": "audit my Figma frame for detached components",
-  "should_trigger": false
- }
+ {"query": "what existing screens does this offer floors brief touch, and how should we design it?", "should_trigger": true},
+ {"query": "does TRA-482 need a designer or can we just build it?", "should_trigger": true},
+ {"query": "design impact of this Linear project before we start design", "should_trigger": true},
+ {"query": "is this Fix, Compose, or Extend? here's the PRD", "should_trigger": true},
+ {"query": "should this brief go to coded wires, a coded prototype, or Figma?", "should_trigger": true},
+ {"query": "find the current screens this idea changes before anyone starts designing", "should_trigger": true},
+ {"query": "where does this sit on the system map", "should_trigger": false},
+ {"query": "build a prototype of the sell flow from this brief", "should_trigger": false},
+ {"query": "triage this", "should_trigger": false},
+ {"query": "who owns the company page today?", "should_trigger": false},
+ {"query": "we already agreed it goes to a designer, set up the figma file so they can jump in", "should_trigger": false},
+ {"query": "audit my Figma frame for detached components", "should_trigger": false}
 ]

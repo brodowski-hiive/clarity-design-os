@@ -7,7 +7,7 @@ description: "Port a coded Clarity prototype back into Figma as editable screens
 
 A coded prototype gets a reaction, then the design work carries on in Figma. This skill brings the prototype back so the designer can keep going without redrawing it. The screens have to be ones a designer would have built by hand on Alloy: real instances, real styles, auto layout throughout. A screenshot pasted into a frame, or a pile of absolutely positioned rectangles, is no help to anyone.
 
-The audit at the end is the proof. The skill builds the screens, then runs `design-os-audit-design-system` on its own output, adds the report card, and fixes what it can.
+The audit at the end is the proof. The skill builds the screens, then runs `design-os-audit-design-system` on its own output, adds the report card, and fixes what it can. Then it tidies the section, so the designer opens something that reads like a well-kept file rather than a dump of frames.
 
 ## Rules
 
@@ -16,8 +16,8 @@ The audit at the end is the proof. The skill builds the screens, then runs `desi
 3. **Auto layout everywhere.** Every frame that holds content uses auto layout, with gap and padding bound to `1. Primitives` spacing variables and children set to fill or hug. No absolute positioning, except for overlays that float on purpose (toasts, popovers).
 4. **Styles and variables, not values.** Text uses `Responsive Type/*` styles and colors bind to `2. Clarity` variables. Never type a hex value, or a pixel value where a variable exists.
 5. **Gaps are reported, not faked.** If Alloy has no Figma component for something the code builds, build it from auto layout, styles, and variables, name it `Custom / <what it is>`, and list it as a gap. Never draw a lookalike of an Alloy component.
-6. **Confirm before writing.** No Figma writes until the designer has approved the plan (step 3). That one yes covers the build, the report cards, and the in-place fixes. Ask again before writing anywhere else.
-7. **Only write inside the new section.** Never edit or move existing layers in the destination file.
+6. **Confirm before writing.** No Figma writes until the designer has approved the plan (step 3). That one yes covers the build, the report cards, the in-place fixes, and tidying the new section. Ask again before writing anywhere else.
+7. **Only write inside the new section.** Never edit or move existing layers in the destination file. The tidy pass in step 7 stays inside the section too.
 
 Before the first `use_figma` call, load the Figma MCP server's `figma-use` guidance: the `figma-use` skill if your agent has it installed, otherwise the `skill://figma/figma-use/SKILL.md` resource.
 
@@ -50,7 +50,7 @@ Post one message, putting the rows that need attention first:
 - **Screens:** each screen with its states and widths.
 - **Component map:** code import → Alloy Figma component → how it matched (Code Connect, name match, or gap). Gaps and props without a matching variant go first.
 - **Flow:** one line per link, for example `Review —[Place bid]→ Confirmation  (navigate)`.
-- **What happens next:** "I'll build these, wire the links, audit each frame with an Alloy report card, and fix findings directly in the new frames. Nothing outside the new section changes."
+- **What happens next:** "I'll build these, wire the links, audit each frame with an Alloy report card, fix findings directly in the new frames, and tidy the section so it reads in flow order. Nothing outside the new section changes."
 
 Apply the designer's corrections, then build. If they say "just build it", use your best guesses and list each unconfirmed one under **Assumed** in the receipt.
 
@@ -76,6 +76,18 @@ Follow `references/audit-handoff.md`. In short:
 2. Fix every finding with an exact match directly in the frame (in place, no `· Alloy fixes` copy). Mark findings that need a choice as Needs designer, and add gaps to the callout.
 3. Re-run the audit once, so each card shows the final coverage and statuses.
 
+## 7. Tidy the section
+
+Builds drift: columns shift as frames grow, report cards crowd neighbours, and a designer arriving later can't tell where the flow starts. Tidy after the audit, because the report cards are part of the layout.
+
+Where a subagent is available, run the `design-workspace-review` agent in tidy mode, scoped to the new section; otherwise follow `design-os-design-setup`'s `references/organize.md` yourself. Either way:
+
+- Order columns by the wired flow from its starting point; states under their screen; mobile row under desktop.
+- Add a section header: prototype name and source (app, path or URL), date, the flow's starting screen, and links back to the app and its `prototype.json`.
+- Add a small `→ <next screen> (<control>)` label between columns where the flow isn't obvious, and a `Needs designer` sticky beside each frame with open findings, listing their IDs.
+- Check names (`<Screen>`, `<Screen> · <State>`, `· Mobile`), even gaps, and no report card overlapping a neighbour; resize the section to fit.
+- Move nodes, never clone-and-delete, so the prototype links stay wired. Don't change anything inside a screen frame.
+
 ## Receipt
 
 End with:
@@ -85,6 +97,7 @@ End with:
 - **Needs designer:** the findings left open, with IDs and the choice to make.
 - **Gaps:** what Alloy was missing, worded so it can be pasted into #support-alloy-design-system.
 - **Flow:** links wired, and any that couldn't be wired.
+- **Organized:** what the tidy pass moved, renamed or labelled.
 - **Assumed:** guesses built without the designer confirming them.
 - **Listing:** in ai-prototypes, offer to add the section link to `prototype.json` as `links.figma` (`design-os-prototype`'s `references/listing.md`). Only write it on a yes.
 
@@ -93,6 +106,7 @@ End with:
 - `references/reading-the-prototype.md`: read in steps 1 and 2. Running the source, finding screens and states, reading layout from the DOM, and mapping imports and tokens to Figma.
 - `references/build.md`: read before the first write. Section layout, auto layout rules, instances, text and color, naming, saved data, and prototype links.
 - `references/audit-handoff.md`: read before step 6. How to call the audit, what fixing in place changes, and the final re-run.
+- `design-os-design-setup`'s `references/organize.md`: read before step 7. What good organisation looks like and what organizing never touches.
 
 ## Lessons logged
 

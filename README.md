@@ -7,9 +7,10 @@ The design operating system for Clarity: agent-agnostic skills for Clarity desig
 | Skill | What it does | Status | Last edited |
 |---|---|---|---|
 | `design-os-audit-design-system` | Audits a Figma frame for Alloy coverage, adds a report card with fix IDs, and fixes chosen IDs in a copy of the frame | Live | Adam Brodowski (via Claude), Oct 16, 2026 |
-| `design-os-design-impact` | Finds every existing screen a brief affects, calls each Fix, Compose, or Extend, recommends one design route, and starts from the current screens on a yes | Live | Adam Brodowski (via Claude), Oct 16, 2026 |
+| `design-os-design-impact` | Finds every existing screen a brief affects, calls each Fix, Compose, or Extend, recommends one design route, and hands off to `design-os-design-setup` on a yes | Live | Adam Brodowski (via Claude), Oct 16, 2026 |
+| `design-os-design-setup` | Turns a design-impact readout into a ready-to-work workspace: a Figma page cloned from the team's prior frames with notes, stickies, paste-in placeholders and empty boards; a coded as-is baseline; or a Notion/FigJam workspace. Then reviews and organizes it as a designer | Live | Adam Brodowski (via Claude), Oct 16, 2026 |
 | `design-os-prototype` | Builds coded prototypes from `@hiivemarkets/alloy` components, from a brief or Design Spec or by porting Figma flows, at hi-fi or wires fidelity, adds a standard playground panel for stress testing, keeps each ai-prototypes app's `prototype.json` listing current, and checks the code is on-system | Live | Adam Brodowski (via Claude), Oct 16, 2026 |
-| `design-os-prototype-to-figma` | Ports a coded prototype back into Figma as Alloy screens in auto layout with its flow wired, then audits them with `design-os-audit-design-system` and fixes findings in place | Live | Adam Brodowski (via Claude), Oct 16, 2026 |
+| `design-os-prototype-to-figma` | Ports a coded prototype back into Figma as Alloy screens in auto layout with its flow wired, then audits them with `design-os-audit-design-system`, fixes findings in place, and tidies the section into flow order | Live | Adam Brodowski (via Claude), Oct 16, 2026 |
 | `design-os-ping` | Ranked digest of what needs a designer's attention across Slack, Linear, and their Notion task list | Live | Adam Brodowski (via Claude), Oct 16, 2026 |
 | `design-os-stress-test-design` | Stress-tests a design for edge cases (long text, high volume, extreme numbers, missing states) and builds data permutations to design against | Live | Adam Brodowski (via Claude), Oct 16, 2026; created by Ernie |
 | `design-os-fill-mock-data` | Replaces placeholder content in a Figma frame with realistic, reconciled Clarity mock data, section by section after approval | Live | Adam Brodowski (via Claude), Oct 16, 2026; created by Ernie |
@@ -26,7 +27,9 @@ Agents are Claude only. Each file under `agents/` is one subagent.
 
 | Agent | What it does | Last edited |
 |---|---|---|
-| `design-impact` | Runs `design-os-design-impact` on a Linear issue or project and posts the readout and recommended route as one comment, prefixed `**design-impact · proposal, not a decision**`, in the AI Software Factory Tests project only. Never builds; names the next step and who runs it | Adam Brodowski (via Claude), Oct 16, 2026 |
+| `design-impact` | Runs `design-os-design-impact` on a Linear issue or project and posts the readout and recommended route as one comment, prefixed `**design-impact · proposal, not a decision**`, in the AI Software Factory Tests project only. Never builds; names the next step, `design-os-design-setup`, and who runs it | Adam Brodowski (via Claude), Oct 16, 2026 |
+| `design-setup` | Runs `design-os-design-setup` after the route and place to work are agreed: finds prior work, clones it into a labelled working page, adds notes, stickies, paste-ins and NEW boards. Never changes the team's original pages | Adam Brodowski (via Claude), Oct 16, 2026 |
+| `design-workspace-review` | Opens a Figma page or section cold as a Clarity designer. Brief mode checks flow coverage and states against the brief, then organizes on a yes; tidy mode organizes a ported prototype section. Never changes what a screen contains | Adam Brodowski (via Claude), Oct 16, 2026 |
 
 ## Install
 
@@ -61,6 +64,12 @@ Other agents that read `SKILL.md` (Cursor and others) can link the same `skills/
 Each folder under `skills/` is one skill: a `SKILL.md`, plus `references/` when needed and `evals/` (`evals.json` and `trigger-evals.json`). Each file under `agents/` is one subagent (Claude only). The Claude plugin manifest lives in `.claude-plugin/`; `.agents/skills/` links to `skills/` so Codex finds them. Agent instructions for working in this repo are in [AGENTS.md](AGENTS.md); `CLAUDE.md` just imports it for Claude Code.
 
 ## What's new
+
+**1.6.0 (Oct 16, 2026)**
+- New `design-os-design-setup`: takes a design-impact readout and builds the workspace for the route. For Figma it reads the team's files page by page to find earlier design work, asks once where to work (a labelled page in the team file, your duplicate, or a drafts file), clones prior frames into one section per group with a notes-and-links frame, sticky notes (keep, change, drop, check, maybe, open question), empty NEW boards, and orange paste-in placeholders for anything in another file. Coded routes get the as-is baseline with a Today/Proposed switch and per-screen notes; teams without a Figma file get a Notion workspace or a FigJam board. Ends with a designer's review that, on a yes, reorganizes the page.
+- `design-os-design-impact` now only assesses: it reports earlier design work, lists a team file's pages before saying "not found", and hands to setup on a yes. The handoff package moved to setup.
+- `design-os-prototype-to-figma` tidies its section after the audit: columns in flow order, a header with the source and links, flow labels, Needs designer stickies, no overlapping report cards.
+- New agents (Claude only): `design-setup` builds the workspace; `design-workspace-review` reviews it cold and follows through on organisation (brief mode), or tidies a ported section (tidy mode).
 
 **1.5.0 (Oct 16, 2026)**
 - New `design-os-design-impact`: reads a brief, Linear item, or idea, finds every existing Clarity screen it affects (with the source and confidence for each), calls each change Fix, Compose, or Extend, and recommends one design route: no design, coded wires, coded hi-fi, Figma, or a designer. On one yes it starts from the screens as they ship: a committed as-is baseline with a Today/Proposed switch for the coded routes, an annotated `<feature> · design impact` page in a copy of the team's file for Figma, or a handoff package for the owning team's Design lead.

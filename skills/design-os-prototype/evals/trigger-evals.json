@@ -20,11 +20,11 @@
   "should_trigger": true
  },
  {
-  "query": "my sell order prototype is ready, open a PR and make sure people can find it later",
+  "query": "I want to add my prototype to the Clarity Design prototype directory, it's a Figma Make link",
   "should_trigger": true
  },
  {
-  "query": "the listing for kits-v1 says TODO for the description, can you fix it",
+  "query": "here's the PRD for offer floors, can you turn it into a clickable prototype for scope review",
   "should_trigger": true
  },
  {
@@ -36,15 +36,15 @@
   "should_trigger": false
  },
  {
-  "query": "fix A3 on the report card",
-  "should_trigger": false
- },
- {
   "query": "write the engineering spec for the sell flow",
   "should_trigger": false
  },
  {
   "query": "wire up prototype connections between my Figma frames",
+  "should_trigger": false
+ },
+ {
+  "query": "write the design spec from this brief so design can start",
   "should_trigger": false
  }
 ]

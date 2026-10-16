@@ -5,7 +5,7 @@ Getting `@hiivemarkets/alloy` installed and wired up. Read when creating an app,
 New apps from `mise run new` already scaffold on `@hiivemarkets/alloy`. Older apps may still depend on `@hiivemarkets/ui`; on any of those you touch:
 
 1. In the app's `package.json`, remove `@hiivemarkets/ui` and add `@hiivemarkets/alloy` (plus `@hiivemarkets/alloy-icons` if you need icons). Use the version the newest Alloy app in the repo uses, or the latest published one.
-2. Replace the design-system block in `src/styles.css` with the setup below.
+2. Replace the design-system block in `src/styles.css` with the ai-prototypes setup below.
 3. Set `data-theme="clarity"` on `<html>` in the worker's SSR shell, and give the shell a real `<title>` (for example `Offer approvals · Clarity`).
 4. Change every `@hiivemarkets/ui/<x>` import to its Alloy equivalent, checking each against `COMPONENTS.md`, because names and props differ.
 5. Install and rebuild, using the repo's own commands.
@@ -15,6 +15,18 @@ New apps from `mise run new` already scaffold on `@hiivemarkets/alloy`. Older ap
 
 ## CSS setup (order matters)
 
+**In ai-prototypes,** keep the `src/styles.css` that `mise run new` writes, including its `@source "../node_modules/@hiivemarkets/alloy/dist"` line, because the repo's agent instructions file requires it. Add the Clarity theme after the Alloy imports if the scaffold doesn't have it:
+
+```css
+@import "tailwindcss";
+@source "../node_modules/@hiivemarkets/alloy/dist";
+@import "@hiivemarkets/alloy/styles";
+@import "@hiivemarkets/alloy/theme";
+@import "@hiivemarkets/alloy/themes/clarity";
+```
+
+**Everywhere else,** follow the package's own setup in `TOKENS.md`:
+
 ```css
 @import "tailwindcss";
 @import "@hiivemarkets/alloy/styles";
@@ -23,7 +35,7 @@ New apps from `mise run new` already scaffold on `@hiivemarkets/alloy`. Older ap
 @source "./"; /* the app's own files only */
 ```
 
-- Don't add an `@source` pointing into Alloy. Alloy declares its own, and a hand-written path breaks silently when the package moves.
+- Outside ai-prototypes, don't add an `@source` pointing into Alloy. Alloy declares its own (`dist/variables.css`), and a hand-written path breaks silently when the package moves.
 - Don't use `@theme inline`.
 - If buttons render unstyled, the imports are missing or out of order.
 - If text is in Inter instead of Roobert, `data-theme="clarity"` is missing from `<html>`.

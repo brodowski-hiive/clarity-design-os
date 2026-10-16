@@ -4,7 +4,7 @@ Build a prototype from a Product Brief, with or without a Design Spec. Turn what
 
 Two moments call for this:
 
-- **Scope review (brief only).** A PM brings a clickable prototype to the M or L scope review, before a Design Spec exists. The brief is the only source, so you derive the states yourself and mark them as derived.
+- **Scope review (brief only).** A PM brings a clickable prototype to the M or L scope review, before a Design Spec exists. The brief is the only source, so you derive the states yourself and mark them as derived. When the review's question is about flow rather than visual design, build at wires fidelity (`references/wires.md`).
 - **Design (brief + Design Spec).** After the spec is written, a designer or PM builds against its scenario matrix. The spec decides the states, data and reuse; the brief supplies the why.
 
 If there's also a Figma frame for any screen, run `references/from-figma.md` for those screens and use this file for everything else.

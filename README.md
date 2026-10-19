@@ -2,6 +2,10 @@
 
 The design operating system for Clarity: agent-agnostic skills for Clarity designers that run in Claude (as a plugin) and Codex. Sister plugin to [clarity-pm-os](https://github.com/josh-m-kramer/clarity-pm-os).
 
+> **New to Design OS? Start with [ONBOARDING.md](ONBOARDING.md).** It walks you through getting repo access, installing the plugin in Claude, connecting Figma, Linear, Notion and Slack, and the first skills to try. About 15 minutes, no git or terminal needed.
+>
+> **Need help?** Ask in the design channel, or contact the Design OS owner (listed in the Notion Product Team Directory).
+
 ## Skills
 
 | Skill | What it does | Status | Last edited |
@@ -32,6 +36,8 @@ Agents are Claude only. Each file under `agents/` is one subagent.
 | `design-workspace-review` | Opens a Figma page or section cold as a Clarity designer. Brief mode checks flow coverage and states against the brief, then organizes on a yes; tidy mode organizes a ported prototype section. Never changes what a screen contains | Adam Brodowski (via Claude), Oct 16, 2026 |
 
 ## Install
+
+New to Design OS? Start with [ONBOARDING.md](ONBOARDING.md).
 
 **Cowork / Claude (desktop and web)**
 

@@ -8,5 +8,6 @@
   {"query": "what should our multi-year product strategy be?", "should_trigger": false},
   {"query": "stress test this screen", "should_trigger": false},
   {"query": "is this frame using Alloy?", "should_trigger": false},
-  {"query": "what's the status of the data room project in Linear?", "should_trigger": false}
+  {"query": "what's the status of the data room project in Linear?", "should_trigger": false},
+  {"query": "redesign this screen based on how other apps do it", "should_trigger": false}
 ]

@@ -1,6 +1,6 @@
 ---
 name: "design-os-research-patterns"
-description: "Research how 15+ competitors and cross-industry products handle a screen or feature (data room, transfer modal, cap table), with tradeoffs and source links, to explore or to check a design. Use for \"how do competitors handle X\", \"pattern research\", \"what's out there for X\", \"inspiration for this screen\", \"how does this compare to the market\". Not for: critiquing a mock (design-os-review-design-work), product strategy (pm-os-product-strategy), or stress tests (design-os-stress-test-design)."
+description: "Research how 15+ competitors and cross-industry products handle a screen or feature (data room, transfer modal, cap table), with tradeoffs and source links, to explore or to check a design. Use for \"how do competitors handle X\", \"pattern research\", \"what's out there for X\", \"how does this compare to Carta\", \"how does this compare to the market\". Not for: app-pattern redesigns (mobbin:redesign-screen), product strategy (pm-os-product-strategy), or stress tests (design-os-stress-test-design)."
 ---
 
 # Research patterns
@@ -79,7 +79,7 @@ Rules:
 - Every link must come from search or fetch results. Direct image URLs are fine when found.
 - Stay neutral: the summary states a finding, not a recommendation.
 
-End with one line offering the full pattern breakdown. When asked, give a table per pattern (Pattern | Approaches seen | Tradeoff), plus, in validation mode, a comparison table (Pattern | Your design | Market | Note). If the user asks to expand a single pattern, give a fuller prose write-up of that pattern only.
+End with one line offering the full pattern breakdown. Once the designer picks a direction, offer to log it with `design-os-design-decisions`; the research itself stays neutral. When asked, give a table per pattern (Pattern | Approaches seen | Tradeoff), plus, in validation mode, a comparison table (Pattern | Your design | Market | Note). If the user asks to expand a single pattern, give a fuller prose write-up of that pattern only.
 
 ## Reference files
 

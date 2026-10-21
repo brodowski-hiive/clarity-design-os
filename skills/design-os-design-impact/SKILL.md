@@ -1,6 +1,6 @@
 ---
 name: "design-os-design-impact"
-description: "Read a brief, Linear item, or idea, find the Clarity screens it affects, call each Fix, Compose, or Extend, and recommend one design route (none, coded wires or hi-fi, Figma, or a designer), then hand off to setup on a yes. Use for \"what screens does this touch\", \"how should we design this\", \"design impact of TRA-123\", \"does this need a designer\". Not for: setting up the workspace (design-os-design-setup), system map placement (design-os-system-map), or lane and risk (pm-os-triage-lane)."
+description: "Read a brief, Linear item, or idea, find the Clarity screens it affects, call each Fix, Compose, or Extend, and recommend one design route (none, coded wires or hi-fi, Figma, or a designer), then hand off to setup on a yes. Use for \"how should we design this\", \"design impact of TRA-123\", \"does this need a designer\", \"Fix, Compose, or Extend?\". Not for: setting up the workspace (design-os-design-setup), system map placement (design-os-system-map), or lane and risk (pm-os-triage-lane)."
 ---
 
 # Design OS: design impact

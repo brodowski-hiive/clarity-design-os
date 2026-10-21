@@ -37,7 +37,7 @@ Rules:
 - **Fictional only.** Never use real people, real companies, or real funds. Invented names should sound plausible but not match well-known firms.
 - **Consistent across the screen.** The same entity has the same name everywhere. All math reconciles: rows sum to totals, remaining = max − used, price × shares = value, breakdown lines sum to the net figure, percentages add up.
 - **Logical over time.** Dates follow the flow (acquired before transferred, deadline after submission).
-- **Match existing formatting.** Keep the frame's currency format, decimal places, date style, separators, and casing.
+- **Match existing formatting.** Keep the frame's currency format, decimal places, date style, separators, and casing. Where `design-os-design-decisions` has an Active `Data & formatting` guideline, follow it and flag frames that don't.
 - **Typical, not extreme.** Keep lengths close to the original so layouts hold. Stress testing with extreme values belongs to the `design-os-stress-test-design` skill; mention it if the user wants that instead.
 
 ## 4. Propose by section

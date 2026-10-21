@@ -81,4 +81,5 @@ Bump `version` in `.claude-plugin/plugin.json` on every PR that touches `skills/
 - [ ] No person's name; roles only.
 - [ ] Agent-agnostic: no Claude-only tool, feature, or file named without an alternative (section 5).
 - [ ] Both eval files present and valid JSON.
+- [ ] For a release: `design-os-design-decisions` `references/guidelines-snapshot.md` refreshed from the log (`references/snapshot.md`).
 - [ ] README updated: a What's new entry for the version, and the Last edited column for each skill you changed.

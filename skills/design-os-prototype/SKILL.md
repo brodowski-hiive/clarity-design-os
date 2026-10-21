@@ -114,7 +114,7 @@ From a brief, also include:
 - **Source:** the brief (with Doc Stage and last-edited date) and the Design Spec, or "brief only".
 - **Testing:** the question the prototype answers.
 - **Coverage:** Must-demonstrate states built and how to reach each one; Must-specify rules followed; deferrals carried forward unchanged. Brief only: derived states marked as such.
-- **New patterns:** anything the spec called new or Alloy lacked, for design to pick up.
+- **New patterns:** anything the spec called new or Alloy lacked, for design to pick up. Offer in one line to propose each as a guideline with `design-os-design-decisions`.
 - **Assumed:** guesses beyond the documents, quoting any brief Open item you guessed at.
 
 ## Reference files

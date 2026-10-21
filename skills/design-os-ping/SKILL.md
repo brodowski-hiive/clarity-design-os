@@ -1,6 +1,6 @@
 ---
 name: "design-os-ping"
-description: "Sweep Slack, Linear, and the designer's Notion task list for what needs their attention and return one ranked digest, with Figma links carried through. Use for \"/design-ping\", \"design ping\", \"what's on my plate\", \"what am I missing\", \"catch me up on Slack and Linear\", \"check my tickets and Slack\". Not for: team-wide stalled design asks (design-dragnet), Slack-only catch-up for non-designers (ping), or feature status (pm-os-clarity-context)."
+description: "Sweep Slack, Linear, and the designer's Notion task list for what needs their attention and return one ranked digest, with Figma links carried through. Use for \"/design-ping\", \"design ping\", \"what's on my plate\", \"catch me up on Slack and Linear\", \"check my tickets and Slack\", \"anything in Linear waiting on me\". Not for: Slack-only catch-up (ping), the morning brief (morning), or feature status (pm-os-clarity-context)."
 ---
 
 # Design OS Ping

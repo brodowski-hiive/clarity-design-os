@@ -1,0 +1,14 @@
+[
+  {"query": "make a call: ghost or secondary button for Cancel in this dialog?", "should_trigger": true},
+  {"query": "log this decision: step tracker maxes out at six steps", "should_trigger": true},
+  {"query": "what did we decide about truncating titles on mobile?", "should_trigger": true},
+  {"query": "is there a guideline for how we format share prices?", "should_trigger": true},
+  {"query": "does this frame break any of our design guidelines?", "should_trigger": true},
+  {"query": "what design calls are waiting on the working council?", "should_trigger": true},
+  {"query": "audit my frame for detached components", "should_trigger": false},
+  {"query": "log to the offer floors initiative that we're launching to Canada first", "should_trigger": false},
+  {"query": "create a DACI for building our own e-signature", "should_trigger": false},
+  {"query": "how do competitors handle dismissible alerts?", "should_trigger": false},
+  {"query": "add an onDismiss prop to the Alloy Alert component", "should_trigger": false},
+  {"query": "critique the UX of this onboarding flow", "should_trigger": false}
+]

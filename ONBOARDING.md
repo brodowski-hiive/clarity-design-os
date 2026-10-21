@@ -7,7 +7,7 @@ Setup takes about 15 minutes. You don't need to know git or use a terminal.
 ## What you need
 
 - The Claude desktop app, signed in with your Clarity work account
-- Your GitHub account
+- A GitHub account. No account yet? Sign up free at [github.com/signup](https://github.com/signup)
 - Your usual Figma, Linear, Notion and Slack accounts
 
 ## How the repo works
@@ -18,9 +18,10 @@ Setup takes about 15 minutes. You don't need to know git or use a terminal.
 
 The repo is public, so anyone can install the plugin. Access lets you propose changes to skills.
 
-1. Send your GitHub username to the Design OS owner (listed in the Notion Product Team Directory).
-2. You'll get an email: *"… invited you to collaborate on brodowski-hiive/clarity-design-os"*. Click **View invitation**, then **Accept invitation**.
-3. No email? Go to [github.com/notifications](https://github.com/notifications) or check spam. Invites expire after 7 days; ask for a new one if it lapses.
+1. Don't have a GitHub account? Create one at [github.com/signup](https://github.com/signup), then verify your email.
+2. Send your GitHub username to the Design OS owner (listed in the Notion Product Team Directory).
+3. You'll get an email: *"… invited you to collaborate on brodowski-hiive/clarity-design-os"*. Click **View invitation**, then **Accept invitation**.
+4. No email? Go to [github.com/notifications](https://github.com/notifications) or check spam. Invites expire after 7 days; ask for a new one if it lapses.
 
 ## Step 2: Install the plugin in Claude
 

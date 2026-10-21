@@ -86,7 +86,7 @@ Controlled work gets a prototype only, never production code. Regulated copy is 
 When the designer asks for a playground, tweaks, or test controls, add the standard panel from `references/playground.md`:
 
 1. Propose stress-test settings and get a yes.
-2. Install the shared files unchanged.
+2. Install the shared files unchanged, in the default style unless the designer names another.
 3. Write only the prototype's config.
 
 After any build with lists, forms, numbers, or loading data, offer one in a line ("Want a playground so testers can try empty, many, long text, and error states?").
@@ -100,7 +100,7 @@ End every build with:
 - **Custom:** anything not from Alloy, and why.
 - **Gaps:** what Alloy is missing, worded so it can be pasted into #support-alloy-design-system.
 - **Self-check:** passed, or what's left and why.
-- **Playground:** the controls added, if any.
+- **Playground:** the style and controls added, if any.
 - **Listing:** the name, description, team and status as the directory card will show them, anything still missing, and when it appears (after the PR merges). Outside the repo: "Not in the directory yet" and how to move it in.
 
 From a Figma source, also include:
@@ -126,8 +126,9 @@ From a brief, also include:
 - `references/self-check.md`: read before saying a prototype is done, or when asked whether a prototype uses Alloy.
 - `references/wires.md`: read when building at wires fidelity (a wireframe, mid-fi, or greyscale prototype). When wires fit, install, scope, and the receipt line.
 - `references/playground.md`: read when adding or changing a playground. The plan, stress-test catalog, and install steps.
+- `references/playground-styles.md`: read when the designer names a playground style, asks for a different look, or wants to save their own as a style. The styles, installing one, and adding one.
 - `references/lessons-archive.md`: older lessons; read when changing setup or the playground files.
-- `assets/playground/`: the shared playground files (`engine.ts`, `provider.tsx`, `panel.tsx`, `playground.css`) and `config.example.ts`. Copy, don't rewrite.
+- `assets/playground/`: the shared playground files (`engine.ts`, `provider.tsx`, `panel.tsx`, `playground.css`) and `config.example.ts`; other styles' `panel.tsx` and `playground.css` in `styles/<name>/`. Copy, don't rewrite.
 - `assets/wires/wires.css`: the greyscale wire layer. Copy, don't rewrite.
 - `assets/clarity-logo.svg`: the Clarity wordmark, `currentColor`.
 

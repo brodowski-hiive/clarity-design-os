@@ -9,5 +9,6 @@
   {"query": "ping - just Slack, any DMs I missed?", "should_trigger": false},
   {"query": "where are we on the onboarding redesign project in Linear?", "should_trigger": false},
   {"query": "clean up the layer names in this Figma file", "should_trigger": false},
-  {"query": "review this mock for the new listing flow", "should_trigger": false}
+  {"query": "review this mock for the new listing flow", "should_trigger": false},
+  {"query": "run my morning brief", "should_trigger": false}
 ]

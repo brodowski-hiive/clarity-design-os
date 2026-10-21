@@ -8,5 +8,6 @@
   {"query": "does this brief give engineering what they need to start?", "should_trigger": false},
   {"query": "stress test this screen with long names", "should_trigger": false},
   {"query": "fix the placeholder data in this frame", "should_trigger": false},
-  {"query": "build a coded prototype of this flow", "should_trigger": false}
+  {"query": "build a coded prototype of this flow", "should_trigger": false},
+  {"query": "review this PR", "should_trigger": false}
 ]

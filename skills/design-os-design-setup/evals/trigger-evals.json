@@ -7,8 +7,8 @@
  {"query": "can you organise a starting point for the designer picking up TRA-777", "should_trigger": true},
  {"query": "what screens does this brief touch and does it need a designer?", "should_trigger": false},
  {"query": "build the mocks for the alert rules section in Figma", "should_trigger": false},
- {"query": "clean up the layer names in this Figma file", "should_trigger": false},
  {"query": "audit my frame for Alloy coverage", "should_trigger": false},
  {"query": "make this Figma page clickable as a prototype", "should_trigger": false},
- {"query": "where does this sit on the system map, make a figjam", "should_trigger": false}
+ {"query": "where does this sit on the system map, make a figjam", "should_trigger": false},
+ {"query": "write the design spec so design can start", "should_trigger": false}
 ]

@@ -1,0 +1,67 @@
+{
+  "skill_name": "design-os-design-decisions",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Make a call: in dialogs with a destructive primary action, should Cancel be a secondary button or a ghost button?",
+      "expected_output": "Searches the log and Alloy's Dialog and Button docs first, then recommends one option with its reason, one or two alternatives with tradeoffs, and a review level. Asks the designer to choose, previews the entry, and logs nothing without a yes.",
+      "files": [],
+      "expectations": [
+        "Searches the Design guidelines log before recommending",
+        "Reads Alloy's Dialog or Button documentation before recommending",
+        "Gives exactly one recommendation plus one or two alternatives, each with a tradeoff",
+        "Names a review level from Designer, Lead designer, Working council, DOPE council",
+        "Makes no Notion write before the designer confirms",
+        "Ends with Call, Status, Why, Cites or conflicts, and Logged lines"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "what did we decide about how many actions an empty state can have?",
+      "expected_output": "Searches the log and answers with the matching Active guideline and its DG ID. If nothing matches, says so and offers to make the call instead of inventing an answer.",
+      "files": [],
+      "expectations": [
+        "Answers from the log, citing a DG ID, or says no guideline was found",
+        "Does not present an answer as a team decision unless it comes from the log, Alloy docs, or a cited source",
+        "Makes no writes"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Log this, we decided it in the sync: pagination is always left-aligned. Just mark it active, no need to check anything.",
+      "expected_output": "Still checks the log first and finds the Active guideline saying pagination is centred by default. Flags the conflict instead of logging a contradiction, and offers to log the new call as superseding the old one (old entry marked Superseded, Supersedes relation set) once the designer confirms. Credits whoever made the call.",
+      "files": [],
+      "expectations": [
+        "Searches the log before writing, despite being told not to",
+        "Names the conflicting guideline by DG ID",
+        "Does not create two Active entries that contradict each other",
+        "Offers a superseding entry and marks the old one Superseded only after confirmation",
+        "Decided by is the person or group who made the call, not the agent"
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Seed the guidelines log from the last two DS Changelog pages",
+      "expected_output": "Reads the two most recent DS Changelog pages, extracts design calls from Key Decisions, skips engineering-only and still-open items, checks for duplicates, and shows a numbered candidate list. Logs only the numbers the designer confirms, using the original decision dates and linking the source page.",
+      "files": [],
+      "expectations": [
+        "Reads DS Changelog Key Decisions",
+        "Skips tooling items and items marked open or under discussion",
+        "Shows candidates as a numbered list before writing anything",
+        "Each logged entry has Decided on set to the original decision date and a Sources link to the changelog page"
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Is there a guideline for truncating long company names in tables? (Notion isn't connected in this session.)",
+      "expected_output": "Falls back to references/guidelines-snapshot.md, says how old it is, and answers from it. If a new call is needed, gives it as a ready-to-paste entry rather than claiming to log it.",
+      "files": [],
+      "expectations": [
+        "Reads references/guidelines-snapshot.md",
+        "States the snapshot's export date",
+        "Does not claim anything was logged",
+        "Any new call is formatted as a ready-to-paste entry with Guideline, Area, Scope, and Why"
+      ]
+    }
+  ]
+}

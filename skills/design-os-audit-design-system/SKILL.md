@@ -29,6 +29,8 @@ Work out **Alloy coverage**: of the elements that should be Alloy (controls, sur
 
 Collect **Alloy gaps**: things the frame needed that Alloy doesn't provide (no component, style, or token, or a component a description references but that isn't published). These aren't designer mistakes. Record each with the finding IDs where it showed up. `references/known-gaps.md` lists gaps already seen; confirm each is still missing before reporting it.
 
+Before calling a lookalike or a custom element a finding, look up the components involved with `design-os-design-decisions` (read-only). An Active guideline that allows the exception means it isn't a finding; name its ID in the report instead.
+
 ## 3. Report card
 
 Ask once per frame before adding it ("I'll add a report card to the right of Checkout. OK?"), unless `design-os-prototype-to-figma` is running the audit and its plan approval already covered it. Then build it as in `references/report-card.md`: beside the original, made from Alloy, with the gaps callout, each ID linked to its layer, and the findings saved in the file so a later chat can pick them up.
@@ -45,7 +47,7 @@ When the designer names IDs:
 2. If the frame is marked `prototype-port-superseded`, don't fix it; point to the current port (`references/report-card.md`, Fixing in place). If it's a `prototype-port` frame, skip the copy and fix in place. Otherwise, if the frame has no fix copy yet, duplicate the original, name it `<frame name> · Alloy fixes`, and place it below the original with an 80px gap. Reuse the same copy for later fixes.
 3. Map each finding's node to its counterpart in the copy (same index path in the layer tree) and apply the fix there, using the fix notes in `references/findings.md`. Screenshot the affected section after each batch, and the whole copy at the end.
 4. Update each finding's status on the report card: **Fixed in copy** (linked to the fixed layer), **Partly fixed in copy · Needs designer**, **Needs designer** (with the specific choice to make), or **Couldn't fix** (with the reason). "Fix all <severity>" includes findings that need a decision; mark them, don't skip them silently. Add any gaps found while fixing to the callout.
-5. In chat, list what changed and what didn't, and remind them the original is untouched. They keep whichever version they want.
+5. In chat, list what changed and what didn't, and remind them the original is untouched. They keep whichever version they want. When the designer settles a Needs designer choice that will come up again (which heading style, which variant), offer in one line to log it with `design-os-design-decisions`.
 
 ## Reference files
 

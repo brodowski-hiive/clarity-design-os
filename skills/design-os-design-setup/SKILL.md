@@ -1,6 +1,6 @@
 ---
 name: "design-os-design-setup"
-description: "Turn a design-impact readout into a ready-to-work design workspace: a Figma page built from the team's prior frames with notes, stickies, paste-ins and empty boards; a coded baseline; or a Notion/FigJam workspace. Then review it as a designer. Use for \"set up the Figma for this\", \"get this ready for design\", \"start the designer route\", \"prep the file\". Not for: deciding the route (design-os-design-impact), building mocks (design-os-create-mocks), Alloy audits (design-os-audit-design-system)."
+description: "Turn a design-impact readout into a ready-to-work design workspace: a Figma page built from the team's prior frames with notes, stickies, paste-ins and empty boards; a coded baseline; or a Notion/FigJam workspace. Then review it as a designer. Use for \"set up the Figma for this\", \"start the designer route\", \"pull in the old frames\", \"prep a working page\". Not for: deciding the route (design-os-design-impact), the Design Spec (pm-os-write-spec), Alloy audits (design-os-audit-design-system)."
 ---
 
 # Design OS: design setup

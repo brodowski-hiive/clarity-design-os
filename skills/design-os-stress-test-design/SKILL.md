@@ -26,6 +26,8 @@ For each dynamic element, check the categories below. Use realistic values from 
 - **People and roles**: viewer vs. admin vs. external party, user with no name or avatar, many collaborators, the current user appearing in lists.
 - **Layout**: narrowest supported width, browser zoom at 200%, truncation vs. wrapping behavior, alignment of numeric columns.
 
+Where `design-os-design-decisions` has an Active guideline for a behavior (truncation, empty states, number formats), test against it and cite its ID. Where there's none and the design has to choose, list it as a call to make.
+
 ## 3. Build permutations
 
 1. Identify the variables (e.g. holder type, share class count, status, document count).

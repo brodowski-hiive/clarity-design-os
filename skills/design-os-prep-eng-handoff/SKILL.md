@@ -1,6 +1,6 @@
 ---
 name: "design-os-prep-eng-handoff"
-description: "Prepare a Clarity design for engineering handoff: the questions engineers will ask, what's costly to build, and the backend, permission, and data implications, as a short checklist. Use for \"ready for eng?\", \"handoff checklist\", \"what will eng ask\", \"eng review\", \"backend implications of this design\". Not for: the Engineering Spec (pm-os-write-spec), handoff completeness gates (pm-os-artifact-handoff-contracts), or edge-case stress tests (design-os-stress-test-design)."
+description: "Prepare a Clarity design for engineering handoff: the questions engineers will ask, what's costly to build, and the backend, permission, and data implications, as a short checklist. Use for \"ready for eng?\", \"handoff checklist\", \"what will eng ask\", \"what's expensive to build here\", \"backend implications of this design\". Not for: the Engineering Spec (pm-os-write-spec), handoff completeness gates (pm-os-artifact-handoff-contracts), or edge-case stress tests (design-os-stress-test-design)."
 ---
 
 # Prep eng handoff
@@ -19,6 +19,7 @@ If the scope is unclear (one screen vs. a whole flow), ask one short question. O
 When the work has an initiative or Linear issue (named by the user or linked from the Figma file) and `clarity-pm-os` is installed, read before analyzing, so the checklist asks only what's still open:
 
 - **Initiative record:** read it with `pm-os-initiative-record` (Decisions, Numbers of record, Artifacts, including the brief and Design Spec). Skip questions the record already answers. A design that contradicts a recorded decision is the first question.
+- **Design guidelines:** look up the components and patterns in the design with `design-os-design-decisions` (read-only). A design that breaks an Active guideline is a question, citing its ID; a call the guideline already settles needs no question.
 - **Architecture:** for backend items, read the `pm-os-clarity-context` node for the surface (for example `infra/issuer-workflows` for ROFR and approvals, `infra/transactions` for transfers) and cite its live doc. Where the node is Partial or a Placeholder, say so and keep the item as a question for eng.
 
 Read only; this skill doesn't write to the record or Linear. If neither source is available, work from the design and say so in one line.

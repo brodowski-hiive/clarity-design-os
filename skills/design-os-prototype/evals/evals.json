@@ -182,6 +182,20 @@
         "Makes no writes to the Figma file",
         "Offers a re-port with design-os-prototype-to-figma after the change is pushed"
       ]
+    },
+    {
+      "id": 14,
+      "prompt": "Add a playground to my holdings prototype, but use the dopetycoon one, the retro window. I want to try empty, lots of holdings, and a load error.",
+      "expected_output": "Proposes a playground plan for the holdings screen and gets a yes, then installs the shared engine.ts and provider.tsx with dopetycoon's panel.tsx and playground.css, adds the two pixel-font packages, writes only config.ts, and verifies the panel including resizing.",
+      "files": [],
+      "expectations": [
+        "Proposes the settings (including empty, many holdings, and load error) and waits for the designer to confirm before installing",
+        "Copies engine.ts and provider.tsx from assets/playground/ and panel.tsx and playground.css from assets/playground/styles/dopetycoon/, unchanged",
+        "Adds @fontsource/press-start-2p and @fontsource/vt323 to the prototype",
+        "Writes only src/playground/config.ts per prototype, following config.example.ts",
+        "Checks in the browser that each control changes the page, Copy link reproduces the state, ?playground=off hides it, and the window resizes and maximizes",
+        "Lists the playground style and controls in the Alloy receipt"
+      ]
     }
   ]
 }

@@ -4,7 +4,7 @@ Adding a playground panel to a prototype: the plan, the stress-test settings to 
 
 A small onyx, monospace panel in Clarity colors that opens from a "Playground" launcher in the bottom-right. Testers use it to stress the prototype (empty, many, long text, errors, loading) and to flip between design options. Settings live in the URL, so "Copy link" gives anyone the exact same state (a pop-up explains this to the tester). `?playground=off` hides it for demos and screenshots; the tilde key (~) opens and closes it, as the title bar says.
 
-It's prototype tooling, not design: it never uses Alloy components, and it always looks the same, in every prototype.
+It's prototype tooling, not design: it never uses Alloy components. It comes in styles that share one engine; use the default style unless the designer names another (see `references/playground-styles.md`).
 
 ## 1. Propose a plan first
 
@@ -38,7 +38,7 @@ States should render real Alloy states: `EmptyState` for empty, `Skeleton` for l
 
 ## 3. Install
 
-1. Copy the four files from this skill's `assets/playground/` into the prototype at `src/playground/`, unchanged: `engine.ts`, `provider.tsx`, `panel.tsx`, `playground.css`. If they already exist, compare and update to the skill's version.
+1. Copy the four files from this skill's `assets/playground/` into the prototype at `src/playground/`, unchanged: `engine.ts`, `provider.tsx`, `panel.tsx`, `playground.css`. For another style, take `panel.tsx` and `playground.css` from its folder instead (`references/playground-styles.md`). If they already exist, compare and update to the skill's version.
 2. Write `src/playground/config.ts` from the approved plan, using `assets/playground/config.example.ts` as the pattern. Groups, in this order: Data, States, Content, Design, Access. Use the designer's words for labels.
 3. Import `./playground/playground.css` from the app's CSS entry, after the Alloy imports.
 4. Wrap the app in `client.tsx`: `<PlaygroundProvider config={playground}><App /></PlaygroundProvider>`.
@@ -49,4 +49,4 @@ Prototypes that aren't React (plain HTML) don't get the playground; say so and o
 
 ## Existing playgrounds
 
-`apps/fund-offerings` has an older retro-style playground. Don't convert existing ones unless asked; new playgrounds always use these files.
+`apps/fund-offerings` has an older retro-style playground, the origin of the dopetycoon style. Don't convert existing ones unless asked; new playgrounds always use these files, in the default style or the one the designer names.

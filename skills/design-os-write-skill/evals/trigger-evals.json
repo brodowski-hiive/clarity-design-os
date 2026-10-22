@@ -1,0 +1,14 @@
+[
+  {"query": "turn my notes on tooltip cards into a design-os skill", "should_trigger": true},
+  {"query": "write a skill for how we set up Figma files", "should_trigger": true},
+  {"query": "add this rule to the prototype-to-figma skill", "should_trigger": true},
+  {"query": "my audit skill isn't working, the agent ignores half of it", "should_trigger": true},
+  {"query": "package how I clean up Figma pages so the team's agents do it the same way", "should_trigger": true},
+  {"query": "review this SKILL.md before I open a PR", "should_trigger": true},
+  {"query": "we decided drawers use Section Title for headers, log that", "should_trigger": false},
+  {"query": "write a skill that formats our Python release notes", "should_trigger": false},
+  {"query": "clean up the layer names in this Figma file", "should_trigger": false},
+  {"query": "write the Design Spec for the onboarding redesign", "should_trigger": false},
+  {"query": "audit my frame for Alloy coverage", "should_trigger": false},
+  {"query": "what did we decide about badge colours?", "should_trigger": false}
+]

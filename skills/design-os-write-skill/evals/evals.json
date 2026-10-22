@@ -1,0 +1,52 @@
+{
+  "skill_name": "design-os-write-skill",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "turn this into a skill so agents set up tooltips properly: every screen gets a tooltips card to its right with real Alloy Tooltip instances, numbered top to bottom, each info icon annotated 'Tooltip 3 · Fee → see tooltips card', card never wider than the screen, one tall list not a grid, never invent copy, never touch the approved page",
+      "expected_output": "Places the rule by the step 1 tree, sorts the notes, writes steps with a Why on each rule, and asks the designer about every value the notes leave open instead of filling them in.",
+      "files": [],
+      "expectations": [
+        "States where the rule belongs (new skill or an existing skill) before writing, with the reason",
+        "Takes the card's gap from the designer's written standard or an existing card; asks with a recommended default only if neither has it; never invents a pixel value",
+        "Asks the designer no more than about 8 questions, blocking ones first, each with a recommended default",
+        "Verifies the Alloy Tooltip variant and property names in the library, or marks them unverified and asks",
+        "Every numbered rule carries a Why",
+        "Contains none of: reasonably, appropriate, sensible, near, roughly, try to, consider"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "make this a skill: when the agent ports a playground to Figma it keeps 'improving' things we already decided, it added a fees column nobody asked for, and it re-adds things I deleted on purpose",
+      "expected_output": "Recognises design-os-prototype-to-figma already does porting and proposes rules or references there instead of a new skill.",
+      "files": [],
+      "expectations": [
+        "Lists skills/ and reads design-os-prototype-to-figma before deciding",
+        "Proposes edits to design-os-prototype-to-figma rather than a new skill",
+        "The 'deleted on purpose' rule names what the agent reads to detect a deletion (for example saved plugin data from the last build), or adds a step that records it",
+        "Each incident appears once, not as story, reason and lesson"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "my audit skill keeps saying colours have no token when they do. can you fix the skill?",
+      "expected_output": "Treats it as a revision: runs or describes a baseline, adds the smallest change where the failing step lives, and tests it.",
+      "files": [],
+      "expectations": [
+        "Edits the existing skill's step or reference, not a new skill",
+        "Describes a baseline run showing the failure before the change",
+        "Adds a Lessons logged line and moves the oldest to references/lessons-archive.md if there are already 3"
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "we decided Section Title is the heading style for drawer headers, can you make that a skill?",
+      "expected_output": "Recognises a single design call and routes it to design-os-design-decisions instead of writing a skill.",
+      "files": [],
+      "expectations": [
+        "Does not create a skill",
+        "Points to design-os-design-decisions to log the call"
+      ]
+    }
+  ]
+}

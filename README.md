@@ -22,6 +22,7 @@ The design operating system for Clarity: agent-agnostic skills for Clarity desig
 | `design-os-prep-eng-handoff` | Gets ahead of eng handoff: the questions engineers will ask and the backend, permission, and data work the design implies | Live | Adam Brodowski (via Claude), Oct 21, 2026; created by Ernie |
 | `design-os-research-patterns` | Researches how 15+ competitors and cross-industry products handle a screen or feature, with tradeoffs and source links | Live | Adam Brodowski (via Claude), Oct 21, 2026; created by Ernie |
 | `design-os-design-decisions` | Makes design calls with the designer (checks the guidelines log and Alloy, recommends one option with its reason and review level), logs confirmed calls to the Design guidelines log in Notion with IDs, answers "what did we decide?", and ships an Active-guidelines snapshot with each release | Live | Adam Brodowski (via Claude), Oct 21, 2026 |
+| `design-os-write-skill` | Writes or revises a design-os skill so it changes what an agent does: decides whether a rule belongs in a new skill or an existing one, turns a designer's notes into steps with reasons, cuts what doesn't change behavior, and tests it against a baseline. Principles adapted from Emil Kowalski's guidance on writing skills | Live | Ellen Pennock (via Claude), Oct 22, 2026 |
 | `design-os-create-mocks` | Turns a brief and Design Spec into Figma mocks on Alloy (coded prototypes from a brief: `design-os-prototype`) | Planned | — |
 | `design-os-review-design-work` | Critiques a drafted mock or flow | Planned | — |
 
@@ -72,6 +73,9 @@ Other agents that read `SKILL.md` (Cursor and others) can link the same `skills/
 Each folder under `skills/` is one skill: a `SKILL.md`, plus `references/` when needed and `evals/` (`evals.json` and `trigger-evals.json`). Each file under `agents/` is one subagent (Claude only). The Claude plugin manifest lives in `.claude-plugin/`; `.agents/skills/` links to `skills/` so Codex finds them. Agent instructions for working in this repo are in [AGENTS.md](AGENTS.md); `CLAUDE.md` just imports it for Claude Code.
 
 ## What's new
+
+**1.10.0 (Oct 22, 2026)**
+- New `design-os-write-skill`: how to write a design-os skill that changes what an agent does. It decides first whether a rule belongs in a new skill, an existing skill, its references, or the design guidelines log. Then it sorts a designer's notes into rules, reasons, stories and values, and asks about any value nobody gave rather than inventing one. Figma and Alloy names are checked live, and every check names what the agent reads to answer it. Finally it tests the skill against a baseline run. The six writing principles are adapted from Emil Kowalski's guidance. AGENTS.md now points contributors to it.
 
 **1.9.0 (Oct 21, 2026)**
 - `design-os-prototype` playgrounds come in styles. Every style runs on the same engine and config, so a prototype can switch looks by swapping two files. The first new one is dopetycoon, a retro pixel "Playground.exe" window from the fund offerings prototype: draggable, resizable from any edge or corner, with maximize, and its option groups flow into columns when it's wide. Default stays the onyx panel. `references/playground-styles.md` lists the styles and explains how to add your own.

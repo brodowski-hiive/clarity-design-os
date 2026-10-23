@@ -4,6 +4,10 @@ Working notes for whoever picks this repo up next. What shipped in each release 
 
 ## Sessions
 
+**Oct 23, 2026: 1.10.0**
+- `design-os-placeholder-copy` came in as a zip of content design's `clarity-design-tools` repo (plugin `clarity-copy`, skill `clarity-placeholder-copy` 0.1.0). Repackaged to this repo's conventions: `design-os-` name, quoted two-key frontmatter, a 500-character description with Not for, agent-agnostic tool wording, Reference files, Lessons logged, and evals. Behavior is unchanged except one thing: the original treated "fill it in" as the go-ahead to write to Figma; here it asks one yes first, per the confirm-before-every-write rule.
+- Content design owns the copy rules. The style guide, A to Z, and leadership log are read live, so most updates don't touch the repo; the 17 core rules and the audience references do. Changes to those should come from content design. The standalone `clarity-design-tools` repo should be retired or point here, so there aren't two copies.
+
 **Oct 23, 2026: 1.9.1**
 - A lint pass over every skill for duplicated effort. The mechanical checks all passed; the fixes were overlap. Each kind of check now has one owner the others point to: edge cases and states belong to `design-os-stress-test-design`'s categories, Clarity data and the mock-math checklist to `design-os-fill-mock-data`'s `domain-data.md`. Stress-test, prep-eng-handoff and the playground now depend on files in other skills, the same way prototype-to-figma already reads the audit's `alloy-library.md`.
 - Prototype's evals went from 14 to 9, not 5. Getting to 5 would have dropped whole modes (the return path from Figma, the self-check, the shadcn refusal), so CONTRIBUTING now allows one eval per entry mode, up to 10.

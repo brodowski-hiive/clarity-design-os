@@ -44,7 +44,7 @@ Using Claude Code instead? Run these two commands:
 
 ## Step 3: Connect your tools
 
-The skills read from Figma, Linear, Notion and Slack. In Claude, open **Connectors** (under Customize or Settings) and connect each one you use. Figma matters most.
+The skills read from Figma, Linear, Notion and Slack. In Claude, open **Connectors** (under Customize or Settings) and connect each one you use. Figma matters most. `design-os-placeholder-copy` also reads a Google Doc, so connect Google Drive if you write copy.
 
 ## Step 4: Try it
 

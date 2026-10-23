@@ -1,0 +1,63 @@
+{
+  "skill_name": "design-os-placeholder-copy",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Write placeholder copy for this frame and fill it in: https://www.figma.com/design/abc123/Listings?node-id=12-340",
+      "expected_output": "Picks an audience mode, fetches the three sources, reads the frame's text layers, shows a paste-ready block in screen order, asks one yes before writing, edits text only, then hands off with mode, sources, what changed, and notes for content review.",
+      "files": [],
+      "expectations": [
+        "Fetches the style guide, A to Z, and leadership log fresh before writing",
+        "States which audience mode it used and why",
+        "Shows the paste-ready block before any edit",
+        "Asks for a yes before writing to Figma and loads figma-use guidance before use_figma",
+        "Changes text content only and lists previous and new text in the handoff"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "This error state is for the Investing team's fund resale flow. Clean up the copy: 'Your bid was rejected because the fund issuing company does not accept new investors.' (screenshot attached)",
+      "expected_output": "Uses sophisticated mode, rewrites without 'rejected' or 'issuing company', doesn't name the eligibility reason, uses outcome-neutral framing, and delivers paste-ready because a screenshot can't be edited.",
+      "files": [],
+      "expectations": [
+        "Uses sophisticated audience mode for an Investing screen",
+        "Avoids 'rejected' and uses non-adversarial framing such as 'If your bid is ineligible'",
+        "Doesn't list the eligibility criterion behind the review",
+        "Says in one line that a screenshot can't be edited and delivers the paste-ready block"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Write banner copy inviting users to invest in the new Clarity Investments fund with a 'returns up to 20%' headline.",
+      "expected_output": "Refuses the implied-returns headline, applies the standing compliance rules, loads compliance-review for a promotional banner (or flags that it wasn't checked), and takes entity names from the Corporate Cheat Sheet, not from compliance-review.",
+      "files": [],
+      "expectations": [
+        "Doesn't write a performance prediction or implied return",
+        "Loads compliance-review or flags in the handoff that compliance wasn't checked",
+        "Uses 'Clarity Investments funds' naming with a lowercase f",
+        "Avoids urgency or fear-of-missing-out language"
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Give me copy for this modal so I can paste it in. The Notion style guide won't open for me.",
+      "expected_output": "Names the failed source and the likely fix, offers to continue on the core rules only, and if the designer continues, flags in the handoff that the copy wasn't checked against the style guide.",
+      "files": [],
+      "expectations": [
+        "Names the source that failed and suggests connecting Notion or requesting view access",
+        "Asks before continuing without the source rather than skipping it quietly",
+        "Flags the missing source in the handoff's Mode and sources line"
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Replace the placeholder names and dollar amounts in this holdings table so the totals add up",
+      "expected_output": "Recognises this as mock data, not copy, and points to design-os-fill-mock-data.",
+      "files": [],
+      "expectations": [
+        "Does not invent data values as copy",
+        "Points to design-os-fill-mock-data"
+      ]
+    }
+  ]
+}

@@ -19,6 +19,7 @@ The design operating system for Clarity: agent-agnostic skills for Clarity desig
 | `design-os-ping` | Ranked digest of what needs a designer's attention across Slack, Linear, and their Notion task list | Live | Adam Brodowski (via Claude), Oct 23, 2026 |
 | `design-os-stress-test-design` | Stress-tests a design for edge cases (long text, high volume, extreme numbers, missing states) and builds data permutations to design against | Live | Adam Brodowski (via Claude), Oct 23, 2026; created by Ernie |
 | `design-os-fill-mock-data` | Replaces placeholder content in a Figma frame with realistic, reconciled Clarity mock data, section by section after approval | Live | Adam Brodowski (via Claude), Oct 23, 2026; created by Ernie |
+| `design-os-placeholder-copy` | Writes first-draft UX copy for a Clarity screen to the style guide, A to Z, and Leadership Copy Preferences log (read fresh each run), in general or sophisticated audience mode, delivered paste-ready or filled into Figma after a yes, with a handoff note for content review | Live | Adam Brodowski (via Claude), Oct 23, 2026; created by Clarity content design |
 | `design-os-prep-eng-handoff` | Gets ahead of eng handoff: the questions engineers will ask and the backend, permission, and data work the design implies | Live | Adam Brodowski (via Claude), Oct 23, 2026; created by Ernie |
 | `design-os-research-patterns` | Researches how 15+ competitors and cross-industry products handle a screen or feature, with tradeoffs and source links | Live | Adam Brodowski (via Claude), Oct 23, 2026; created by Ernie |
 | `design-os-design-decisions` | Makes design calls with the designer (checks the guidelines log and Alloy, recommends one option with its reason and review level), logs confirmed calls to the Design guidelines log in Notion with IDs, answers "what did we decide?", and ships an Active-guidelines snapshot with each release | Live | Adam Brodowski (via Claude), Oct 21, 2026 |
@@ -72,6 +73,10 @@ Other agents that read `SKILL.md` (Cursor and others) can link the same `skills/
 Each folder under `skills/` is one skill: a `SKILL.md`, plus `references/` when needed and `evals/` (`evals.json` and `trigger-evals.json`). Each file under `agents/` is one subagent (Claude only). The Claude plugin manifest lives in `.claude-plugin/`; `.agents/skills/` links to `skills/` so Codex finds them. Agent instructions for working in this repo are in [AGENTS.md](AGENTS.md); `CLAUDE.md` just imports it for Claude Code.
 
 ## What's new
+
+**1.10.0 (Oct 23, 2026)**
+- New `design-os-placeholder-copy`, from Clarity content design's `clarity-placeholder-copy` (the `clarity-copy` plugin in `clarity-design-tools`). It writes first-draft UX copy for a screen before content review: picks general or sophisticated audience mode from the owning team, reads the Clarity style guide, A to Z, and Leadership Copy Preferences log fresh through Notion and Google Drive, applies the core copy and compliance rules, and ends with a handoff note. It delivers paste-ready copy, or fills it into Figma after one yes. Uninstall the `clarity-copy` plugin or any personal copy of `clarity-placeholder-copy` (see Migrating below).
+- `design-os-fill-mock-data` points to it for static copy, and it points back for data values.
 
 **1.9.1 (Oct 23, 2026)**
 - One Clarity data reference: `design-os-fill-mock-data`'s `references/domain-data.md` now holds typical values and extremes for each topic, plus the one consistency checklist. `design-os-stress-test-design`'s `stress-data.md` is merged into it, and the stress test and prep-eng-handoff check mock math against it instead of keeping their own copies.
@@ -145,6 +150,8 @@ Each folder under `skills/` is one skill: a `SKILL.md`, plus `references/` when 
 If you installed any of these skills as personal skills (in Claude, or copied into `~/.agents/skills` or `~/.codex/skills` for Codex), uninstall those copies after installing the plugin. Otherwise two copies compete to trigger.
 
 Four skills were renamed when they joined the plugin in 1.2.0. Remove any personal copy of the old name: `design-edge-cases` (now `design-os-stress-test-design`), `design-mock-data` (now `design-os-fill-mock-data`), `design-eng-handoff` (now `design-os-prep-eng-handoff`), and `design-pattern-research` (now `design-os-research-patterns`).
+
+`clarity-placeholder-copy` (from the `clarity-copy` plugin) became `design-os-placeholder-copy` in 1.10.0; uninstall `clarity-copy` or remove any uploaded copy of `clarity-placeholder-copy`.
 
 `design-ping` became `design-os-ping` when it joined the plugin; remove any personal copy of `design-ping`.
 

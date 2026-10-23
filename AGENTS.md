@@ -13,7 +13,7 @@ The Clarity design operating system: a set of [Agent Skills](https://agentskills
 
 ## Working on a skill
 
-Follow [CONTRIBUTING.md](CONTRIBUTING.md). The rules that trip agents up most:
+Follow [CONTRIBUTING.md](CONTRIBUTING.md) for format, and `skills/design-os-write-skill/SKILL.md` for the content: where a rule belongs, how to word it, and how to test it. The format rules that trip agents up most:
 
 - **Frontmatter is exactly `name` and `description`.** `name` matches the folder. Description ≤ 500 characters with "Use for" triggers and "Not for:".
 - **`SKILL.md` under 500 lines**, with a Reference files section listing every file in `references/`, and Lessons logged last (at most 3 entries).

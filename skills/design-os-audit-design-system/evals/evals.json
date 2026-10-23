@@ -69,11 +69,11 @@
     {
       "id": 5,
       "prompt": "Audit the Alloy library against the dev-ready checklist",
-      "expected_output": "Hands off to alloy-figma-audit.",
+      "expected_output": "Says auditing the Alloy library itself is out of scope and no design-os skill covers it, and suggests raising it in #support-alloy-design-system.",
       "files": [],
       "expectations": [
         "Does not audit the library as a designer's frame",
-        "Points to alloy-figma-audit"
+        "Does not name a skill that isn't installed"
       ]
     }
   ]

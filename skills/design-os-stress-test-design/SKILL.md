@@ -5,7 +5,9 @@ description: "Stress-test a Clarity design for edge cases: find where layouts br
 
 # Stress-test a design
 
-Find where a design breaks under real-world content and data, and produce the permutations worth designing for. The user designs Clarity, the issuer-facing portal: cap tables, transfers, approvals, documents, stakeholders. Their data is unusually prone to extremes (long legal entity names, huge share counts, many decimal places, multi-party workflows), so lean into those.
+Find where a design breaks under real-world content and data, and produce the permutations worth designing for. The user designs Clarity (for the product and its surfaces, read `pm-os-clarity-context` if it's installed). Its data is unusually prone to extremes (long legal entity names, huge share counts, many decimal places, multi-party workflows), so lean into those.
+
+The categories in step 2 are the design-os list of edge cases and states. Other skills (`design-os-prep-eng-handoff`, the workspace review in `design-os-design-setup`, `design-os-prototype`'s playground) point here rather than keeping their own.
 
 ## 1. Get the design
 
@@ -16,7 +18,7 @@ List the dynamic elements first. Static UI copy is out of scope unless it's loca
 
 ## 2. Stress test
 
-For each dynamic element, check the categories below. Use realistic values from `references/stress-data.md` rather than lorem ipsum or "AAAAAAA", because realistic extremes reveal realistic breakage.
+For each dynamic element, check the categories below. Use the Extremes in `design-os-fill-mock-data`'s `references/domain-data.md` rather than lorem ipsum or "AAAAAAA", because realistic extremes reveal realistic breakage.
 
 - **Length**: shortest (1 char, single-name person), typical, longest realistic, unbroken strings (emails, URLs, IDs with no spaces).
 - **Volume**: 0, 1, a few, many, way too many (tables with 10,000 rows, 40 badges, 200 stakeholders).
@@ -59,7 +61,7 @@ Rules:
 - One line per item, with a short example in parentheses where it helps.
 - Severity: High = broken or misleading, Medium = ugly or awkward, Low = minor polish.
 - Mark cases the design doesn't show as needing a design, not as passing.
-- Check that mock values reconcile (totals, fees, calculations) and list mismatches under Cleanup. Don't propose replacement values; `design-os-fill-mock-data` owns the fix, so one finding doesn't turn into three.
+- Check mock values against the Consistency checklist in `domain-data.md` and list mismatches under Cleanup. Don't propose replacement values; `design-os-fill-mock-data` owns the fix, so one finding doesn't turn into three.
 - Keep the permutation matrix out of the default output. Offer it instead; when asked, give it as a table and note the method (full matrix or pairwise).
 
 ## 5. Data files, Figma, and prototypes (on request)
@@ -74,8 +76,8 @@ End with one line offering the permutation matrix, a CSV/JSON of the data, Figma
 
 ## Reference files
 
-- `references/stress-data.md`: realistic extreme values (names, IDs, numbers, volumes, dates, statuses). Read in step 2.
+- `design-os-fill-mock-data`'s `references/domain-data.md`: the shared Clarity data reference. Read its Extremes in step 2 and its Consistency checklist for Cleanup.
 
 ## Lessons logged
 
-- **Oct 15, 2026 (migration):** Moved from personal `design-edge-cases` into clarity-design-os as `design-os-stress-test-design` → uninstall personal copies so the two don't compete to trigger.
+None yet.

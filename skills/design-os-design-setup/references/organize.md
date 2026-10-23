@@ -16,7 +16,7 @@ Organize only inside the agreed scope, because anything outside it may be someon
 - **One home per thing.** Every frame is in exactly one group. Nothing floats loose on the canvas.
 - **Groups are sections, named for what they hold.** `<n> · <journey or surface>` in setup; `<Screen>` columns under one section in a port. Old milestone names are kept only as a "from: Milestone 2" note.
 - **Names say what a frame is.** `<Screen> · <State>` for screens; `<ID> · <screen · state>` for boards; no `Frame 4961`, no `Copy of`.
-- **Labels where a newcomer needs them.** A header on each section (what it is, its source, a link back), a Start here or section header on the page, and flow arrows or "→ next" labels where the order isn't obvious.
+- **Labels where a newcomer needs them.** A header on each section (what it is, its source, a link back), a Start here or section header on the page, and flow arrows or "→ next" labels where the order isn't obvious. In a port, the port note is the section header: add to it (starting screen, links back), never a second header beside it.
 - **Even rhythm.** Consistent gaps between groups and between frames; report cards and stickies don't overlap their neighbours; sections are resized to fit their contents.
 - **Leftovers parked, not deleted.** Anything that doesn't fit goes to a final `Parking lot` section with a note on why.
 

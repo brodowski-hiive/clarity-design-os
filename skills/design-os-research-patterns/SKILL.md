@@ -5,7 +5,7 @@ description: "Research how 15+ competitors and cross-industry products handle a 
 
 # Research patterns
 
-Research how existing products handle a screen or feature, so a designer can explore the landscape before sketching or check an existing direction against it. The user is a product designer on Clarity, the issuer-facing portal (formerly called HIP or KITS). They know the domain and the design system, so don't explain either.
+Research how existing products handle a screen or feature, so a designer can explore the landscape before sketching or check an existing direction against it. The user is a product designer on Clarity (formerly called HIP or KITS; for the product and its surfaces, read `pm-os-clarity-context` if it's installed). They know the domain and the design system, so don't explain either.
 
 ## Stance
 
@@ -87,4 +87,4 @@ End with one line offering the full pattern breakdown. Once the designer picks a
 
 ## Lessons logged
 
-- **Oct 15, 2026 (migration):** Moved from personal `design-pattern-research` into clarity-design-os as `design-os-research-patterns` → uninstall personal copies so the two don't compete to trigger.
+None yet.

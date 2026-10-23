@@ -84,4 +84,4 @@ None.
 
 ## Lessons logged
 
-- **Oct 9, 2026 (migration):** Moved from personal `design-ping` into clarity-design-os → uninstall personal copies so the two don't compete to trigger.
+None yet.

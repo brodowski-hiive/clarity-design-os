@@ -7,7 +7,7 @@ Picking one design route for the whole brief. Read at step 5, after every affect
 | No design | Every screen is Fix | A ticket (`pm-os-ticket-brief`) |
 | Coded wires | A flow or interaction question, an early concept, or a scope review with a brief only | `design-os-prototype`, From a brief, at wires fidelity |
 | Coded hi-fi | Compose on existing screens, and a Design Spec exists | `design-os-prototype`, From a brief |
-| Figma | A layout or visual-direction question; the owning team designs in Figma first; or another team's screen changes | `design-os-create-mocks` if installed, else the Figma skills on the person's copy |
+| Figma | A layout or visual-direction question; the owning team designs in Figma first; or another team's screen changes | The Figma skills on the person's copy (`design-os-create-mocks` once it ships) |
 | Designer | Any Extend; Controlled work with new UI; placement confidence low; a contested cross-team change; a money moment; a non-web channel (WhatsApp) | A handoff package to the owning team's Design lead (`design-os-design-setup`'s `references/handoff.md`) |
 
 ## How to choose

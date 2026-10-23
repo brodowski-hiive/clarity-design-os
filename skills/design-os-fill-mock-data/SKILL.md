@@ -5,7 +5,7 @@ description: "Replace placeholder content in a Figma frame with realistic, consi
 
 # Fill mock data
 
-Turn placeholder content in a Figma frame into realistic mock data that makes sense together. The user designs Clarity, the issuer-facing portal (cap tables, transfers, tender offers, approvals, documents), so the data should read like a real issuer's account.
+Turn placeholder content in a Figma frame into realistic mock data that makes sense together. The user designs Clarity (for the product and its surfaces, read `pm-os-clarity-context` if it's installed), so the data should read like a real issuer's account.
 
 The flow is always: read → propose by section → user approves sections → apply to the original frame → verify.
 
@@ -30,7 +30,7 @@ If a value is ambiguous (could be static copy or data), include it in the propos
 
 ## 3. Generate data
 
-Read `references/domain-data.md` for vocabulary, realistic ranges, and formatting.
+Read the Typical values in `references/domain-data.md` for vocabulary, realistic ranges, and formatting. The same file holds the Extremes `design-os-stress-test-design` uses; keep both halves in step when editing it.
 
 Rules:
 - **Fresh each run.** Invent new names and values every time; don't reuse a fixed fictional company.
@@ -74,8 +74,8 @@ Take a new `get_screenshot` and check for text that now overflows, truncates, or
 
 ## Reference files
 
-- `references/domain-data.md`: Clarity vocabulary, realistic ranges, formatting, and the consistency checklist. Read in step 3.
+- `references/domain-data.md`: the shared Clarity data reference: vocabulary, typical and extreme values, formatting, and the consistency checklist. Read in step 3. Also read by `design-os-stress-test-design` and `design-os-prep-eng-handoff`.
 
 ## Lessons logged
 
-- **Oct 15, 2026 (migration):** Moved from personal `design-mock-data` into clarity-design-os as `design-os-fill-mock-data` → uninstall personal copies so the two don't compete to trigger.
+None yet.

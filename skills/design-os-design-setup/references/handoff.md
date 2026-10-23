@@ -25,7 +25,7 @@ Name the person in the package you write, because it's for them. Never write a n
 8. **Open questions:** the brief's open items that touch design, plus anything unsettled (no reference, inferred owner).
 9. **Still manual:** the paste-ins and who to ask.
 10. **Placement:** map version, main home card link, Map suggestion lines.
-11. **Suggested next skills:** for example `design-os-research-patterns` for an Extend pattern, `design-os-create-mocks` in the workspace, `design-os-prep-eng-handoff` later.
+11. **Suggested next skills:** for example `design-os-research-patterns` for an Extend pattern, `design-os-fill-mock-data` and `design-os-stress-test-design` on the boards, `design-os-prep-eng-handoff` later.
 
 Keep it skimmable. Link, don't paste: the brief, the frames and the map card are all links.
 

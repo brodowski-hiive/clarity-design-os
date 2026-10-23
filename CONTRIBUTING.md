@@ -65,7 +65,7 @@ Name roles ("the design lead", "the owning PM"), never people, in skills, refere
 
 ## 7. Evals
 
-- `evals/evals.json`: 3 to 5 evals in `skill-creator`'s schema covering the main path, one hard case, and one boundary case.
+- `evals/evals.json`: 3 to 5 evals in `skill-creator`'s schema covering the main path, one hard case, and one boundary case. A skill with several entry modes (from a brief, from Figma, a playground) may add one eval per mode beyond that, up to 10; merge evals that test the same path.
 - `evals/trigger-evals.json`: 8 to 12 queries, about half should trigger; should-nots are near misses from neighbouring skills.
 
 ## 8. Versioning

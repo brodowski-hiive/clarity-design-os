@@ -1,6 +1,6 @@
 ---
 name: "design-os-prototype-to-figma"
-description: "Port a coded Clarity prototype into Figma as Alloy screens in auto layout, flow wired and version-stamped, for detailed review while code stays canonical; then audit and fix them. Use for \"put my prototype in Figma\", \"port this prototype to Figma\", \"turn my Claude or Codex prototype into Figma screens\", \"refresh the Figma copy of my prototype\". Not for: Figma to code (design-os-prototype), auditing a designer's frame (design-os-audit-design-system), or Alloy library audits (alloy-figma-audit)."
+description: "Port a coded Clarity prototype into Figma as Alloy screens in auto layout, flow wired and version-stamped, for detailed review while code stays canonical; then audit and fix them. Use for \"put my prototype in Figma\", \"port this prototype to Figma\", \"turn my Claude or Codex prototype into Figma screens\", \"refresh the Figma copy of my prototype\". Not for: Figma to code (design-os-prototype), auditing a designer's frame (design-os-audit-design-system), or Alloy library audits (out of scope)."
 ---
 
 # Design OS: prototype to Figma

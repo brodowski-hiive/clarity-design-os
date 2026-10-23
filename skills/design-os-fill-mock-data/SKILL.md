@@ -17,7 +17,7 @@ The flow is always: read → propose by section → user approves sections → a
 
 ## 2. Find what to replace
 
-Replace dynamic content only. Leave static UI copy alone: labels, headings, button text, helper copy, disclaimers, and legal text.
+Replace dynamic content only. Leave static UI copy alone: labels, headings, button text, helper copy, disclaimers, and legal text. Writing that copy belongs to `design-os-placeholder-copy`; mention it if the frame needs both.
 
 Candidates:
 - Bracketed or templated placeholders: `[programName]`, `{{name}}`, `<value>`

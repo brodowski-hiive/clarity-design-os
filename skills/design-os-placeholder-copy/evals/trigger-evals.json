@@ -1,0 +1,13 @@
+[
+  {"query": "write placeholder copy for this Figma frame", "should_trigger": true},
+  {"query": "replace the lorem ipsum in this modal with real copy", "should_trigger": true},
+  {"query": "what should this button say?", "should_trigger": true},
+  {"query": "clean up the error message copy on this screen", "should_trigger": true},
+  {"query": "get this flow ready for copy review", "should_trigger": true},
+  {"query": "draft the empty state and tooltip text for the bids page", "should_trigger": true},
+  {"query": "make the data realistic in this frame", "should_trigger": false},
+  {"query": "fill in the John Doe rows with real-looking names and amounts", "should_trigger": false},
+  {"query": "stress test this card with the longest company names", "should_trigger": false},
+  {"query": "review this disclosure for FINRA compliance", "should_trigger": false},
+  {"query": "write the product brief for fund resales", "should_trigger": false}
+]

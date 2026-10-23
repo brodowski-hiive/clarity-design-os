@@ -10,20 +10,20 @@ The design operating system for Clarity: agent-agnostic skills for Clarity desig
 
 | Skill | What it does | Status | Last edited |
 |---|---|---|---|
-| `design-os-audit-design-system` | Audits a Figma frame for Alloy coverage, adds a report card with fix IDs, and fixes chosen IDs in a copy of the frame | Live | Adam Brodowski (via Claude), Oct 21, 2026 |
-| `design-os-design-impact` | Finds every existing screen a brief affects, calls each Fix, Compose, or Extend, recommends one design route, and hands off to `design-os-design-setup` on a yes | Live | Adam Brodowski (via Claude), Oct 21, 2026 |
-| `design-os-design-setup` | Turns a design-impact readout into a ready-to-work workspace: a Figma page cloned from the team's prior frames with notes, stickies, paste-in placeholders and empty boards; a coded as-is baseline; or a Notion/FigJam workspace. Then reviews and organizes it as a designer | Live | Adam Brodowski (via Claude), Oct 21, 2026 |
-| `design-os-prototype` | Builds coded prototypes from `@hiivemarkets/alloy` components, from a brief or Design Spec or by porting Figma flows, at hi-fi or wires fidelity, adds a playground panel for stress testing (in the default or another style), keeps each ai-prototypes app's `prototype.json` listing current, and checks the code is on-system | Live | Daniel Stein (via Claude), Oct 21, 2026 |
+| `design-os-audit-design-system` | Audits a Figma frame for Alloy coverage, adds a report card with fix IDs, and fixes chosen IDs in a copy of the frame | Live | Adam Brodowski (via Claude), Oct 23, 2026 |
+| `design-os-design-impact` | Finds every existing screen a brief affects, calls each Fix, Compose, or Extend, recommends one design route, and hands off to `design-os-design-setup` on a yes | Live | Adam Brodowski (via Claude), Oct 23, 2026 |
+| `design-os-design-setup` | Turns a design-impact readout into a ready-to-work workspace: a Figma page cloned from the team's prior frames with notes, stickies, paste-in placeholders and empty boards; a coded as-is baseline; or a Notion/FigJam workspace. Then reviews and organizes it as a designer | Live | Adam Brodowski (via Claude), Oct 23, 2026 |
+| `design-os-prototype` | Builds coded prototypes from `@hiivemarkets/alloy` components, from a brief or Design Spec or by porting Figma flows, at hi-fi or wires fidelity, adds a playground panel for stress testing (in the default or another style), keeps each ai-prototypes app's `prototype.json` listing current, and checks the code is on-system | Live | Adam Brodowski (via Claude), Oct 23, 2026 |
 | `dopetycoon` (playground style in `design-os-prototype`) | Styles your playground like a vintage video game, making it stand out from Clarity UI. Not the default: ask for it by name, e.g. "add a dopetycoon playground to my prototype" | Live | Daniel Stein (via Claude), Oct 21, 2026 |
-| `design-os-prototype-to-figma` | Ports a coded prototype into Figma as a version-stamped working copy (Alloy screens in auto layout, flow wired) for detailed review while code stays canonical, audits it with `design-os-audit-design-system`, fixes findings in place, tidies the section into flow order, and supersedes old ports on a re-port | Live | Adam Brodowski (via Claude), Oct 16, 2026 |
-| `design-os-ping` | Ranked digest of what needs a designer's attention across Slack, Linear, and their Notion task list | Live | Adam Brodowski (via Claude), Oct 21, 2026 |
-| `design-os-stress-test-design` | Stress-tests a design for edge cases (long text, high volume, extreme numbers, missing states) and builds data permutations to design against | Live | Adam Brodowski (via Claude), Oct 21, 2026; created by Ernie |
-| `design-os-fill-mock-data` | Replaces placeholder content in a Figma frame with realistic, reconciled Clarity mock data, section by section after approval | Live | Adam Brodowski (via Claude), Oct 21, 2026; created by Ernie |
-| `design-os-prep-eng-handoff` | Gets ahead of eng handoff: the questions engineers will ask and the backend, permission, and data work the design implies | Live | Adam Brodowski (via Claude), Oct 21, 2026; created by Ernie |
-| `design-os-research-patterns` | Researches how 15+ competitors and cross-industry products handle a screen or feature, with tradeoffs and source links | Live | Adam Brodowski (via Claude), Oct 21, 2026; created by Ernie |
+| `design-os-prototype-to-figma` | Ports a coded prototype into Figma as a version-stamped working copy (Alloy screens in auto layout, flow wired) for detailed review while code stays canonical, audits it with `design-os-audit-design-system`, fixes findings in place, tidies the section into flow order, and supersedes old ports on a re-port | Live | Adam Brodowski (via Claude), Oct 23, 2026 |
+| `design-os-ping` | Ranked digest of what needs a designer's attention across Slack, Linear, and their Notion task list | Live | Adam Brodowski (via Claude), Oct 23, 2026 |
+| `design-os-stress-test-design` | Stress-tests a design for edge cases (long text, high volume, extreme numbers, missing states) and builds data permutations to design against | Live | Adam Brodowski (via Claude), Oct 23, 2026; created by Ernie |
+| `design-os-fill-mock-data` | Replaces placeholder content in a Figma frame with realistic, reconciled Clarity mock data, section by section after approval | Live | Adam Brodowski (via Claude), Oct 23, 2026; created by Ernie |
+| `design-os-prep-eng-handoff` | Gets ahead of eng handoff: the questions engineers will ask and the backend, permission, and data work the design implies | Live | Adam Brodowski (via Claude), Oct 23, 2026; created by Ernie |
+| `design-os-research-patterns` | Researches how 15+ competitors and cross-industry products handle a screen or feature, with tradeoffs and source links | Live | Adam Brodowski (via Claude), Oct 23, 2026; created by Ernie |
 | `design-os-design-decisions` | Makes design calls with the designer (checks the guidelines log and Alloy, recommends one option with its reason and review level), logs confirmed calls to the Design guidelines log in Notion with IDs, answers "what did we decide?", and ships an Active-guidelines snapshot with each release | Live | Adam Brodowski (via Claude), Oct 21, 2026 |
-| `design-os-create-mocks` | Turns a brief and Design Spec into Figma mocks on Alloy (coded prototypes from a brief: `design-os-prototype`) | Planned | — |
-| `design-os-review-design-work` | Critiques a drafted mock or flow | Planned | — |
+| `design-os-create-mocks` | Turns a brief and Design Spec into Figma mocks on Alloy in the NEW boards `design-os-design-setup` creates. Plans from `design-os-prototype`'s brief path and builds with `design-os-prototype-to-figma`'s build rules rather than a build engine of its own (coded prototypes from a brief: `design-os-prototype`) | Planned | — |
+| `design-os-review-design-work` | Critiques a drafted mock or flow against the brief's goal: hierarchy, clarity, copy, flow. Hands Alloy coverage, guidelines and edge cases to the audit, design-decisions and stress-test skills rather than checking them again | Planned | — |
 
 `design-os-create-mocks`, `design-os-review-design-work`, and `design-os-audit-design-system` are called by `clarity-pm-os` as optional companions.
 
@@ -72,6 +72,14 @@ Other agents that read `SKILL.md` (Cursor and others) can link the same `skills/
 Each folder under `skills/` is one skill: a `SKILL.md`, plus `references/` when needed and `evals/` (`evals.json` and `trigger-evals.json`). Each file under `agents/` is one subagent (Claude only). The Claude plugin manifest lives in `.claude-plugin/`; `.agents/skills/` links to `skills/` so Codex finds them. Agent instructions for working in this repo are in [AGENTS.md](AGENTS.md); `CLAUDE.md` just imports it for Claude Code.
 
 ## What's new
+
+**1.9.1 (Oct 23, 2026)**
+- One Clarity data reference: `design-os-fill-mock-data`'s `references/domain-data.md` now holds typical values and extremes for each topic, plus the one consistency checklist. `design-os-stress-test-design`'s `stress-data.md` is merged into it, and the stress test and prep-eng-handoff check mock math against it instead of keeping their own copies.
+- One list of edge cases and states: `design-os-stress-test-design`'s categories. Prep-eng-handoff keeps only states with backend consequences, the workspace review keeps a coverage check, and the playground catalog maps the categories to controls.
+- The copied "issuer-facing portal" blurb in four skills is now a pointer to `pm-os-clarity-context`.
+- No more pointers to skills that don't exist: `alloy-figma-audit` and `design-os-review-design-work` are out of the audit's and prototype-to-figma's `Not for`, and setup's handoff suggests live skills instead of `design-os-create-mocks`.
+- Migration notes are out of Lessons logged in five skills (Migrating from personal copies, below, already covers them). The tidy pass treats a port note as the section header instead of adding a second one. Prototype's evals are merged from 14 to 9, one per entry mode, and CONTRIBUTING allows that for skills with several modes.
+- The two planned skills have sharper scope (Skills table).
 
 **1.9.0 (Oct 21, 2026)**
 - `design-os-prototype` playgrounds come in styles. Every style runs on the same engine and config, so a prototype can switch looks by swapping two files. The first new one is dopetycoon, a retro pixel "Playground.exe" window from the fund offerings prototype: draggable, resizable from any edge or corner, with maximize, and its option groups flow into columns when it's wide. Default stays the onyx panel. `references/playground-styles.md` lists the styles and explains how to add your own.
@@ -137,6 +145,8 @@ Each folder under `skills/` is one skill: a `SKILL.md`, plus `references/` when 
 If you installed any of these skills as personal skills (in Claude, or copied into `~/.agents/skills` or `~/.codex/skills` for Codex), uninstall those copies after installing the plugin. Otherwise two copies compete to trigger.
 
 Four skills were renamed when they joined the plugin in 1.2.0. Remove any personal copy of the old name: `design-edge-cases` (now `design-os-stress-test-design`), `design-mock-data` (now `design-os-fill-mock-data`), `design-eng-handoff` (now `design-os-prep-eng-handoff`), and `design-pattern-research` (now `design-os-research-patterns`).
+
+`design-ping` became `design-os-ping` when it joined the plugin; remove any personal copy of `design-ping`.
 
 `design-os-alloy-prototype` was renamed to `design-os-prototype` in 1.0.0. Remove any personal copy of either name, including `design-prototype` or `design-os-prototype` installed from a `.skill` file.
 

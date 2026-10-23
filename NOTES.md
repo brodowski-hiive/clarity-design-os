@@ -4,6 +4,11 @@ Working notes for whoever picks this repo up next. What shipped in each release 
 
 ## Sessions
 
+**Oct 23, 2026: 1.9.1**
+- A lint pass over every skill for duplicated effort. The mechanical checks all passed; the fixes were overlap. Each kind of check now has one owner the others point to: edge cases and states belong to `design-os-stress-test-design`'s categories, Clarity data and the mock-math checklist to `design-os-fill-mock-data`'s `domain-data.md`. Stress-test, prep-eng-handoff and the playground now depend on files in other skills, the same way prototype-to-figma already reads the audit's `alloy-library.md`.
+- Prototype's evals went from 14 to 9, not 5. Getting to 5 would have dropped whole modes (the return path from Figma, the self-check, the shadcn refusal), so CONTRIBUTING now allows one eval per entry mode, up to 10.
+- Planned skills: `design-os-create-mocks` should reuse prototype's `from-brief.md` planning and prototype-to-figma's `build.md`, and fill setup's NEW boards. `design-os-review-design-work` should stick to UX critique against the brief and hand Alloy, guidelines and edge cases to their skills; otherwise it becomes the sixth skill checking states.
+
 **Oct 21, 2026: 1.8.0**
 - Prompted by Kyle Cooney's AI Design Playbook (decision log, knowledge in files, descriptions as triggers). We departed from its `/decisions/log.json` on purpose: the plugin only reaches designers on a version bump and they can't edit it, so the live log is a Notion database and the repo keeps a release snapshot. The playbook's "add skills to CLAUDE.md" doesn't apply either: this repo's AGENTS.md only loads for agents working on the repo, not in a designer's session, so shared rules have to live somewhere every skill reads at runtime.
 - "Recommend; the designer decides" was the design team's choice over letting the agent log small calls on its own.
@@ -18,10 +23,8 @@ Working notes for whoever picks this repo up next. What shipped in each release 
 
 - **The Design guidelines log is new** (Notion, under Alloy Design System, created Oct 21). Watch the first few Make a call runs: whether recommendations cite precedent, and whether the review levels match how the working council actually works.
 - **Stale org-managed copies compete with plugin skills** in Cowork: `anthropic-skills:design-os-audit-design-system` (no `references/`), `anthropic-skills:design-os-prototype` and its twin `design-prototype` (pre-1.4, ship a dark-token file), `anthropic-skills:design-os-prototype-to-figma` (pre-1.7) and `anthropic-skills:design-ping` (broader description). Ask an org admin to remove them. `design-os-system-map` and `system-map-placement` are two org copies of one skill; keep `design-os-system-map`.
-- **`Not for` targets that don't exist:** `design-os-review-design-work` and `design-os-create-mocks` are planned; `alloy-figma-audit` (audit, to-figma) isn't in either plugin. Until review-design-work ships, "critique this mock" has no owner.
-- **Clarity domain blurb copied into four skills** (stress-test, fill-mock-data, prep-eng-handoff, research-patterns: "Clarity, the issuer-facing portal…"). Replace it with a pointer to `pm-os-clarity-context` next time they're touched.
+- **Planned skills still unowned:** `design-os-review-design-work` and `design-os-create-mocks` are planned (scope notes in Sessions, Oct 23). Until review-design-work ships, "critique this mock" has no owner, and the audit's `Not for` says "not covered yet". Nothing covers auditing the Alloy library itself (the old `alloy-figma-audit` pointer was dropped). `routes.md` still names `design-os-create-mocks` "once it ships".
 
 - **No Figma path from 1.6.0 or 1.7.0 has run against a real file.** Setup's cloned working page, the review agent's organize pass, the port's version stamp and saved plugin data, superseding an old port, the audit's superseded guard, and the return path to code are all untested. The first real run of each should be watched.
-- **Tidy mode may add a second header on a ported section.** `design-os-prototype-to-figma` step 7 says to use the port note as the header, but `design-os-design-setup`'s `references/organize.md` (which the `design-workspace-review` agent follows) says to add a header on each section and doesn't mention port notes. Add a line there, or check the first tidy run.
-- **`design-os-prototype` has 13 evals** against CONTRIBUTING's 3 to 5. Consolidate them, or change the guideline.
+- **Descriptions near the 500-character cap:** prototype-to-figma, research-patterns, design-setup, prep-eng-handoff and design-impact are within 12 characters. Adding a trigger phrase means cutting one.
 - **`routes.md`'s "Hands to" column** in impact now describes what setup does for each route. Consider retitling it.

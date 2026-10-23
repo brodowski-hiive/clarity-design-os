@@ -1,6 +1,6 @@
 ---
 name: "design-os-audit-design-system"
-description: "Audit a Figma frame for Alloy coverage: missing or detached components, non-Alloy libraries, raw colors, off-system type. Adds a report card with fix IDs and Alloy gaps beside the frame, then fixes chosen IDs in a duplicate, never the original. Use for \"audit my frame\", \"am I using Alloy?\", \"find detached components\", \"fix A3\". Not for: auditing the Alloy library itself (alloy-figma-audit), coded prototypes (design-os-prototype), or UX critique (design-os-review-design-work)."
+description: "Audit a Figma frame for Alloy coverage: missing or detached components, non-Alloy libraries, raw colors, off-system type. Adds a report card with fix IDs and Alloy gaps beside the frame, then fixes chosen IDs in a duplicate, never the original. Use for \"audit my frame\", \"am I using Alloy?\", \"find detached components\", \"fix A3\". Not for: auditing the Alloy library itself (out of scope), coded prototypes (design-os-prototype), or UX critique (not covered yet)."
 ---
 
 # Design OS: Audit design system

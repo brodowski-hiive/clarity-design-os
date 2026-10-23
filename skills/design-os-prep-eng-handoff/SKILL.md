@@ -5,7 +5,7 @@ description: "Prepare a Clarity design for engineering handoff: the questions en
 
 # Prep eng handoff
 
-Help a product designer get ahead of engineering before handoff: surface what's hard to build, the questions engineers will ask, and the backend work implied by the design. The user designs Clarity, the issuer-facing portal. They know the product and the design system (Alloy), so don't explain basics. The goal is a smoother kickoff, not a spec engineers would write themselves.
+Help a product designer get ahead of engineering before handoff: surface what's hard to build, the questions engineers will ask, and the backend work implied by the design. The user designs Clarity (for the product and its surfaces, read `pm-os-clarity-context` if it's installed). They know the product and the design system (Alloy), so don't explain basics. The goal is a smoother kickoff, not a spec engineers would write themselves.
 
 ## 1. Get the design
 
@@ -35,13 +35,13 @@ Think like a senior full-stack engineer seeing this for the first time. Look acr
 - **Side effects**: emails and notifications, document generation or e-signature, audit logs, webhooks, syncs with other systems (e.g. cap table data).
 - **Validation and errors**: client vs. server validation, conflict handling when data changed underneath the user, failure recovery.
 - **Migration and rollout**: existing data that needs backfilling, feature flags, behavior for records created before the change.
-- **Unspecified states**: loading, empty, error, partial, permission-restricted. For a deep pass on edge cases and content stress tests, point to the `design-os-stress-test-design` skill rather than duplicating it.
+- **Unspecified states**: only the ones with backend consequences (a permission-restricted view, a partial or async result). The full list of states and edge cases belongs to `design-os-stress-test-design`; point there once rather than duplicating it.
 
 Don't invent facts about Clarity's backend. When something depends on how the existing system works and the architecture doc doesn't settle it, phrase it as a question for eng.
 
 ## 4. Check the numbers
 
-If the design shows calculations (totals, fees, breakdowns, counts), check that the mock values reconcile. Mismatched placeholder math hides real questions about formulas, so list each mismatch as a question about the formula. Don't propose corrected values; fixing the mock belongs to `design-os-fill-mock-data`, so point there once.
+If the design shows calculations (totals, fees, breakdowns, counts), check the mock values against the Consistency checklist in `design-os-fill-mock-data`'s `references/domain-data.md`. Mismatched placeholder math hides real questions about formulas, so list each mismatch as a question about the formula. Don't propose corrected values; fixing the mock belongs to `design-os-fill-mock-data`, so point there once.
 
 ## 5. Output format
 
@@ -69,8 +69,8 @@ End with one line offering to turn the open questions into a message for the PM 
 
 ## Reference files
 
-None.
+- `design-os-fill-mock-data`'s `references/domain-data.md`: read its Consistency checklist in step 4.
 
 ## Lessons logged
 
-- **Oct 15, 2026 (migration):** Moved from personal `design-eng-handoff` into clarity-design-os as `design-os-prep-eng-handoff` → uninstall personal copies so the two don't compete to trigger.
+None yet.

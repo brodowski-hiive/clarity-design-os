@@ -22,12 +22,10 @@ Suggest only what this prototype can show. Every control must change something v
 
 Always offer the **baseline presets** that apply: Default, Empty, One, Many, Long text, Error, Loading.
 
-Then pick from this catalog based on what's on screen:
+Then pick what's on screen. The edge cases come from `design-os-stress-test-design`'s categories (length, volume, numbers, dates, states, people and roles), with values from the Extremes in `design-os-fill-mock-data`'s `references/domain-data.md`; don't keep a separate list here. As controls, they usually become:
 
 - **Lists and tables:** item count (0 to well past one screen); one item; exactly one page and one over (pagination); all items in one status; sorting or filters returning nothing.
-- **Text:** long names (90+ characters), long words with no spaces, missing optional fields (no logo, no description), names with accents and symbols.
-- **Numbers and money:** zero, very large (billions), negative or down moves, many decimal places, fractional shares, price unavailable.
-- **Dates and time:** today, long ago, far future, missing, expiring soon.
+- **Text, numbers and dates:** a toggle per extreme (long names, unbroken strings, missing optional fields, very large or fractional numbers, price unavailable, expiring soon).
 - **Forms:** prefilled vs empty, validation errors on every field, submitting, server error after submit, success.
 - **Loading and network:** loading skeleton, slow load (a few seconds), load error, partial failure (one section fails).
 - **People and access:** role (viewer, admin), new user vs power user, account not verified, feature not available.

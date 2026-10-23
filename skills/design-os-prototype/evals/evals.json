@@ -3,8 +3,8 @@
   "evals": [
     {
       "id": 1,
-      "prompt": "In ai-prototypes, build a quick prototype of the sell order flow: amount in shares, price per share, and a confirm dialog.",
-      "expected_output": "Checks apps/ for an existing app, scaffolds with mise run new (which uses @hiivemarkets/alloy), fills in prototype.json from the request, reads COMPONENTS.md and TOKENS.md, builds with SharesInput, MoneyInput, Dialog, and PageSection, runs the self-check, and ends with a receipt.",
+      "prompt": "Make me a quick prototype of the sell order flow: amount in shares, price per share, and a confirm dialog. I'm just in my Desktop folder, I don't really know git. When it's done, share it with the team; it's for CLR-512.",
+      "expected_output": "Explains in one line that prototypes live in ai-prototypes so the Clarity Design directory lists them, uses the person's clone or clones hiivemarkets/ai-prototypes, follows the repo's agent instructions file (no commands for the person to run), checks apps/ for an existing app, runs mise run new, reads COMPONENTS.md and TOKENS.md, builds with SharesInput, MoneyInput, Dialog, and PageSection, runs the self-check, then updates prototype.json (in-review, links.linear for CLR-512), validates it, opens the PR, and replies with the PR link and a one-line listing preview. If the repo can't be cloned, builds locally, says it isn't in the directory, and points to the directory's Add a link.",
       "files": [],
       "expectations": [
         "package.json depends on @hiivemarkets/alloy, not @hiivemarkets/ui",
@@ -12,14 +12,27 @@
         "Uses SharesInput for share quantity and MoneyInput for price",
         "Imports use @hiivemarkets/alloy/<component> subpaths",
         "No hex values or arbitrary color classes",
-        "prototype.json has a real name and description (no TODO) and status exploring",
-        "Ends with an Alloy receipt including the self-check result and the listing"
+        "Ends with an Alloy receipt including the self-check result and the listing",
+        "The app is created under apps/<name> in ai-prototypes with mise run new, not in the Desktop folder",
+        "Does not ask the person to run terminal commands",
+        "prototype.json status is one of exploring, in-review, in-development, archived",
+        "team is a pod name from apps/clarity-design/src/org.ts or Cross-team, or is left out",
+        "Receipt's Listing line says when the prototype appears in the directory",
+        "If cloning fails, says the prototype is not in the directory and names the Add a link fallback",
+        "prototype.json status is in-review",
+        "links.linear points to CLR-512 as a full URL",
+        "Description describes what was built, not the scaffold placeholder",
+        "Runs mise run validate for the app before opening the PR",
+        "Reply includes the PR link and a one-line listing preview",
+        "Does not invent a team or Figma link",
+        "Says the prototype appears in the Clarity Design directory once the PR merges",
+        "prototype.json has a real name and description (no TODO)"
       ]
     },
     {
       "id": 2,
-      "prompt": "Turn this Figma frame into a coded prototype: https://www.figma.com/design/EXAMPLE/holdings?node-id=4-20",
-      "expected_output": "Reads Code Connect, confirms linked instances are Alloy by component key, proposes Alloy swaps for hand-built layers with reasons and confidence, posts the component map for confirmation, then builds from Alloy, compares against the Figma screenshot, and records the Figma URL in the listing.",
+      "prompt": "Make this Figma page clickable in Codex: https://www.figma.com/design/EXAMPLE/place-bid?node-id=12-0. It has the bid form, review, confirmation, and an error version of the bid form. Only Continue is wired.",
+      "expected_output": "Reads Code Connect, confirms linked instances are Alloy by component key, proposes Alloy swaps for hand-built layers with reasons and confidence, treats the page as a flow (wired Continue as-is, other links inferred with confidence, the error frame as a state of the bid form), posts the component and flow maps with uncertain rows first, waits for corrections, builds with every link clickable, compares against the Figma screenshots, and records the Figma URL in the listing.",
       "files": [],
       "expectations": [
         "Calls get_code_connect_map before searching the library",
@@ -27,8 +40,14 @@
         "Proposes an Alloy component for each hand-built layer with a reason and confidence",
         "Posts the component map and waits for confirmation before writing UI",
         "Makes no writes to the Figma file",
-        "prototype.json links.figma is the URL from the prompt",
-        "Receipt includes match rate and any gaps"
+        "prototype.json links.figma is the page URL from the prompt",
+        "Receipt includes match rate and any gaps",
+        "Labels Continue as wired and other links as inferred with confidence",
+        "Treats the error frame as a state of the bid form, not a separate route",
+        "Repeated header or step indicator becomes one shared layout",
+        "Posts the flow map and waits for confirmation before writing UI",
+        "Every link in the confirmed flow map works in the rendered prototype",
+        "Receipt lists the flow (wired vs. inferred, corrections) and any Assumed items"
       ]
     },
     {
@@ -56,8 +75,8 @@
     },
     {
       "id": 5,
-      "prompt": "Add a playground to the fund-offerings-v2 prototype so testers can stress it.",
-      "expected_output": "Proposes a short table of playground settings based on what's on screen (baseline presets plus relevant catalog items), waits for a yes, copies the four shared files unchanged into src/playground/, writes config.ts, wires the provider and CSS, and verifies each control changes the page.",
+      "prompt": "Add a playground to the fund-offerings-v2 prototype so testers can stress it, and include a dark mode toggle.",
+      "expected_output": "Proposes a short table of playground settings based on what's on screen (baseline presets plus relevant catalog items), checks whether Alloy can show a dark theme and, since it can't, reports it as a gap instead of adding a dead control, waits for a yes, copies the four shared files unchanged into src/playground/, writes config.ts, wires the provider and CSS, and verifies each control changes the page.",
       "files": [],
       "expectations": [
         "Proposes the settings table before writing code",
@@ -66,51 +85,14 @@
         "Only config.ts is prototype-specific",
         "Empty, loading, and error states render Alloy EmptyState, Skeleton, and Alert",
         "Fake data generation lives in src/data/, driven by playground settings",
-        "Receipt lists the playground controls added"
-      ]
-    },
-    {
-      "id": 6,
-      "prompt": "Add a toggle to the playground for a dark mode",
-      "expected_output": "Checks whether Alloy and the prototype can actually show a dark theme. If they can't, says so and reports it as a gap instead of adding a control that does nothing.",
-      "files": [],
-      "expectations": [
+        "Receipt lists the playground controls added",
         "Checks Alloy's themes before adding the control",
         "Does not add a control that changes nothing visible",
         "If no dark theme exists, reports it as an Alloy gap"
       ]
     },
     {
-      "id": 7,
-      "prompt": "Make this Figma page clickable in Codex: https://www.figma.com/design/EXAMPLE/place-bid?node-id=12-0. It has the bid form, review, confirmation, and an error version of the bid form. Only Continue is wired.",
-      "expected_output": "Treats the page as a flow, uses the wired Continue link as-is, infers the remaining links from labels, names, and order with confidence levels, groups the error frame as a state of the bid form, posts the flow map with low-confidence links first, waits for corrections, then builds a working stepper or routes with every link clickable.",
-      "files": [],
-      "expectations": [
-        "Labels Continue as wired and other links as inferred with confidence",
-        "Treats the error frame as a state of the bid form, not a separate route",
-        "Repeated header or step indicator becomes one shared layout",
-        "Posts the flow map and waits for confirmation before writing UI",
-        "Every link in the confirmed flow map works in the rendered prototype",
-        "Receipt lists the flow (wired vs. inferred, corrections) and any Assumed items"
-      ]
-    },
-    {
-      "id": 8,
-      "prompt": "ok the offer approvals prototype is good, share it with the team. it's for CLR-512",
-      "expected_output": "Updates apps/offer-approvals/prototype.json to match what was built (status in-review, links.linear for CLR-512), validates it, opens the PR per the repo's agent instructions file, and replies with the PR link plus a one-line listing preview the designer can correct.",
-      "files": [],
-      "expectations": [
-        "prototype.json status is in-review",
-        "links.linear points to CLR-512 as a full URL",
-        "Description describes what was built, not the scaffold placeholder",
-        "Runs mise run validate for the app before opening the PR",
-        "Reply includes the PR link and a one-line listing preview",
-        "Does not invent a team or Figma link",
-        "Says the prototype appears in the Clarity Design directory once the PR merges"
-      ]
-    },
-    {
-      "id": 9,
+      "id": 6,
       "prompt": "Build a prototype from the floor-setting brief and its Design Spec: https://www.notion.so/clarity/Design-Spec-Offer-floor-EXAMPLE. Brief is linked from the spec.",
       "expected_output": "Fetches the Design Spec and the brief it links, reads the initiative record if one exists, checks for an existing prototype, takes the question from What we're testing, starts from the Where this lives screens, posts a plan (flow per persona, states from the scenario matrix with classifications, Alloy components from Reuse vs. new, the spec's worked example as data, Assumed rows first), waits for confirmation, builds, checks every Must-demonstrate state is reachable, and ends with a receipt that includes Source, Testing, Coverage, New patterns and Assumed.",
       "files": [],
@@ -126,38 +108,16 @@
       ]
     },
     {
-      "id": 10,
-      "prompt": "I'm the PM on a Controlled M project. Here's the brief, no design spec yet. I need a clickable prototype for scope review on Thursday, and if it looks good can you just push it into the frontend repo so we save time?",
-      "expected_output": "Treats this as a scope-review build from the brief only: names the question from the brief's Open items, derives states from the capabilities and failure modes and marks them derived, flags regulated copy for compliance-review, uses fictional data, and confirms the plan before building in ai-prototypes. Declines to push it into the frontend repo and explains that production code for Controlled work belongs to engineering.",
+      "id": 7,
+      "prompt": "I'm the PM on a Controlled M project. Here's the brief, no design spec yet: https://app.notion.com/p/EXAMPLE-offer-floors-brief. I need a wireframe-fidelity prototype for Thursday's scope review; it's only about whether the steps make sense, not the look. If it looks good can you just push it into the frontend repo so we save time?",
+      "expected_output": "Runs From a brief at wires fidelity, brief only: names the flow question, derives states and marks them derived, plans the happy path plus only the states the question needs, flags regulated copy for compliance-review, copies assets/wires/wires.css unchanged, sets data-fidelity=\"wires\", still builds from real Alloy components with no playground, and confirms the plan before building in ai-prototypes. Declines to push into the frontend repo: production code for Controlled work belongs to engineering.",
       "files": [],
       "expectations": [
         "Says no Design Spec exists and labels this a brief-only build",
         "Every state not from the brief is marked derived in the plan and the receipt",
         "Regulated copy is marked as needing compliance-review",
         "Makes no changes in the frontend repo and says production code for Controlled work belongs to engineering",
-        "Builds only in ai-prototypes, after the plan is confirmed"
-      ]
-    },
-    {
-      "id": 11,
-      "prompt": "Make me a quick prototype of a holdings summary card. I'm just in my Desktop folder, I don't really know git.",
-      "expected_output": "Explains in one line that prototypes live in ai-prototypes so the Clarity Design directory lists them, uses the person's clone or clones hiivemarkets/ai-prototypes, follows the repo's agent instructions file (no commands for the person to run), checks apps/ for an existing app, runs mise run new, builds on Alloy, writes prototype.json with only statuses and teams the directory accepts, and at share time says it appears in the directory once the PR merges. If the repo can't be cloned (no access), builds locally, says it isn't in the directory, and points to the directory's Add a link as a stopgap.",
-      "files": [],
-      "expectations": [
-        "The app is created under apps/<name> in ai-prototypes with mise run new, not in the Desktop folder",
-        "Does not ask the person to run terminal commands",
-        "prototype.json status is one of exploring, in-review, in-development, archived",
-        "team is a pod name from apps/clarity-design/src/org.ts or Cross-team, or is left out",
-        "Receipt's Listing line says when the prototype appears in the directory",
-        "If cloning fails, says the prototype is not in the directory and names the Add a link fallback"
-      ]
-    },
-    {
-      "id": 12,
-      "prompt": "Build a wireframe-fidelity prototype of the new seller floor flow from this brief for Thursday's scope review. It's only about whether the steps make sense, not the look. https://app.notion.com/p/EXAMPLE-offer-floors-brief",
-      "expected_output": "Runs From a brief at wires fidelity: names the flow question, plans the happy path plus only the states the question needs, copies assets/wires/wires.css unchanged into src/wires/, imports it unlayered after the Alloy imports, sets data-fidelity=\"wires\" on <html>, still builds from real Alloy components, adds no playground, checks the grey render in the browser, and ends with a receipt that has a Fidelity line.",
-      "files": [],
-      "expectations": [
+        "Builds only in ai-prototypes, after the plan is confirmed",
         "src/wires/wires.css matches the skill's assets/wires/wires.css byte for byte",
         "styles.css imports ./wires/wires.css after the Alloy imports with no layer()",
         "<html> in the SSR shell has data-theme=\"clarity\" and data-fidelity=\"wires\"",
@@ -169,7 +129,7 @@
       ]
     },
     {
-      "id": 13,
+      "id": 8,
       "prompt": "I've finished my edits on the ported sell-order screens in Figma (https://www.figma.com/design/EXAMPLE/sell-order?node-id=40-1). Bring them back into the prototype.",
       "expected_output": "Recognizes a ported section, updates the existing app named in its saved source on a new branch, compares each frame with the running prototype at its saved route to find what changed, confirms only those changes, builds them, and offers a re-port.",
       "files": [],
@@ -184,7 +144,7 @@
       ]
     },
     {
-      "id": 14,
+      "id": 9,
       "prompt": "Add a playground to my holdings prototype, but use the dopetycoon one, the retro window. I want to try empty, lots of holdings, and a load error.",
       "expected_output": "Proposes a playground plan for the holdings screen and gets a yes, then installs the shared engine.ts and provider.tsx with dopetycoon's panel.tsx and playground.css, adds the two pixel-font packages, writes only config.ts, and verifies the panel including resizing.",
       "files": [],
